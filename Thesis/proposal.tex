@@ -1,0 +1,117 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\bibliographystyle{unsrt}
+
+\title{Proposal for the Bachelor thesis}
+\author{Anna Fedorchenko}
+\author{Student: Anna Fedorchenko \\ Supervisor: M.Sc. Atanas Tanev\\Advisor: Prof. Dr.-Ing. Rüdiger Dillmann}
+
+
+\begin{document}
+
+\maketitle
+
+
+\section*{Current title of the thesis}
+%Vorläufiger oder Arbeitstitel, max. 300 Zeichen
+Data-driven robotic grasp synthesis in a simulated environment.\\
+(Datengesteuerte Robotergreifenssynthese in einer Simulationsumgebung.) 
+
+\section*{Motivation}
+Grasping is a beginning of many diverse robotic manipulations in research and industry (like ...?). It is crucial for the grasping part to succeed in order to be able to complete the proceeding steps of the manipulation. \\
+There are a some variations to this problem such as: the type of the object to be grasped (rigid/non-rigid, transparent, having certain shape, color,..), the number of objects (cluttered environment, a couple of objects, a single one), whether the object is known, familiar or completely unknown, the type of the gripper (two-finger, five-finger,...), the type of the camera and so on. \\
+Different approaches have been created to solve the grasping problem. A lot of them that were developed in the last couple of years are based on Machine Learning. Machine learning helps to
+incorporate the training examples in order to learn from them.
+-----Übergang zum human labeling----- \\
+Human labeling is time and effort consuming. Although there exist software for easier labeling (LabelFusion) and already pre-labeled datasets (Cornell Dataset) in many cases depending on the use case still new objects have to be labeled. The reinforcement learning approach helps to avoid the labeling part by making system to acquire experience from its own successes and failures. Such self-supervised system have showed good results at solving the grasping problem.  \\
+Reinforcement learning paradigm (?) is similar to how humans learn. One of the easy everyday tasks that every human learns is catching a ball. Either we watch somebody else doing it or try it out ourselves. We automatically in the course of split seconds estimate the size and mass of the ball, what our position should be in order to catch it. The result of catching - positive or negative - influences our behavior for the next time when we have to perform the same task.  \\
+Another important aspect of solving the grasping problem is being able to adapt to new surrounding environments and new objects.  Lightning, object type, background color, size....depending on the task????\\
+
+One of the drawbacks of using machine learning is the need to use a lot of training data to avoid under- and overfitting. Data-collection \\
+
+The state of the art approach .... Information??? Pipeline
+---state of the art in FZI---
+
+%\section*{Motivation2}
+%max. 5 Bulletpoints - im Stil der IEEE Keywords
+%The goal of the bachelor thesis is to implement an algorithm for robotic grasping in a simulated environment. In case of successful simulation the algorithm will be then trained in real environment. The experimental setup consists of one robot with a two-finger parallel gripper, a depth RGB-D camera and known and unknown objects that are located in the field of the camera. 
+%The focus is to learn how to locate different objects using learning approaches such as Reinforcement and Deep Learning. The simulation will be done in Gazebo with Pytorch for programming the neural network, ROS as a middleware framework and Python as programming language. 
+
+
+\section*{Problem statement}
+The focus of the thesis is to develop an approach for the robot to learn how to grasp rigid objects using images from RGB-D camera and two-finger parallel gripper. The learning process should be self-supervised: any human labeling should be avoided. This will be achieved with the help of deep and reinforcement learning. The training and testing will be conducted in a simulated environment. In case of successful performance of the developed algorithm in the simulation, the next step will be to prepare the transition to the real-world environment with the help of domain randomization. \\
+One of the advantages of such algorithm is the ability to generalize to new objects. Previous research shows that data-driven algorithms that are based on machine learning have successful rates of grasping objects that were never used in training. Another advantage is the fact that no human labeling will be required. This spares time and effort. \\
+Training the robot in real world is time consuming and expensive, simulation makes it possible to avoid these costs. However, there is a so-called "reality gap" problem, when the algorithm trained in simulation does not perform well in the real world scenario. One of the possible solutions to this problem is using domain randomization and/or fine-tuning with training in reality. The sim-to-real transfer is an additional optional part of the thesis, that will take place only if the algorithm performs well in simulation.\\
+
+\section*{Related work}
+Throughout the years there has been a lot of research on the topic of robotic grasping. Sahbani et al. \cite{sahbani2012overview} divided different approaches in analytical and empirical. Analytical approaches investigate the physics, kinematics and geometry of the object and the robot in order to determine contact points and gripper position \cite{nguyen1988constructing},  \cite{murray2017mathematical}. However, as Bohg et al. \cite{bohg2013data} stated, they require exact 3D models of objects and are not robust to noise. \\
+Empirical or also called data-driven approaches are based on sampling grasps for objects and then evaluating them \cite{bohg2013data}. In some methods robots learn to grasp by comparing its grasp attempts to the database of human labeled grasps \cite{redmon2015real}. Some empirical approaches try to avoid the effort of human labeling to create databases for training, instead they attempt grasps on objects and learn from these attempts. Berscheid et al. \cite{berscheid2019improving} trained the neural network by executing grasps and adapting the network according to success or failure of the attempt.
+Empirical approaches can generalize better to new objects and are more resistant to noise. However they usually require big resources of data \cite{berscheid2019improving}.\\
+In data-driven approaches training data is required to learn for a successful grasp. Levine et al. \cite{levine2018learning} used 14 robotic arms that sampled 800 000 grasp attempts. Pinto and al. \cite{pinto2016supersizing} used one robot manipulator to conduct 50 000 grasp attempts in course of 700 hours. However, it is expensive to collect such amount of data and it is very time consuming, this is where the arguments for learning in simulation come to a point. \\
+Goldfeld et al. \cite{goldfeder2011data} created a grasp planner containing database of grasps for 3D models of different objects, that were generated using GraspIt! \cite{miller2004graspit} simulation engine. Kasper et al. \cite{kasper2012kit}  introduced the system for digitizing objects. In year 2010 the OpenGRASP  \cite{leon2010opengrasp}  simulation toolkit for grasping and dexterous manipulation was created. \\
+James et al. \cite{james2019sim} developed an approach that used only a small amount of real-word training data in addition to simulation, which helped to reduce the real-world data by more than 99\%. Bousmalis et al. \cite{bousmalis2018using} implemented a grasping method that helps to significantly reduce the amount of additional real-world grasp samples. In their experiment 50 times less real-world samples were required to achieve the same level of performance compared to their previous system. \\
+Another advantage of using simulation is the ability to pretrain the network. Redmon et al. \cite{redmon2015real} stated that "pretraining large convolutional neural networks greatly improves training time and helps avoid overfitting".
+
+
+\section*{Approach}
+The data-driven approach introduced in the thesis consists of predicting good grasp parameters for the object, executing the predicted grasp and adapting the network according to the result of the grasp. The scheme of the selected approach is represented in Figure \ref{fig:pipeline}.
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[scale=0.5]{Pipeline.jpg}
+	\caption{Steps of the algorithm. After preprocessing the input image from the camera the parameters of location of the gripper will be evaluated in course of a two step approach - evaluation of the grasp space and grasp selection. Then the gripper will execute a planar grasp with parameters that were calculated in the last step. Depending on the result of the grasp, the system will be trained. After that the new loop cycle will start for the next object. \label{fig:pipeline}}
+\end{figure}
+\begin{itemize}
+\item Data Preprocessing\\ 
+Although most part of the training will take place in a simulation, some of the training samples will be taken from the real world. The depth camera can take an image of the scene, the algorithm will then simulate the scene and try to locate and grasp the object. This can help to bring the simulation closer to the real-world problem. In case of using the 3D camera it might be helpful to additionally use data augmentation for creating more diversified training data. Redmon et al \cite{redmon2015real} used random translating and rotating the input image during training, generating 3000 training examples per image. 
+\item Pose estimation\\
+In this part the correct gripper location to execute a planar grasp of the object will be calculated. The gripper location is defined as (x,y,q) where x, y are coordinates of the gripper along according axes (the height of the gripper will be predefined, the depth camera will help to calculate how low does the gripper have go to execute a grasp), q is the angle of the rotation of the gripper around the z- axis. All the grasps are restricted to planar grasps in order to reduce the possible grasp space, so gripper rotations around x- and y-axes are emitted. (See  Figure \ref{fig:Gripper})
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[scale=0.5]{Gripper.jpg}
+	\caption{The gripper position will be defined by its x and y coordinates and angle q around the z axis. The jaw width will be set to a possible maximum before executing the grasp in order to cut down the number of gripper parameters that have to estimated for the grasp. \label{fig:Gripper}}
+\end{figure}
+\begin{itemize}
+\item Grasp space evaluation\\
+Convolutional neural networks are better at classification rather than regression \cite{pinto2016supersizing}, which is why they are going to be used not to directly define the (x, y, q) parameters but to compute the heatmap of probabilities for all possible combinations of x, y, q. \\\
+Heatmap is one of the representations of probabilities for possible grasps. Tobin et al. \cite{tobin2018domain} devided the bounding box of the object in buckets and sampled the grasp for every bucket. Pinto et al. \cite{pinto2016supersizing} extracted patches from the input image and calculated a 18-dimensional binary likelihood vector for each patch, each component of the vector estimates whether the object can successfully be grasped at the center of the patch with respectively 0$^{\circ}$, 10$^{\circ}$, ..., 170$^{\circ}$ of rotation of the gripper. In \cite{zeng2019tossingbot} Zeng et al. used neural networks to calculate 16 probability maps, every value in each map represents whether the object is graspable at the to the value corresponding input pixel. There are 16 maps for 16 rotation angles (with 22,5$^{\circ}$ step).\\
+\item Grasp selection\\
+Using the heatmap that was calculated in previous step one or several grasp parameters will be selected. It will not be necessary the grasp with the biggest probability, other metrics can be applied, e.g. random in order to explore the grasp space. Berscheid et al. \cite{berscheid2019improving} used four different selection functions to explore the grasp space and decrease error rates. 
+\end{itemize}
+\item Weighted retraining \\
+Retraining of the network will be conducted using the Reinforcement learning approach. The weights in the neural network will be changed according to achieved result in the previous step. The formula for the calculation of the new weights is to be defined. It will include the reward for the successful or failed grasp.
+\end{itemize}
+All the steps will be continued for new experiments. The duration of the training has to be long enough to achieve a good success rate but also not too long to prevent the network from overfitting.
+The focus of the thesis is to conduct all the training in a simulation environment. The existing database of 3D objects is to be used. 
+
+
+%\section*{Gliederung der eigenen Arbeit}
+%Angebabe der Haupt-Kapitel
+%\begin{itemize}
+ %\item Einleitung
+%\end{itemize}
+
+%\section*{Eigene Publikationen}
+%\subsection*{Aktuelle Publikationliste}
+%eigene Publikationsliste in bibtex style einbinden
+%\nocite{*}
+
+
+
+
+%\subsection*{Geplante Publikationen}
+%bitte mind. 2 in der näheren Zukunft geplante Publikationen
+
+
+
+%\section*{Zeitplan}
+
+
+\bibliographystyle{plain}
+\bibliography{Literaturliste.bib}
+
+
+
+\end{document}
+
+
