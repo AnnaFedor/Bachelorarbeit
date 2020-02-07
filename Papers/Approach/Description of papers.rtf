@@ -1,0 +1,134 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11905\paperh16837\margl1133\margr1133\margb1133\margt1133
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs32 \cf2 \expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone Using Simulation and Domain Adaptation to Improve Efficiency of Deep Robotic Grasping\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs22 \cf2 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf2 \'97good introduction\'97\
+Learning approach is based on \'93Learning Hand-Eye Coordination for Robotic Grasping with Deep Learning and Large-Scale Data Collection\'94, adding simulation and domain adaptation.\
+Approach consists of two parts:\
+\pard\tx20\tx392\pardeftab720\li392\fi-393\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone {\listtext	1.	}
+\f0\b \expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone Grasp prediction convolutional neural network 
+\f1\b0 (CNN) C(xi ,vi) that accepts a tuple of visual inputs xi = \{xi0 ,xic \} and a motion command vi , and outputs the predicted probability that executing vi will result in a successful grasp. xi0 is an image recorded before the robot becomes visible and starts the grasp attempt, and xic is an image recorded at the current timestep. vi is specified in the frame of the base of the robot and corresponds to a relative change of the end-effector\'92s current position and rotation about the vertical axis. We consider only top-down pinch grasps, and the motion command has, thus, 5 dimensions: 3 for position, and 2 for a sine-cosine encoding of the rotation.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone {\listtext	2.	}\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone Simple, manually designed 
+\f0\b servoing function
+\f1\b0  that uses the grasp probabilities predicted by C to choose the motor command vi that will continuously control the robot.\
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf2 The datasets for training the grasp prediction CNN C are collections of visual episodes of robotic arms attempting to grasp various objects. Each grasp attempt episode consists of T time steps which result in T distinct training samples. Each sample i includes xi ,vi , and the success label yi of the entire grasp sequence. The visual inputs are 640\'d7512 images that are randomly cropped to a 472\'d7472 region during training to encourage translation invariance.\
+\
+Domain Adaptation \
+As part of our proposed approach we use two domain adaptation techniques: domain-adversarial training and pixel-level domain adaptation.\
+\
+While DANN makes the features extracted from both domains similar, the goal in pixel-level domain adaptation [26], [27], [28], [25] is to learn a generator function G that maps images from a source to a target domain at the input level. This approach decouples the process of domain adaptation from the process of task-specific predictions, by adapting the images from the source domain to make them appear as if they were sampled from the target domain. Once the images are adapted, they can replace the source dataset and the relevant task model can be trained as if no domain adaptation were required. \
+\
+Two types of object sets were used for the simulation: 1) procedurally generated random geometric shapes, built by attaching different shapes to on another and then smoothing the edges and 2) realistic objects obtained from the publicly-available ShapeNet 3D model repository. The first group turned out to be more helpful.\
+\
+We used 1,000 to 2,000 simulated arms at any given time to collect our synthetic data, and the models that were used to collect the datasets were being updated continuously by an automated process. \
+After training our grasping approach in our simulated environment, the simulated robots were successful on 70%-90% of the simulated grasp attempts. \
+\
+Virtual Scene Randomization was used during the experiments (No randomization: Similar to real-world data collection, we only varied camera pose, bin location, and used 6 different real-world images as backgrounds; (b) Visual Randomization: We varied tray texture, object texture and color, robot arm color, lighting direction and brightness; (c) Dynamics Randomization: We varied object mass, and object lateral/rolling/spinning friction coefficients; and (d) All: both visual and dynamics randomization.)\
+\
+Two methods of domain adaptation were used: feature-level and pixel-level.\
+Domain\'96adversarial neural networks, visual scene randomization, combination of different domain adaptation techniques helped to achieve comparable grasping success rate to experiments with only real-world data, using much smaller percentage of real-world data (10%-20%)\
+\
+In this paper, we examined how simulated data can be incorporated into a learning-based grasping system to improve performance and reduce data requirements. We study grasping from over-the-shoulder monocular RGB images, a particularly challenging setting where depth information and analytic 3D models are not available. This presents a challenging setting for simulation-to-real-world transfer, since simulated RGB images typically differ much more from real ones compared to simulated depth images. We examine the effects of the nature of the objects in simulation, of randomization, and of domain adaptation. We also introduce a novel extension of pixel-level domain adaptation that makes it suitable for use with high-resolution images used in our grasping system. Our results indicate that including simulated data can drastically improve the vision-based grasping system we use, achieving comparable or better performance with 50 times fewer real-world samples. Our results also suggest that it is not as important to use realistic 3D models for simulated training. Finally, our experiments indicate that our method can provide plausible transformations of synthetic images, and that including domain adaptation substantially improves performance in most cases.\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs36 \cf2 Deep Object Pose Estimation for Semantic Robotic Grasping of Household Objects\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs22 \cf2 \
+Good motivation, detailed description of the NN\
+Pose estimation: Belief maps of 8 Vertices + centroid for the object are generated, which help to find the bounding box for the object.\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs32 \cf2 Approach \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f1\b0\fs24 \cf2 We propose a two-step solution to address the problem of detecting and estimating the 6-DoF pose of all instances of a set of known household objects from a single RGB image. First, a deep neural network estimates belief maps of 2D keypoints of all the objects in the image coordinate system. Secondly, peaks from these belief maps are fed to a standard perspective-n-point (PnP) algorithm [12] to estimate the 6-DoF pose of each object instance. In this section we describe these steps, along with our novel method of generating synthetic data for training the neural network.\
+\pard\pardeftab720\partightenfactor0
+
+\fs22 \cf2 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf2 I didn\'92t understand how they do the grasping part. The focus of this paper is object pose estimation, training only on synthetic data.\
+\pard\pardeftab720\partightenfactor0
+
+\fs22 \cf2 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs36 \cf2 A Robotic Grasping Method using ConvNets \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs22 \cf2 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\fs24 \cf2 In this work, we use Convolutional Neural Networks for recognizing a selected production piece on a cluster. Once the selected piece has been recognized, a grasping algorithm estimates the best gripper configuration so that the robot is able to pick the piece up. \
+\
+Detailed description of NN architecture, camera calibration, robot coordinates, analytical approach for grasping based on the Hough transform and friction cones. Looks like an Abschlussarbeit, maybe I am wrong. \
+\
+\pard\pardeftab720\sa360\partightenfactor0
+
+\f0\b\fs32 \cf2 Knowledge Induced Deep Q-Network for a Slide-to-Wall Object Grasping \
+\pard\pardeftab720\sl288\slmult1\sa40\partightenfactor0
+
+\f1\b0\fs28 \cf2 \kerning1\expnd1\expndtw5
+Hengyue Liang, Xibai Lou and Changhyun Choi\
+\pard\pardeftab720\partightenfactor0
+
+\fs22 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs26 \cf2 One example of such tasks is the Slide-to-Wall grasping, where the target object needs to be pushed towards a wall before a feasible grasp can be applied. In this paper, we propose an approach that actively exploits the environment to grasp objects. We formulate the Slide-to-Wall grasping problem as a Markov Decision Process and propose a reinforcement learning approach. Though a standard Deep Q-Network (DQN) method is capable of solving MDP problems, it does not effectively generalize to unseen environment settings that are different from training. To tackle the generalization challenge, we propose a Knowledge Induced DQN (KI-DQN) that not only trains more effectively, but also outperforms the standard DQN significantly in testing cases with unseen walls, and can be directly tested on real robots without fine-tuning while DQN cannot.\
+\pard\pardeftab720\sl280\partightenfactor0
+\cf2 Our work utilizes the CNN based DQN method to solve the Slide-to-Wall grasping task\
+CNN + DQL for MDP as RL\
+Knowledge Induced Deep Q-Network: the grasping point must be located on the object, it cuts down the number of possible grasps\
+Using pertained DenseNet (Densely connected convolutional networks)\
+\
+Good formulas for DQN and explanation of the NN structure\
+\
+\
+\pard\pardeftab720\sa360\partightenfactor0
+
+\f0\b\fs32 \cf2 Learning Synergies between Pushing and Grasping with Self-supervised Deep Reinforcement Learning \
+\pard\pardeftab720\sl288\slmult1\sa40\partightenfactor0
+
+\f1\b0\fs28 \cf2 \kerning1\expnd1\expndtw5
+Andy Zeng1,2 , Shuran Song1,2 , Stefan Welker2 , Johnny Lee2 , Alberto Rodriguez3 , Thomas Funkhouser1,2 1Princeton University 2Google 3Massachusetts Institute of Technology {\field{\*\fldinst{HYPERLINK "http://vpg.cs.princeton.edu"}}{\fldrslt \kerning1\expnd1\expndtw5
+\ul http://vpg.cs.princeton.edu}}\
+\pard\pardeftab720\partightenfactor0
+
+\fs22 \cf2 \expnd0\expndtw0\kerning0
+\
+\
+VERY good paper\
+Pushing + Grasping\
+Two CNNs: one for pushing, one for grasping. Grasping: 16 angle orientations (22,5 degrees). The height maps are rotated and for each pixel in a heightmap the Q-Value is calculated. Pushing: 16 different directions for pushing, same process: Q-values for every pixel.\
+There are 224*224 pixel, so 224*224*32 possible actions.\
+32 heatmaps are calculated, the motion with the best Q-value is chosen.\
+\
+Loss function, rewards formulas are given. \
+Trained by SGD\
+Used DenseNets pertained on ImageNet (pretraining might be not necessary)}
