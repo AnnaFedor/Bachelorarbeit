@@ -1,0 +1,47 @@
+\begin{thebibliography}{1}
+
+\bibitem{sahbani2012overview}
+Anis Sahbani, Sahar El-Khoury, and Philippe Bidaud.
+\newblock An overview of 3d object grasp synthesis algorithms.
+\newblock {\em Robotics and Autonomous Systems}, 60(3):326--336, 2012.
+
+\bibitem{nguyen1988constructing}
+Van-Duc Nguyen.
+\newblock Constructing force-closure grasps.
+\newblock {\em The International Journal of Robotics Research}, 7(3):3--16,
+  1988.
+
+\bibitem{murray2017mathematical}
+Richard~M Murray.
+\newblock {\em A mathematical introduction to robotic manipulation}.
+\newblock CRC press, 2017.
+
+\bibitem{ding2000computing}
+Dan Ding, Yun-Hui Liu, and Shuguo Wang.
+\newblock Computing 3-d optimal form-closure grasps.
+\newblock In {\em Proceedings 2000 ICRA. Millennium Conference. IEEE
+  International Conference on Robotics and Automation. Symposia Proceedings
+  (Cat. No. 00CH37065)}, volume~4, pages 3573--3578. IEEE, 2000.
+
+\bibitem{bohg2013data}
+Jeannette Bohg, Antonio Morales, Tamim Asfour, and Danica Kragic.
+\newblock Data-driven grasp synthesis---a survey.
+\newblock {\em IEEE Transactions on Robotics}, 30(2):289--309, 2013.
+
+\bibitem{redmon2015real}
+Joseph Redmon and Anelia Angelova.
+\newblock Real-time grasp detection using convolutional neural networks.
+\newblock In {\em 2015 IEEE International Conference on Robotics and Automation
+  (ICRA)}, pages 1316--1322. IEEE, 2015.
+
+\bibitem{Cornellgraspingdataset}
+
+
+\bibitem{pinto2016supersizing}
+Lerrel Pinto and Abhinav Gupta.
+\newblock Supersizing self-supervision: Learning to grasp from 50k tries and
+  700 robot hours.
+\newblock In {\em 2016 IEEE international conference on robotics and automation
+  (ICRA)}, pages 3406--3413. IEEE, 2016.
+
+\end{thebibliography}

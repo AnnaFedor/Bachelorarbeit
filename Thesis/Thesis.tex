@@ -1,0 +1,74 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\bibliographystyle{unsrt}
+
+\title{Proposal for the Bachelor thesis}
+\author{Anna Fedorchenko}
+\author{Student: Anna Fedorchenko \\ Supervisor: M.Sc. Atanas Tanev\\Advisor: Prof. Dr.-Ing. Rüdiger Dillmann}
+
+
+\begin{document}
+
+\maketitle
+
+
+\section*{Current title of the thesis}
+%Vorläufiger oder Arbeitstitel, max. 300 Zeichen
+Data-driven robotic grasp synthesis in a simulated environment.\\
+(Datengesteuerte Robotergreifenssynthese in einer Simulationsumgebung.) 
+
+
+\section*{Problem statement}
+The focus of the thesis is to develop an approach for the robot to learn how to grasp rigid objects using images from RGB-D camera and two-finger parallel gripper. The learning process should be self-supervised: any human labeling should be avoided. This will be achieved with the help of deep and reinforcement learning. The training and testing will be conducted in a simulated environment. In case of successful performance of the developed algorithm in the simulation, the next step will be to prepare the transition to the real-world environment with the help of domain randomization. \\
+One of the advantages of such algorithm is the ability to generalize to new objects. Previous research shows that data-driven algorithms that are based on machine learning have successful rates of grasping objects that were never used in training. Another advantage is the fact that no human labeling will be required. This spares time and effort. \\
+Training the robot in real world is time consuming and expensive, simulation makes it possible to avoid these costs. However, there is a so-called "reality gap" problem, when the algorithm trained in simulation does not perform well in the real world scenario. One of the possible solutions to this problem is using domain randomization and/or fine-tuning with training in reality. The sim-to-real transfer is an additional optional part of the thesis, that will take place only if the algorithm performs well in simulation.\\
+
+\section*{Motivation}
+Nowadays there is a big variety of use cases in the field of robotics in everyday life, starting from smart home devices to autonomous driving vehicles and space shift robots. Due to the significant development of soft- and hardware in the last decades it is becoming possible to create new robots that could considerably impact humans’ lives. \\ 
+In some warehouse scenarios robots have to pick an object and then perform different actions on it: lift, shift, put on a specific position. Similar process takes place in the scenario of a kitchen robot, that is being developed for assisting people at cooking. A kitchen robot might be asked to bring a glass of water or pick a utensil. In order for a robot to pick an object it has to grasp it first. It is crucial for the grasping part to succeed in order to be able to complete the proceeding steps of the manipulation. \\ 
+%ensure stability, "Computing task-oriented grasps is consequently crucial for a
+%grasping strategyy. Finally, because of the variety of objects shapes and sizes,
+%grasping novel objects is required."
+The current state-of-the art approach for the grasping problem in the industry is based on knowing the exact positions of the robotic gripper and the object, what kind of the object that is, its size and shape. So the grasping motion is also already predefined.(??) However, if the some characteristics of the objects slightly change, the robot might not be able to grasp it anymore. Even more difficult would grasping be for the kitchen robot, where it is impossible to always predefine positions of objects that must be grasped.\\ 
+There are a some variations to the grasping problem such as: the type of the object to be grasped (rigid/non-rigid, transparent, having certain shape, color,..), the number of objects (cluttered environment, a couple of objects, a single one), whether the object is known, familiar or completely unknown, the type of the gripper (two-finger, five-finger,...), the type of the camera and so on. \\ 
+The grasping problem has been profoundly researched throughout the last decades. Many different approaches have been developed. Since the beginning of the 21century, Machine Learning has been used in more and more of them. ——> Übergang zum Reinforcement learning 404 not found ——
+Reinforcement learning, one of the types of Maschine Learning, has shown promising results in business strategy planning(???), continuous control problems(?) and creating artificial intelligence for computer games. Reinforcement learning approach is similar to how humans learn. One of the simple everyday tasks that every human learns is catching a ball. Either we watch somebody else doing it or try it out ourselves. We automatically in the course of split seconds estimate the size and mass of the ball, what our position should be in order to catch it. The result of catching - positive or negative - influences our behavior for the next time when we have to perform the same task. (????)\\ 
+%Robotic control pipeline Aussage von Sergey Levine - nicht (ein)verstanden.
+%End-to-end training ?
+
+\section*{Related work}
+Sahbani et al. \cite{sahbani2012overview} divided different approaches in analytical and empirical. Analytical approaches investigate the physics, kinematics and geometry of the object and the robot in order to determine contact points and gripper position\cite{nguyen1988constructing},  \cite{murray2017mathematical}. 
+"Computing 3-D Optimal Form-Closure Grasps" \cite{ding2000computing} of Ding et al. is an example of the analytical approach. Having a multi-fingered gripper with n fingers, an object and the position of m of n fingers that do not form a form-closure grasp, the position of the remaining m-n fingers have to be determined to satisfy the requirement of the form-closure grasp. There is a Coloumb friction between object and fingers. In order for fingers not to slip while executing the grasp, the finger force must have a certain direction (lie in a friction cone), which can be expressed as a set of non-linear constraints. Calculations consider the center of mass of the object, combination of grasping force and torque, center of the contact points. A sufficient and necessary condition for form-closure grasps was formulated. \\ 
+As Bohg et al. \cite{bohg2013data} stated, analytical approaches usually require exact 3D models of the object, rely on the knowledge of the object's surface properties, its weight distribution and are not robust to noise. \\
+Bohg et al. \cite{bohg2013data} made a detailed overview of the data-driven grasp synthesis approaches. They define grasp synthesis as "the problem of finding a grasp configuration that satisfies a set of criteria relevant for the grasping task". Data-driven or also called empirical approaches sample various grasp candidates and then rank them using different strategies. \\
+One of the strategies is to compare the candidate grasp to (human) labeled examples. Redmon et al. \cite{redmon2015real} use the Cornell grasping dataset  \cite{Cornellgraspingdataset} to compare the sampled grasps to the "ground truth" grasps from the dataset. The rectangle metric is used for filtering good grasps: the grasp angle must be within 30$^\circ$ of the ground truth grasp and the Jaccard Index of the predicted grasp and the ground truth is greater than 25 percent (das zitieren?). \\
+Human labeling of possible grasps for objects has some significant disadvantages. First of all, it is time consuming. Secondly, there exist a number of possible grasps for every object, it is hard and even impossible to tag every one of them. Pinto et al. \cite{pinto2016supersizing} also remarked the fact that human labeling is "biased by semantics". As an example they describe usual human labeling of handles of cups, because that is how a person would most likely to grasp a cup, although there are more possible configurations for successful grasp. \\
+This reasoning led to development of self-supervised systems, where a robot learns from its own experience during the trial and error process. This approach is inspired by the way that people learn. Pinto et al. \cite{pinto2016supersizing} used a CNN for assessing planar grasp candidates. The grasp candidate is represented as (x,y) coordinates - the center of a chosen part of the image(patch) - and as an angle q - the rotation of the gripper around the z-axis. The CNN estimates a 18-dimensional likelihood vector. Each component of the vector represents the probability whether the grasp will be successful at the center of the patch with one of the 18 possible rotation angles of the gripper. The grasp with the highest probability of the success is executed. Depending on the result of the grasp, the error loss is back-propagated through the network. This way, the system does not rely rather on analytical metrics nor on human labeled examples, - it learns from its own experience. \\
+-----  reinforcement learning
+
+
+%there are methods for learning either from human
+%demonstrations, labeled examples or trial and error.
+------\\
+Dex-Net 1.0 is the first version of Dexterity Network, a set of 3D object models with multiple labelled grasps for each of them and an algorithm for planning parallel-jaw grasps. Dex-Net 1.0 researches finding a robust parallel-jaw grasp for a given object, using analytic and statistic sampling methods to assessing the grasp candidates. 2017 the Dex-Net 2.0 was introduced. The synthetic dataset includes 6.7 point clouds with parallel-jaw grasps and analytic grasp quality metrics (darf man das so abschreiben? lieber zitieren?). Also a Grasp-Quality Convolutional Neural Network that classifies robust grasp poses from depth images of singulated objects considering sensor and control imprecision, trained on the data from Dex-Net 2.0, was presented. The Input for GQ CNN is depth image in form of the 3D point cloud with an annotated set of pairs of antipodal points that represent a possible grasp. The network, trained on the Dex-Net 2.0 set outputs the most robust grasp candidate. \\ 
+Database generation: The database contains 1500 3D object mesh models (129 of them come from KIT object database). For every object robust grasps covering the surface are sampled, using the antipodal grasp sampling approach developed in Dex-Net 1.0. For stable poses of each object planar grasps (grasps perpendicular to the table surface) are chosen, as well as corresponding rendered point clouds (depth images).\\ 
+For assessment of the performance of GQ-CNN four criteria were used: success rate, precision, robust grasp rate, planning time.  \\ 
+
+
+
+%. To study grasp planning at scale, Goldfeder et al. [12], [13] developed the Columbia grasp database, a %dataset of 1,814 distinct models and over 200,000 force closure grasps generated using the GraspIt! %sampling-based grasp planner. Pokorny et al. [34] introduced Grasp Moduli Spaces, enabling joint grasp and %shape interpolation, and analyzed a set of 100 million sampled grasp configurations.
+
+%\section*{Zeitplan}
+
+\section*{Simulation}
+
+
+\bibliographystyle{plain}
+\bibliography{Literaturliste.bib}
+
+
+
+\end{document}
+
+
