@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{sahbani2012overview}
 Anis Sahbani, Sahar El-Khoury, and Philippe Bidaud.
@@ -30,12 +30,35 @@ Jeannette Bohg, Antonio Morales, Tamim Asfour, and Danica Kragic.
 
 \bibitem{redmon2015real}
 Joseph Redmon and Anelia Angelova.
-\newblock Real-time grasp detection using convolutional neural networks.
+\newblock Real-time grasp tection using convolutional neural networks.
 \newblock In {\em 2015 IEEE International Conference on Robotics and Automation
   (ICRA)}, pages 1316--1322. IEEE, 2015.
 
 \bibitem{Cornellgraspingdataset}
 
+
+\bibitem{mahler2017dex}
+Jeffrey Mahler, Jacky Liang, Sherdil Niyaz, Michael Laskey, Richard Doan, Xinyu
+  Liu, Juan~Aparicio Ojea, and Ken Goldberg.
+\newblock Dex-net 2.0: Deep learning to plan robust grasps with synthetic point
+  clouds and analytic grasp metrics.
+\newblock {\em arXiv preprint arXiv:1703.09312}, 2017.
+
+\bibitem{kasper2012kit}
+Alexander Kasper, Zhixing Xue, and R{\"u}diger Dillmann.
+\newblock The kit object models database: An object model database for object
+  recognition, localization and manipulation in service robotics.
+\newblock {\em The International Journal of Robotics Research}, 31(8):927--934,
+  2012.
+
+\bibitem{mahler2016dex}
+Jeffrey Mahler, Florian~T Pokorny, Brian Hou, Melrose Roderick, Michael Laskey,
+  Mathieu Aubry, Kai Kohlhoff, Torsten Kr{\"o}ger, James Kuffner, and Ken
+  Goldberg.
+\newblock Dex-net 1.0: A cloud-based network of 3d objects for robust grasp
+  planning using a multi-armed bandit model with correlated rewards.
+\newblock In {\em 2016 IEEE international conference on robotics and automation
+  (ICRA)}, pages 1957--1964. IEEE, 2016.
 
 \bibitem{pinto2016supersizing}
 Lerrel Pinto and Abhinav Gupta.
@@ -43,5 +66,71 @@ Lerrel Pinto and Abhinav Gupta.
   700 robot hours.
 \newblock In {\em 2016 IEEE international conference on robotics and automation
   (ICRA)}, pages 3406--3413. IEEE, 2016.
+
+\bibitem{kaelbling1996reinforcement}
+Leslie~Pack Kaelbling, Michael~L Littman, and Andrew~W Moore.
+\newblock Reinforcement learning: A survey.
+\newblock {\em Journal of artificial intelligence research}, 4:237--285, 1996.
+
+\bibitem{deisenroth2013survey}
+Marc~Peter Deisenroth, Gerhard Neumann, Jan Peters, et~al.
+\newblock A survey on policy search for robotics.
+\newblock {\em Foundations and Trends{\textregistered} in Robotics},
+  2(1--2):1--142, 2013.
+
+\bibitem{bansal2017mbmf}
+Somil Bansal, Roberto Calandra, Kurtland Chua, Sergey Levine, and Claire
+  Tomlin.
+\newblock Mbmf: Model-based priors for model-free reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1709.03153}, 2017.
+
+\bibitem{hasselt2010double}
+Hado~V Hasselt.
+\newblock Double q-learning.
+\newblock In {\em Advances in neural information processing systems}, pages
+  2613--2621, 2010.
+
+\bibitem{levine2018learning}
+Sergey Levine, Peter Pastor, Alex Krizhevsky, Julian Ibarz, and Deirdre
+  Quillen.
+\newblock Learning hand-eye coordination for robotic grasping with deep
+  learning and large-scale data collection.
+\newblock {\em The International Journal of Robotics Research},
+  37(4-5):421--436, 2018.
+
+\bibitem{goldfeder2011data}
+Corey Goldfeder and Peter~K Allen.
+\newblock Data-driven grasping.
+\newblock {\em Autonomous Robots}, 31(1):1--20, 2011.
+
+\bibitem{miller2004graspit}
+Andrew~T Miller and Peter~K Allen.
+\newblock Graspit! a versatile simulator for robotic grasping.
+\newblock 2004.
+
+\bibitem{leon2010opengrasp}
+Beatriz Le{\'o}n, Stefan Ulbrich, Rosen Diankov, Gustavo Puche, Markus
+  Przybylski, Antonio Morales, Tamim Asfour, Sami Moisio, Jeannette Bohg, James
+  Kuffner, et~al.
+\newblock Opengrasp: a toolkit for robot grasping simulation.
+\newblock In {\em International Conference on Simulation, Modeling, and
+  Programming for Autonomous Robots}, pages 109--120. Springer, 2010.
+
+\bibitem{james2019sim}
+Stephen James, Paul Wohlhart, Mrinal Kalakrishnan, Dmitry Kalashnikov, Alex
+  Irpan, Julian Ibarz, Sergey Levine, Raia Hadsell, and Konstantinos Bousmalis.
+\newblock Sim-to-real via sim-to-sim: Data-efficient robotic grasping via
+  randomized-to-canonical adaptation networks.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 12627--12637, 2019.
+
+\bibitem{bousmalis2018using}
+Konstantinos Bousmalis, Alex Irpan, Paul Wohlhart, Yunfei Bai, Matthew Kelcey,
+  Mrinal Kalakrishnan, Laura Downs, Julian Ibarz, Peter Pastor, Kurt Konolige,
+  et~al.
+\newblock Using simulation and domain adaptation to improve efficiency of deep
+  robotic grasping.
+\newblock In {\em 2018 IEEE International Conference on Robotics and Automation
+  (ICRA)}, pages 4243--4250. IEEE, 2018.
 
 \end{thebibliography}
