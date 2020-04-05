@@ -66,12 +66,9 @@ This reasoning led to development of self-supervised systems, where a robot lear
 %\section*{Zeitplan}
 
 \section*{Reinforcement learning}
-To cover: \\
+TODO \\
 - Introduction history applications \\
-- MDP \\
-- Off - on policy \\
- - Model based \\
- - Exploration vs exploitation \\
+- Value vs policy based \\
  
 Reinforcement learning is one of the types of Machine Learning. The core idea of reinforcement learning is having an agent that can perform actions in a specified environment. The agent gets observations from  the environment as an input, the output is an action. At all times the agent is in one of the predefined states, the actions that are possible in the current state are a subset of all actions set. For every performed action the agent receives a feedback in form of a reward from the environment. According to the reward the agent can decide whether the chosen action was the right decision. The core idea of reinforcement learning is modeled as Markov decision process (MDP), which consists of 4-tuple (S, A, R, T) \cite{kaelbling1996reinforcement}:
 \begin{itemize}
@@ -81,7 +78,7 @@ Reinforcement learning is one of the types of Machine Learning. The core idea of
 	\item state transition function T: S x A ->P(S), where P(S) is a probability distribution over the set S (i.e. it maps states to probabilities)
 \end{itemize}
 in some notation the  the starting state distribution r0  is defined as the fifth element of the MDP.
-The name of the process comes from the concept of Markov chains: having a sequence of events the probability of each event depends only on the state that was achieved in the previous event, ignoring all events before. (TO DO: site).\\
+The name of the process comes from the concept of Markov chains: having a sequence of events the probability of each event depends only on the state that was achieved in the previous event, ignoring all events before. Markov state: $P(s_{t+1}|s_t) = P(s_{t+1}|s_1, ..., s_t)$(TO DO: site).\\
 The policy Pi determines which action must be taken in a each state. The action might be deterministic: (Source: spinning up)\\
 $a_t = \mu(s_t)$\\
 or stochastic: \\ 
@@ -123,20 +120,34 @@ Bansal et al. \cite{bansal2017mbmf} state that model-free reinforcement learning
 	\caption{Model-based RL Quelle: s}\label{fig:RL}
 \end{figure}
 
-Model-free (?) reinforcement learning algorithms can also be divided in being on- and off-policy. Policy is used in reinforcement learning to decide which action to perform in the current state. While learning and building the policy up, the algorithm does not necessarily need to always chose the action that the latest version of the policy suggests. The chose action might be for example the one that will maximize the value function for the state (????) as in Q-learning. In that case the algorithm is off-policy. In the opposite case, when algorithm strictly follows the policy while learning, it is an on-policy one.
+Model-free (?) reinforcement learning algorithms can also be divided in being on- and off-policy. Policy is used in reinforcement learning to decide which action to perform in the current state. While learning and building the policy up, the algorithm does not necessarily need to always chose the action that the latest version of the policy suggests. The chosen action might be for example the one that will maximize the value function for the state (????) as in Q-learning. In that case the algorithm is off-policy. In the opposite case, when algorithm strictly follows the policy while learning, it is an on-policy one.
 
 \subsection{Q-Learning}
 Q-learning is a model-free algorithm that is based on approximating an objective function in order to find the optimal policy. \\
 $Q^*(s,a) =R(s,a) + \gamma \underset {s' \subset S} { \sum} P(s_{t+1}| a_t, s_t) * \underset {a'} {\max Q*(s', a')}$\\
+R(s,a) is the immediate reward in state s for executing action a. \\
 Since  $V^*(s) =\underset {a} {\max} Q^*(s, a)$, the optimal policy can be calculated as: \\
 $arg\underset {a} {\max} Q^*(s, a)$ \\
+The strategy for choosing the action in the current state is $\varepsilon$-greedy: with the probability $\varepsilon$ the chosen action will be calculated through the Q-function: a = $arg\underset {a} {\max} Q^*(s, a)$. With probability (1 - $\varepsilon$) the sampled action will be a random one from the action space: $a \in A(s)$. \\
 The O-learning rule is: \\
 $Q(s,a) =Q(s,a) + \alpha (r + \gamma \underset {a'}{\max} Q(s+1, a') - Q(s,a))$, \\
-where  $\alpha$ is the learning rate and $Q(s,a)$ is the old value.
+where  $\alpha$ is the learning rate and $Q(s,a)$ is the old value. \\
 Usually all state-action pairs are stored in a table, a so-called q-table. The agent refers to this table to select the best action - the action with the biggest q-value - for the state he is in. \\
-An agent is exploiting if he uses the q-table and selects the action with the biggest Q-value to perform next. An agent is exploring, if he ignores the table values and takes a random action. Exploring is important as the agent finds other states with possibly better results, that would not be discovered if the agent strictly followed the table. Exploitation/exploration can be controlled by an $\varepsilon$-value - how often should the agent perform a random exploration step. 
-Deep Q-Learning (DQN) is the variant of the Q-Learning that uses a neural network as a function approximator. \\
-Q-learning is one of the most popular reinforcement learning methods as it is simple to implement. However, it has its disadvantages. \cite{hasselt2010double}  stated that because of the fact that it uses max operator to calculate the Q-value for the state, there are often significant overestimations of these values. Double Q-Learning is an off-policy value based reinforcement learning algorithm that uses two different Q-functions: one for selecting the next action and the other for value evaluation. 
+An agent is exploiting if he uses the q-table and selects the action with the biggest Q-value to perform next. An agent is exploring, if he ignores the table values and takes a random action. Exploring is important as the agent finds other states with possibly better results, that would not be discovered if the agent strictly followed the table. Exploitation/exploration can be controlled by an $\varepsilon$-value - how often should the agent perform a random exploration step. \\
+Reinforcement learning is often used for complex problems with a wide action and state space, which makes it impossible to store all Q-values in a table because of the a big amount of time for calculation of the values of the table and the amount of memory that would be required to save the table.  Deep Q-Learning (DQN) is the variant of the Q-Learning which is one of the possibilities to deal with this problem with the help of a neural network as a function approximator. \\
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{DQN}
+	\caption{TODO: make my own scheme}\label{fig:RL}
+\end{figure}
+The Q-values for all possible actions of the state are calculated, the one that maximizes the Q-Value is chosen as the next action. \\ 
+The updating rule is analogic to the the standard Q-learning approach: \\
+$T = R(s,a) + \gamma \underset {a'}{\max}Q_\theta(s',a') $ - target value. \\
+$\theta = \theta + \gamma \nabla_\theta E_{s' \sim  P(s'|s,a)}[(T - Q_\theta(s,a))^2]$\\
+$T - Q_\theta(s,a))^2$ is the temporal difference in form of the mean square error. The gradient of the error is used for calculating new weights for the network. \\
+While the error is calculated only for one state, the gradient of the error impacts all weights in the network - all states. This makes the learning become unstable. In order to cope with this problem another network with the same architecture - target network - is used to compute the target value T. Target network is initialized with the same weights as the main function approximator network, and it is updated every defined number of steps. \\
+Replay buffer is a technique that is also used in DQN. The agent's transitions $(s_t, a_t, r_t, s_{t+1})$ are saved to a replay memory D. After collecting some number of transitions, mini-batches containing random transitions from the replay buffer are sampled and then used for training the network with stochastic gradient descent(SGD). Due to the randomness of trajectories in mini-batches the learned knowledge does not tend to resemble only one type of trajectories. It is also more data-efficient as the experience data can be used multiple times for learning. \\
+Replay buffer and target network make Q-learning stable and efficient. Q-learning is one of the most popular reinforcement learning methods as it is simple to implement. However, it has its disadvantages. \cite{hasselt2010double}  stated that because of the fact that it uses max operator to calculate the Q-value for the state, there are often significant overestimations of these values. Double Q-Learning is an off-policy value based reinforcement learning algorithm that uses two different Q-functions: one for selecting the next action and the other for value evaluation. 
 
 
 
@@ -144,13 +155,23 @@ Q-learning is one of the most popular reinforcement learning methods as it is si
 %V^{\pi}(s) &= \underE{a \sim \pi \\ s'\sim P}{r(s,a) + \gamma V^{\pi}(s')}, \\
 %Q^{\pi}(s,a) &= \underE{s'\sim P}{r(s,a) + \gamma \underE{a'\sim \pi}{Q^{\pi}(s',a')}},
 % \end{align*}
+\subsection{Temporal-Difference Learning}
+Temporal-Difference Learning (TD)\\
+TODO
 
 \subsection{Deep Deterministic Policy Gradient (DDPG) }
-Deep Deterministic Policy Gradient (DDPG) is an off-policy algorithm similar to Q-Learning - it learns an optimal action-value function $Q^*(s,a)$. The main difference between these two algorithms is that DDPG works with continuous action spaces and Q-Learning with discrete ones. For discrete action spaces there are finite number of actions, so Q-values for all possible actions can be calculated and compared, the biggest one would be the max value. However this approach would not work in continuous action spaces as there are endless number of possible actions. DDPG deals with this problem is following: there is an one more network - a target policy network. The
+Deep Deterministic Policy Gradient (DDPG) is an off-policy algorithm similar to Q-Learning - it learns an optimal action-value function $Q^*(s,a)$. The main difference between these two algorithms is that DDPG works with continuous action spaces and Q-Learning with discrete ones. For discrete action spaces there are finite number of actions, so Q-values for all possible actions can be calculated and compared, the biggest one would be the max value. However this approach would not work in continuous action spaces as there are endless number of possible actions.  .....TODO
+
 
 DDPG has the Actor\&Critic architecture for policy network and Q-network.
+\subsection{Actor Ctritic}
+The "Critic" estimates the value function (Q function = action-value function or V function = state-value)
+"Actor" "updates the policy distribution in the direction suggested by the Critic (such as with policy gradients)."\\
+TODO
 \subsection{SAC}
+TODO
 \subsection{HER}
+TODO
 
 \section*{Approach}
 

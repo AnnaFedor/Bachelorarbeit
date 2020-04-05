@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.30)  1 APR 2020 12:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.30)  5 APR 2020 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -146,6 +146,9 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 
 LaTeX Warning: Label `fig:RL' multiply defined.
 
+
+LaTeX Warning: Label `fig:RL' multiply defined.
+
 )
 \openout1 = `Thesis.aux'.
 
@@ -253,58 +256,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--61
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--75
+Underfull \hbox (badness 10000) in paragraph at lines 69--72
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 78.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 75.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
  [4]
-Underfull \hbox (badness 10000) in paragraph at lines 95--103
+Underfull \hbox (badness 10000) in paragraph at lines 92--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
-<taxonomy_of_RL_algorithms.png, id=23, 883.3pt x 408.52625pt>
+<taxonomy_of_RL_algorithms.png, id=24, 883.3pt x 408.52625pt>
 File: taxonomy_of_RL_algorithms.png Graphic file (type png)
 <use taxonomy_of_RL_algorithms.png>
-Package pdftex.def Info: taxonomy_of_RL_algorithms.png  used on input line 113.
+Package pdftex.def Info: taxonomy_of_RL_algorithms.png  used on input line 110.
 
 (pdftex.def)             Requested size: 345.0pt x 159.56146pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<model-basedRL.png, id=25, 1112.155pt x 664.4825pt>
+<model-basedRL.png, id=26, 1112.155pt x 664.4825pt>
 File: model-basedRL.png Graphic file (type png)
 <use model-basedRL.png>
-Package pdftex.def Info: model-basedRL.png  used on input line 122.
+Package pdftex.def Info: model-basedRL.png  used on input line 119.
 (pdftex.def)             Requested size: 345.0pt x 206.12938pt.
-[5]
+[5] [6 <./taxonomy_of_RL_algorithms.png> <./model-basedRL.png (PNG copy)>]
+<DQN.png, id=35, 735.74875pt x 345.29pt>
+File: DQN.png Graphic file (type png)
+<use DQN.png>
+Package pdftex.def Info: DQN.png  used on input line 140.
+(pdftex.def)             Requested size: 345.0pt x 161.91223pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6 <./taxonomy_of_RL_algorithms.png>] [7 <./model-basedRL.png (PNG copy)>]
-(./Thesis.bbl [8]
+[7] [8 <./DQN.png>] (./Thesis.bbl [9]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
- [9]) [10] (./Thesis.aux)
+ [10]) [11] (./Thesis.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2669 strings out of 492616
- 38946 string characters out of 6129481
+ 2674 strings out of 492616
+ 39000 string characters out of 6129481
  116766 words of memory out of 5000000
- 6558 multiletter control sequences out of 15000+600000
+ 6562 multiletter control sequences out of 15000+600000
  9061 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,7n,25p,1118b,232s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -320,10 +328,10 @@ texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/tex
 live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Thesis.pdf (10 pages, 338314 bytes).
+Output written on Thesis.pdf (11 pages, 522520 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 94 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
