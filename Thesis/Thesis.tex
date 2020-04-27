@@ -164,10 +164,16 @@ Deep Deterministic Policy Gradient (DDPG) is an off-policy algorithm similar to 
 
 
 DDPG has the Actor\&Critic architecture for policy network and Q-network.
-\subsection{Actor Ctritic}
+\subsection{Actor Critic}
 The "Critic" estimates the value function (Q function = action-value function or V function = state-value)
 "Actor" "updates the policy distribution in the direction suggested by the Critic (such as with policy gradients)."\\
 TODO
+Value-based methods are based on maximizing a Q-function that is usually given by Bellmann equation(TODO), the optimal policy can be then calculated as $\pi(s)=arg\underset {a} {\max} Q^*(s, a)$. Policy-based methods learn the policy directly without the value-function. The goal for policy-based approches is to maximize the cumulative reward of the trajectory(TODO Definition) $J(\theta) = E_{\tau \sim \pi_{\theta}[R_\tau]}$ as opposed to the value-based approach where the goal is to minimize the error function (which is normally in the form of the temporal difference error). Policy gradient searches for parameters that maximize the goal function by moving in the direction of the gradient - gradient accent: $\theta_{k+1} = \theta_k + \alpha\nabla_{\theta}J(\theta)$, where $\nabla_{\theta}J(\theta) = E_{\tau \sim \pi_{\theta}}[\sum_{t=0}^T\nabla_\theta log\pi_\theta(a_t|s_t)R(\tau)]$, $R(\tau)$ is the cumulative reward of the trajectory. When the reward of the sampled trajectory is positive, the gradient of the goal function is also positive, the policy will be optimized in the direction of the gradient, this way it learns that the sampled trajectory was a good one and vice versa.  Discrete stochastic policy gives as output success probabilities for all actions (Karams Folie). Continuous stochastic policy-based approach makes it possible to work with continuous action spaces. (stochastic policy gives probability distribution over all actions)\\
+The idea of the actor-critic method is to use a Q-function instead of the (average??) cumulative reward $R(\tau)$ - the Q-function of the state gives an expected future reward after completing action a. The approximated policy gradient will then be:\\
+ $\nabla_{\theta}J(\theta) = E_{\tau \sim \pi_{\theta}}[\sum_{t=0}^T\nabla_\theta log\pi_\theta(a_t|s_t)Q_w(s,a)]$ \\
+ where w are the weights of the neural network that calculates the Q-function. That is a separate network that is called "the critic". The network that calculates the goal function is the "actor". The critic estimates the value-function, the actor uses it to update its policy.
+ TOTO actor-crtitic scheme from Sutton Barto find it it's good!!
+
 \subsection{SAC}
 TODO
 \subsection{HER}
@@ -180,6 +186,13 @@ In data-driven approaches training data is required to learn for a successful gr
 Goldfeld et al. \cite{goldfeder2011data} created a grasp planner containing database of grasps for 3D models of different objects, that were generated using GraspIt! \cite{miller2004graspit} simulation engine. Kasper et al. \cite{kasper2012kit}  introduced the system for digitizing objects. In year 2010 the OpenGRASP  \cite{leon2010opengrasp}  simulation toolkit for grasping and dexterous manipulation was created. \\
 James et al. \cite{james2019sim} developed an approach that used only a small amount of real-word training data in addition to simulation, which helped to reduce the real-world data by more than 99\%. Bousmalis et al. \cite{bousmalis2018using} implemented a grasping method that helps to significantly reduce the amount of additional real-world grasp samples. In their experiment 50 times less real-world samples were required to achieve the same level of performance compared to their previous system. \\
 Another advantage of using simulation is the ability to pretrain the network. Redmon et al. \cite{redmon2015real} stated that "pretraining large convolutional neural networks greatly improves training time and helps avoid overfitting".
+
+\section*{Results of the training}
+The movement of the robot consists of several steps: the robot rotates the gripper to the angle $\alpha$, after that it goes to the target (x,y) coordinate. The z-coordinate of the gripper stays constant during the first two parts of the movement. After reaching the target positions: (x,y, $\alpha$), the robot executes a planar grasp: it goes down to almost reach the height of the table with the max gripper opening, then it closes the jaws and goes up. In the final position, when the gripper is above the table, the width between the jaws of the gripper is calculated. If it is not null, then the object was successfully grasped. \\
+In reality the simulation engine showed an unexpected behavior: when the gripper was down, closed the jaws and successfully grasped the object, the object did not stay through the whole way up, it slipped from the jaws. According to Mujoco documentation the type of numerical algorithm for solving convex optimization problems - solver - could be changed to reach the desirable behavior as well as some other parameters such as "$noslip_iterations$", "cone", "impratio". However tuning in those parameters did not help to solve the problem. The method that helped was to slightly close the gripper on the way up. \\
+The observation input was an RGB 81x81 image, the action space continuous: $x \in [1.1, 1.45]$,  $y \in [0.55, 0.95]$, $\alpha \in [0, 90]$.\\
+In the beginning the algorithm was tested for the simplified task: the test object was a black cube with constant position on the table, within the reach of the robot arm. \\
+The first algorithm tested was DDPG with 50 000 steps. The expected outcome was that the model will memorize the position of the cube and will always predict the correct grasping action. \\
 
 
 \bibliographystyle{plain}
