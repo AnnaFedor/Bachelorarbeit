@@ -1,0 +1,161 @@
+\section*{Results of the training}
+The movement of the robot consists of several steps: the robot rotates the gripper to the angle $\alpha$, after that it goes to the target (x,y) coordinate. The z-coordinate of the gripper stays constant during the first two parts of the movement. After reaching the target positions: (x,y, $\alpha$), the robot executes a planar grasp: it goes down to almost reach the height of the table with the max gripper opening, then it closes the jaws and goes up. In the final position, when the gripper is above the table, the width between the jaws of the gripper is calculated. If it is not null, then the object was successfully grasped. \\
+In reality the simulation engine showed an unexpected behavior: when the gripper was down, closed the jaws and successfully grasped the object, the object did not stay through the whole way up, it slipped from the jaws. According to Mujoco documentation the type of numerical algorithm for solving convex optimization problems - solver - could be changed to reach the desirable behavior as well as some other parameters such as "$noslip_iterations$", "cone", "impratio". However tuning in those parameters did not help to solve the problem. The method that helped was to slightly close the gripper on the way up. \\
+The observation input was an RGB 81x81 image, the action space continuous: $x \in [1.1, 1.45]$,  $y \in [0.55, 0.95]$, $\alpha \in [0, 90]$.\\
+In the beginning the algorithm was tested for the simplified task: the test object was a black cube with constant position on the table, within the reach of the robot arm. \\
+The first algorithm tested was DDPG with 25 000 steps. The expected outcome was that the model will memorize the position of the cube and will always predict the correct grasping action. \\
+\begin{figure*}[h!]
+	\centering
+	 \begin{subfigure}[h]{0.3\textwidth}
+	 	\centering
+	 	\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/25k/episode_reward_smoothing1}
+	% \caption{Model-based RL Quelle: s}\label{fig:RL}
+   \end{subfigure}%
+~	
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/25k/actor_loss}
+	% \caption{Model-based RL Quelle: s}\label{fig:RL}
+   \end{subfigure}%
+~
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+	\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/25k/critic_loss}
+	% \caption{Model-based RL Quelle: s}\label{fig:RL}
+    \end{subfigure}%
+    \caption{DDPG 25k steps}
+\end{figure*}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{graphics/Results/1.DDPG_const_obj_pos/25k/critic_target}
+	\caption{DDPG critic target loss 25k steps}
+\end{figure}
+
+DDPG with 50k steps:
+
+\begin{figure*}[h!]
+	\centering
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/50k/episode_reward}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	~	
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/50k/actor_loss}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	~
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/50k/critic_loss}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	\caption{DDPG 50k steps}
+\end{figure*}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{graphics/Results/1.DDPG_const_obj_pos/50k/critic_target}
+	\caption{DDPG critic target loss 50k steps}
+\end{figure}
+
+
+DDPG with 200k steps:
+
+\begin{figure*}[h!]
+	\centering
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/200k/episode_reward_smoothing1}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	~	
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/200k/actor_loss}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	~
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/200k/critic_loss}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	\caption{DDPG 200k steps}
+\end{figure*}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{graphics/Results/1.DDPG_const_obj_pos/200k/critic_target}
+	\caption{DDPG critic target loss 200k steps}
+\end{figure}
+
+------------------------------------------------------------------------------------------------------------\\
+Contrary to DDPG, SAC delivered expected behavior by learning the constant position of the cube and always successfully grasping it:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/episode_reward}
+	\caption{SAC episode reward after 50k steps goes to 1}
+\end{figure}
+
+\begin{figure*}[h!]
+	\centering
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/ent_coef}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	~	
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/ent_coef_loss}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	~
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/entropy}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/learning_rate}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/policy_loss}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/qf1_loss}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/qf2_loss}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}
+	\begin{subfigure}[h]{0.3\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/value_loss}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}
+	\caption{SAC 50k steps}
+\end{figure*}
+
+
+
+
+
+%\chapter{Überkritisches Wasser}
+%\section{Definition und Bedeutung}
+%\subsection{Überkritisches Fluid }
+
+%\section{Eigenschaften von Wasser (von Umgebungs- zu überkritischen Bedingungen)}
+

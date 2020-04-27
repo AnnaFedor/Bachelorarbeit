@@ -1,0 +1,250 @@
+\section*{Current title of the thesis}
+%Vorläufiger oder Arbeitstitel, max. 300 Zeichen
+Data-driven robotic grasp synthesis in a simulated environment.\\
+(Datengesteuerte Robotergreifenssynthese in einer Simulationsumgebung.) 
+
+
+\section*{Problem statement}
+TODO
+%The focus of the thesis is to develop an approach for the robot to learn how to grasp rigid objects using images from RGB-D camera and two-finger parallel gripper. The learning process should be self-supervised: any human labeling should be avoided. This will be achieved with the help of deep and reinforcement learning. The training and testing will be conducted in a simulated environment. In case of successful performance of the developed algorithm in the simulation, the next step will be to prepare the transition to the real-world environment with the help of domain randomization. \\
+%One of the advantages of such algorithm is the ability to generalize to new objects. Previous research shows that data-driven algorithms that are based on machine learning have successful rates of grasping objects that were never used in training. Another advantage is the fact that no human labeling will be required. This spares time and effort. \\
+%Training the robot in real world is time consuming and expensive, simulation makes it possible to avoid these costs. However, there is a so-called "reality gap" problem, when the algorithm trained in simulation does not perform well in the real world scenario. One of the possible solutions to this problem is using domain randomization and/or fine-tuning with training in reality. The sim-to-real transfer is an additional optional part of the thesis, that will take place only if the algorithm performs well in simulation.\\
+
+\section*{Motivation}
+TODO
+% Nowadays there is a big variety of use cases in the field of robotics in everyday life, starting from smart home devices to autonomous driving vehicles and space shift robots. Due to the significant development of soft- and hardware in the last decades it is becoming possible to create new robots that could considerably impact humans’ lives. \\ 
+% In some warehouse scenarios robots have to pick an object and then perform different actions on it: lift, shift, put on a specific position. Similar process takes place in the scenario of a kitchen robot, that is being developed for assisting people at cooking. A kitchen robot might be asked to bring a glass of water or pick a utensil. In order for a robot to pick an object it has to grasp it first. It is crucial for the grasping part to succeed in order to be able to complete the proceeding steps of the manipulation. \\ 
+%ensure stability, "Computing task-oriented grasps is consequently crucial for a
+%grasping strategyy. Finally, because of the variety of objects shapes and sizes,
+%grasping novel objects is required."
+% The current state-of-the art approach for the grasping problem in the industry is based on knowing the exact positions of the robotic gripper and the object, what kind of the object that is, its size and shape. So the grasping motion is also already predefined.(??) However, if the some characteristics of the objects slightly change, the robot might not be able to grasp it anymore. Even more difficult would grasping be for the kitchen robot, where it is impossible to always predefine positions of objects that must be grasped.\\ 
+
+%The parameters of the grasping problem vary depending on the use case scenario. In some cases there are several objects on the surface, one of them (a specific one or a random) has to be grasped - this is a cluttered environment scenario \cite{s}. In some cases, the object is singulated \cite{s}. Objects can be already known in advance with existing 3D meshes of them (i.e.in the industry scenario) or never seen before. 
+%There are a some variations to the grasping problem such as: the type of the object to be grasped (rigid/non-rigid, transparent, having certain shape, color,..), the number of objects (cluttered environment, a couple of objects, a single one), whether the object is known, familiar or completely unknown, the type of the gripper (two-finger, five-finger,...), the type of the camera and so on. \\ 
+%The grasping problem has been profoundly researched throughout the last decades. Many different approaches have been developed. Since the beginning of the 21century, Machine Learning has been used in more and more of them. ——> Übergang zum Reinforcement learning 404 not found ——
+%Reinforcement learning, one of the types of Maschine Learning, has shown promising results in business strategy planning(???), continuous control problems(?) and creating artificial intelligence for computer games. Reinforcement learning approach is similar to how humans learn. One of the simple everyday tasks that every human learns is catching a ball. Either we watch somebody else doing it or try it out ourselves. We automatically in the course of split seconds estimate the size and mass of the ball, what our position should be in order to catch it. The result of catching - positive or negative - influences our behavior for the next time when we have to perform the same task. (????)\\ 
+%Robotic control pipeline Aussage von Sergey Levine - nicht (ein)verstanden.
+%End-to-end training ?
+
+\section*{Related work}
+Sahbani et al. \cite{sahbani2012overview} divided different approaches in analytical and empirical. Analytical approaches investigate the physics, kinematics and geometry of the object and the robot in order to determine contact points and gripper position\cite{nguyen1988constructing},  \cite{murray2017mathematical}. 
+\cite{shimoga1996robot} defined a force-closure grasp as the one that guarantees that "the fingers are capable of resisting any arbitrary force and/or moment that may act on the object externally". Shimoga listed four independent properties that are crucial for a successful force-closure grasp : dexterity, equilibrium, stability, dynamic behavior. Analytical approaches concentrate on developing algorithms that satisfy these properties.\\
+\cite{ding2000computing} of Ding et al. is an example of the analytical approach. Having a multi-fingered gripper with n fingers, an object and the position of m of n fingers that do not form a form-closure grasp, the position of the remaining m-n fingers have to be determined to satisfy the requirement of the form-closure grasp. There is a Coloumb friction between object and fingers. In order for fingers not to slip while executing the grasp, the finger force must have a certain direction (lie in a friction cone), which can be expressed as a set of non-linear constraints. Calculations consider the center of mass of the object, combination of grasping force and torque, center of the contact points. A sufficient and necessary condition for form-closure grasps was formulated. \\ 
+\begin{figure*}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{graphics/form_closure}
+	\caption{Outtake from "Computing 3-D Optimal Form-Closure Grasps" \cite{ding2000computing} of Ding et al.}
+\end{figure*}\\
+As Bohg et al. \cite{bohg2013data} stated, analytical approaches usually require exact 3D models of the object, rely on the knowledge of the object's surface properties, its weight distribution and are not robust to noise. \\
+\cite{bohg2013data} made a detailed overview of the data-driven grasp synthesis approaches. They define grasp synthesis as "the problem of finding a grasp configuration that satisfies a set of criteria relevant for the grasping task". Data-driven or also called empirical approaches sample various grasp candidates and then rank them using different strategies. \\
+\begin{figure*}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{graphics/grasp_hypothesis}
+	\caption{Classification of different aspects that influence the problem of the grasping problem according to \cite{bohg2013data} of Bohg et al.}
+\end{figure*}\\
+Human demonstrations can be used to generate data for learning. In \cite{ekvall2007learning} magnetic trackers were placed on the hand of the human who was grasping and moving objects on the table. The robot recognized which object was moved and which grasp type was used, it then reproduced the task using this information. \\
+Another strategy is to compare the candidate grasp to (human) labeled examples. Redmon et al. \cite{redmon2015real} use the Cornell grasping dataset  \cite{Cornellgraspingdataset} to compare the sampled grasps to the "ground truth" grasps from the dataset. The rectangle metric is used for filtering good grasps. The metric includes two requirements: the grasp angle must be within 30$^\circ$ of the ground truth grasp and the Jaccard Index $J(A, B) = \frac {|A \cap B|} {|A \cup B|} $ of the predicted grasp and the ground truth is greater than 25 percent. \\
+Empirical approaches can use analytical metrics for ranking grasp candidates or labeling robust grasps. Mahler et al. \cite{mahler2017dex} introduced a synthetic dataset that includes 6.7 million point clouds with parallel-jaw grasps and analytic grasp quality metrics. Objects in the dataset come from the database containing 1500 3D object mesh models (129 of them come from KIT object database \cite{kasper2012kit}). For every object robust grasps covering the surface were sampled, using the antipodal grasp sampling approach developed in Dex-Net 1.0 \cite{mahler2016dex}). For stable poses of each object planar grasps (grasps perpendicular to the table surface) are chosen, as well as corresponding rendered point clouds (depth images). The introduced dataset was used to train a neural network, that was also introduced in \cite{mahler2017dex}. The network accepts a depth image of the scene and outputs the most robust grasp candidate.  \\
+Human labeling of possible grasps for objects has some significant disadvantages. First of all, it is time consuming. Secondly, there exist a number of possible grasps for every object, it is hard and even impossible to tag every one of them. Pinto et al. \cite{pinto2016supersizing} also remarked the fact that human labeling is "biased by semantics": as an example they describe usual human labeling of handles of cups, because that is how a person would most likely to grasp a cup, although there are more possible configurations for successful grasp. \\
+This reasoning led to development of self-supervised systems, where a robot learns from its own experience during the trial and error process. This approach is inspired by the way that people learn. Pinto et al. \cite{pinto2016supersizing} used a CNN for assessing planar grasp candidates. The grasp candidate is represented as (x,y) coordinates - the center of a chosen part of the image(patch) - and as an angle q - the rotation of the gripper around the z-axis. The CNN estimates a 18-dimensional likelihood vector. Each component of the vector represents the probability whether the grasp will be successful at the center of the patch with one of the 18 possible rotation angles of the gripper. The grasp with the highest probability of the success is executed. Depending on the result of the grasp, the error loss is back-propagated through the network. This way, the system does not rely rather on analytical metrics nor on human labeled examples, - it learns from its own experience. \\
+Following the classification of \cite{bohg2013data}, the objects that have to be grasped can be divided into three categories: known, familiar and unknown objects.\\
+For known objects the data-driven approaches for finding a successful grasp often consist of estimating the pose of the object and then choosing the suitable grasp candidate from a precalculated grasp database, "experience database". In \cite{tremblay2018deep} of Tremblay et al. the deep neural network takes as input only one RGB-image of the scene with known household objects and outputs belief maps of 2D keypoints of these objects. After that a standard perspective-n-point (PnP) \cite{lepetit2009epnp} algorithm uses these belief maps to estimate the 6-DOF pose of each object. For grasping the robot moves its arm to a point above the object and then completes a top-down grasp.\\
+Another category of objects to grasp is familiar objects. Objects can have similarities in various aspects(texture, shape, etc.). Familiar objects might be grasped in similar ways, the difficulty consists in detecting these similarities between objects and then applying grasping experience on them. \cite{manuelli2019kpam} researched category-level object manipulation with the help of using semantic 3D keypoints as object representation. The two object categories examined were shoes and cups. The goal of robotic manipulation was not only grasping but also positioning the objects in a specific predefined way (place shoes on a shelf, hang cups on the hook by the handle). First the database of manually labelled keypoints on 3D reconstruction of the objects in different training scenes was created. Then a neural network was used to detect these keypoints from an RGB-D image of the scene. The detected keypoints together with the RGB-D image were used to calculate a suitable grasp using a similar to the baseline learning-based algorithm demonstrated in  \cite{zeng2018robotic}.\\
+In case of unknown objects, the object was never seen by the robot beforehand and never used in training. Many approaches are based on approximating the shape of the object and then choosing the grasp for it \cite{bohg2011mind}. In recent years the approaches that have been most successful at solving this type of grasping problem through trial-and-error approach \cite{pinto2016supersizing}, \cite{zeng2019tossingbot}, zeng2018robotic. 
+
+
+\section*{Simulation}
+In data-driven approaches training data is required to learn for a successful grasp. Levine et al. \cite{levine2018learning} used 14 robotic arms that sampled 800 000 grasp attempts. Pinto and al. \cite{pinto2016supersizing} used one robot manipulator to conduct 50 000 grasp attempts in course of 700 hours. However, it is expensive to collect such amount of data and it is very time consuming, this is where the arguments for learning in simulation come to a point. \\
+Goldfeld et al. \cite{goldfeder2011data} created a grasp planner containing database of grasps for 3D models of different objects, that were generated using GraspIt! \cite{miller2004graspit} simulation engine. Kasper et al. \cite{kasper2012kit}  introduced the system for digitizing objects. In year 2010 the OpenGRASP  \cite{leon2010opengrasp}  simulation toolkit for grasping and dexterous manipulation was created. \\
+James et al. \cite{james2019sim} developed an approach that used only a small amount of real-word training data in addition to simulation, which helped to reduce the real-world data by more than 99\%. Bousmalis et al. \cite{bousmalis2018using} implemented a grasping method that helps to significantly reduce the amount of additional real-world grasp samples. In their experiment 50 times less real-world samples were required to achieve the same level of performance compared to their previous system. \\
+Another advantage of using simulation is the ability to pretrain the network. Redmon et al. \cite{redmon2015real} stated that "pretraining large convolutional neural networks greatly improves training time and helps avoid overfitting".
+However there are some drawbacks to synthetic data. Most significant one is the reality gap: the network trained in a simulated environment shows much worse performance in real world. An effective way to trying to close the reality gap is to use domain randomization(TODO cite). \cite{tremblay2018deep} used photorealistic data in addition to domain randomization. It added variation and complexity to the training, which helped for the trained neural network to be able to successfully operate in the real world scenario without any additional fine-tuning.\\
+(TODO domain adaptation)
+%there are methods for learning either from human
+%demonstrations, labeled examples or trial and error.
+------\\
+%Dex-Net 1.0 is the first version of Dexterity Network, a set of 3D object models with multiple labelled grasps for each of them and an algorithm for planning parallel-jaw grasps. Dex-Net 1.0 researches finding a robust parallel-jaw grasp for a given object, using analytic and statistic sampling methods to assessing the grasp candidates. 2017 the Dex-Net 2.0 was introduced. The synthetic dataset includes 6.7 point clouds with parallel-jaw grasps and analytic grasp quality metrics (darf man das so abschreiben? lieber zitieren?). Also a Grasp-Quality Convolutional Neural Network that classifies robust grasp poses from depth images of singulated objects considering sensor and control imprecision, trained on the data from Dex-Net 2.0, was presented. The Input for GQ CNN is depth image in form of the 3D point cloud with an annotated set of pairs of antipodal points that represent a possible grasp. The network, trained on the Dex-Net 2.0 set outputs the most robust grasp candidate. \\ 
+%Database generation: The database contains 1500 3D object mesh models (129 of them come from KIT object database). For every object robust grasps covering the surface are sampled, using the antipodal grasp sampling approach developed in Dex-Net 1.0. For stable poses of each object planar grasps (grasps perpendicular to the table surface) are chosen, as well as corresponding rendered point clouds (depth images).\\ 
+%For assessment of the performance of GQ-CNN four criteria were used: success rate, precision, robust grasp rate, planning time.  \\ 
+
+
+
+%. To study grasp planning at scale, Goldfeder et al. [12], [13] developed the Columbia grasp database, a %dataset of 1,814 distinct models and over 200,000 force closure grasps generated using the GraspIt! %sampling-based grasp planner. Pokorny et al. [34] introduced Grasp Moduli Spaces, enabling joint grasp and %shape interpolation, and analyzed a set of 100 million sampled grasp configurations.
+
+%\section*{Zeitplan}
+
+% \subsection{State of the art}
+
+\subsection{Deep reinforcement learning for grasping problems}
+to do:
+end-to-end approaches
+raw-pixels, image obs (\cite{quillen2018deep})\\
+One of the most important goals of learning-based approaches is for system to be able to perform effectively on previously unseen objects - generalization. Another essential aspect that is considered during development of the approach is the intention of minimizing human's participation in the training of the system. This lead to development of self-supervised systems. \\
+\cite{kaelbling1996reinforcement} made following definition for the reinforcement learning problem: "Reinforcement learning is the problem faced by an agent that must learn behavior through trial-and-error interactions with a dynamic environment." The trial-and-error interactions are the factor that is crucial for a self-supervised system: it supervises itself by committing an action, getting the result of this action and learning from it. In many approaches for solving the grasping problems self-supervised systems can be interpreted as the ones based on reinforcement learning, even if they do not operate on standard RL algorithms. (Atanas Im not sure about that these are just my thoughts but I think they sound logical xD)\\
+TODO: \cite{pinto2016supersizing}
+\cite{levine2018learning} developed a grasping approach that is based on collecting large-scale data using multiple real robots, using no human involvement in the training process, and getting continuous feedback on visual features using only over-the-shoulder RGB camera. This end-to-end approach uses raw pixel images as input and directly outputs task-space gripper motion. The paper addresses the issue of the need of massive analysis and planning in robotic manipulation tasks. The suggested methods avoids it by providing the system with continuous feedback from the setup, fragmenting the grasping attempt in several timesteps and letting it decide what action to take at each timestep. This way the robot can correct its mistakes using previous experience, at the same time not requiring exact camera calibration. \\
+The approach consists of two major parts: the prediction network $g(T_t, v_t)$ that accepts visual input $I_t$ and a task-space motion command $v_t$ and outputs the probability of success of grasping after completing $v_t$. The second part is the servoing function $f(I_t)$ that uses the output of the prediction network to control the gripper for executing a good grasp. The grasping attempt consists of $T$ steps: The robot makes T steps before closing the gripper. It creates $T$ training samples: $(I^i_t, p^i_T - p^i_t, l^i)$: image, collected every step, vector that is calculated through reached pose at the end and the pose at the timestep $t$, and label $l_i$ that is the same for the whole attempt i and which denotes the success of the attempted grasp. The whole self-supervised method can be interpreted as a type of reinforcement learning but without standard reinforcement learning algorithms.  \\
+Reinforcement learning has been successfully used for grasping tasks (TODO cite). \\
+\cite{quillen2018deep} compared different reinforcement learning off-policy algorithms for vision-based robotic grasping. The authors state that on-policy algorithms struggle with diverse grasping scenarios as the robot has to go back to previously seen objects in order to avoid forgetting the gained experience. Therefore off-policy methods might be preferred for the grasping problems. The criteria for evaluating the RL were: overall performance, data-efficiency, robustness to off-policy data and hyperparameter sensitivity - these factors are important when applying the grasping algorithms to robotic systems in real life. \\
+TODO: 
+- tossing bot \\
+- Andy Zeng(2)\\
+
+
+
+\section*{Reinforcement learning}
+TODO \\
+- Introduction history applications \\
+- Value vs policy based \\
+
+Reinforcement learning is one of the types of Machine Learning. The core idea of reinforcement learning is having an agent that can perform actions in a specified environment. The agent gets observations from  the environment as an input, the output is an action. At all times the agent is in one of the predefined states, the actions that are possible in the current state are a subset of all actions set. For every performed action the agent receives a feedback in form of a reward from the environment. According to the reward the agent can decide whether the chosen action was the right decision. The core idea of reinforcement learning is modeled as Markov decision process (MDP), which consists of 4-tuple (S, A, R, T) \cite{kaelbling1996reinforcement}:
+\begin{itemize}
+	\item set of states S
+	\item set of actions A
+	\item a reward function r (R: SxAxS -> RR)
+	\item state transition function T: S x A ->P(S), where P(S) is a probability distribution over the set S (i.e. it maps states to probabilities)
+\end{itemize}
+in some notation the  the starting state distribution r0  is defined as the fifth element of the MDP.
+The name of the process comes from the concept of Markov chains: having a sequence of events the probability of each event depends only on the state that was achieved in the previous event, ignoring all events before. Markov state: $P(s_{t+1}|s_t) = P(s_{t+1}|s_1, ..., s_t)$(TO DO: site).\\
+The policy Pi determines which action must be taken in a each state. The action might be deterministic: (Source: spinning up)\\
+$a_t = \mu(s_t)$\\
+or stochastic: \\ 
+$a_t \sim \pi(\cdot|s_t)$\\
+Same for the state transition function: deterministic $s_{t+1} = f(s_t, a_t)$ or stochastic $s_{t+1} \sim P(\cdot | s_t, a_t)$. \\
+Often there are possible ways for the agent to accomplish a task. For example, there might be a short and a long path to a destination point, both of them conform the requirements. However, the short path is better because it takes less time and less actions, so the agent should take this path. This can be expressed as following: goal of the optimal policy is to maximize the sum of rewards during action sequence that leads to completing the task. There are multiple ways to define the sum of the rewards: 
+\begin{itemize}
+	\item  finite-horizon undiscounted return: R(t) = $\sum_{t=0}^{T} r(t) $, a straightforward sum of all rewards for all taken actions.
+	\item  infinite-horizon discounted return: R(t) = $\sum_{t=0}^{\infty} y^{t}r(t) $, where y is a discount factor ((0,1)). The discount factor makes sure the actions that are taken soon are more relevant that the ones that are taken many steps later. From mathematical point of view, the discount factor is one of the conditions that the infinite sum converges to a finite value.
+\end{itemize}
+Value function of the state s is an expected return that the agent will get if it starts in state s and act according to the policy. Action-Value Function adds dependency to an action a:  expected return after starting in state s and taking action a, continuing by acting forever according to the policy $\pi$: \\
+$Q^{\pi}(s,a) =\underset{\tau \sim \pi} {E}[{R(\tau)\left| s_0 = s, a_0 = a\right.}]$ \\
+the Optimal Action-Value Function, Q*(s,a), which gives the expected return if you start in state s, take an arbitrary action a, and then forever after act according to the optimal policy in the environment: \\
+Finally, the Optimal Action-Value Function, Q*(s,a):\\
+$Q^*(s,a) = \underset {\pi} {\max}  \underset {\tau \sim \pi}{E}[{R(\tau)\left| s_0 = s, a_0 = a\right]}$\\
+, where policy $\pi$ is optimal. \\
+There is a connection between value and action-value functions, that is helpful for some calculations: \\
+$V^{\pi}(s) = \underset {a\sim \pi} {E} [{Q^{\pi}(s,a)}]$ - the value function of the state is an expected return of the Q-function in this state if the action a taken comes from the policy $\pi$. \\
+
+and\\
+
+$V^*(s) =  \underset {a} \max {Q^* (s,a)}$. \\
+TODO: Bellman equations
+
+\section{Algorithms in reinforcement learning}
+There is a wide variety of reinforcement learning algorithms:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{graphics/taxonomy_of_RL_algorithms}
+	\caption{Reinforcement learning algorithms taxonomy Quelle: Spinning up
+		Ich werde ein ähnliches Bild machen, aber nur mit Algorithmen, die ich benutzt habe.}\label{fig:RL}
+\end{figure}
+
+Reinforcement learning algorithms can be categorized in model-based and model-free. As the name suggests, model-based algorithms have a model of the environment and use it to find an optimal policy. There are some advantages and disadvantages of both approaches. Deisenroth et al. \cite{deisenroth2013survey} talk about "robot control as a reinforcement learning problem": forming the trajectory of the robot, which is sequence of states and motor commands that lead to them. Model-free policy search methods usually use real robots to sample such trajectories, which in most cases requires human supervision and causes fast wear-and-tear of robots, especially the ones that are not industrial. What is more, it is time consuming. Model-based methods aim to develop efficiency by sampling some observation trajectories and building a model out of them. The model should decrease the number of real-robot manipulations and better adapt to new unseen environments or parameters. However, in practice, such models can be used not exact enough, which leads to learning a poor policy. \\
+Bansal et al. \cite{bansal2017mbmf} state that model-free reinforcement learning approaches are effective at finding complex policies, however they sometimes take very long time to converge. Model-based algorithms might be better at generalizing and reduce the number of steps to find an optimal policy, however without exact model the learned policy might be far from an optimal one. Also the model must be updated together with the policy.\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{graphics/model-basedRL.png}
+	\caption{Model-based RL Quelle: s}\label{fig:RL}
+\end{figure}
+
+Model-free (?) reinforcement learning algorithms can also be divided in being on- and off-policy. Policy is used in reinforcement learning to decide which action to perform in the current state. While learning and building the policy up, the algorithm does not necessarily need to always chose the action that the latest version of the policy suggests. The chosen action might be for example the one that will maximize the value function for the state (????) as in Q-learning. In that case the algorithm is off-policy. In the opposite case, when algorithm strictly follows the policy while learning, it is an on-policy one.
+
+\subsection{Q-Learning}
+Q-learning is a model-free algorithm that is based on approximating an objective function in order to find the optimal policy. \\
+$Q^*(s,a) =R(s,a) + \gamma \underset {s' \subset S} { \sum} P(s_{t+1}| a_t, s_t) * \underset {a'} {\max Q*(s', a')}$\\
+R(s,a) is the immediate reward in state s for executing action a. \\
+Since  $V^*(s) =\underset {a} {\max} Q^*(s, a)$, the optimal policy can be calculated as: \\
+$arg\underset {a} {\max} Q^*(s, a)$ \\
+The strategy for choosing the action in the current state is $\varepsilon$-greedy: with the probability $\varepsilon$ the chosen action will be calculated through the Q-function: a = $arg\underset {a} {\max} Q^*(s, a)$. With probability (1 - $\varepsilon$) the sampled action will be a random one from the action space: $a \in A(s)$. \\
+The O-learning rule is: \\
+$Q(s,a) =Q(s,a) + \alpha (r + \gamma \underset {a'}{\max} Q(s+1, a') - Q(s,a))$, \\
+where  $\alpha$ is the learning rate and $Q(s,a)$ is the old value. \\
+Usually all state-action pairs are stored in a table, a so-called q-table. The agent refers to this table to select the best action - the action with the biggest q-value - for the state he is in. \\
+An agent is exploiting if he uses the q-table and selects the action with the biggest Q-value to perform next. An agent is exploring, if he ignores the table values and takes a random action. Exploring is important as the agent finds other states with possibly better results, that would not be discovered if the agent strictly followed the table. Exploitation/exploration can be controlled by an $\varepsilon$-value - how often should the agent perform a random exploration step. \\
+Reinforcement learning is often used for complex problems with a wide action and state space, which makes it impossible to store all Q-values in a table because of the a big amount of time for calculation of the values of the table and the amount of memory that would be required to save the table.  Deep Q-Learning (DQN) is the variant of the Q-Learning which is one of the possibilities to deal with this problem with the help of a neural network as a function approximator. \\
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{graphics/DQN}
+	\caption{TODO: make my own scheme}\label{fig:RL}
+\end{figure}
+The Q-values for all possible actions of the state are calculated, the one that maximizes the Q-Value is chosen as the next action. \\ 
+The updating rule is analogic to the the standard Q-learning approach: \\
+$T = R(s,a) + \gamma \underset {a'}{\max}Q_\theta(s',a') $ - target value. \\
+$\theta = \theta + \gamma \nabla_\theta E_{s' \sim  P(s'|s,a)}[(T - Q_\theta(s,a))^2]$\\
+$T - Q_\theta(s,a))^2$ is the temporal difference in form of the mean square error. The gradient of the error is used for calculating new weights for the network. \\
+While the error is calculated only for one state, the gradient of the error impacts all weights in the network - all states. This makes the learning become unstable. In order to cope with this problem another network with the same architecture - target network - is used to compute the target value T. Target network is initialized with the same weights as the main function approximator network, and it is updated every defined number of steps. \\
+Replay buffer is a technique that is also used in DQN. The agent's transitions $(s_t, a_t, r_t, s_{t+1})$ are saved to a replay memory D. After collecting some number of transitions, mini-batches containing random transitions from the replay buffer are sampled and then used for training the network with stochastic gradient descent(SGD). Due to the randomness of trajectories in mini-batches the learned knowledge does not tend to resemble only one type of trajectories. It is also more data-efficient as the experience data can be used multiple times for learning. \\
+Replay buffer and target network make Q-learning stable and efficient. Q-learning is one of the most popular reinforcement learning methods as it is simple to implement. However, it has its disadvantages. \cite{hasselt2010double}  stated that because of the fact that it uses max operator to calculate the Q-value for the state, there are often significant overestimations of these values. Double Q-Learning is an off-policy value based reinforcement learning algorithm that uses two different Q-functions: one for selecting the next action and the other for value evaluation. 
+
+
+
+%\begin{align*}
+%V^{\pi}(s) &= \underE{a \sim \pi \\ s'\sim P}{r(s,a) + \gamma V^{\pi}(s')}, \\
+%Q^{\pi}(s,a) &= \underE{s'\sim P}{r(s,a) + \gamma \underE{a'\sim \pi}{Q^{\pi}(s',a')}},
+% \end{align*}
+\subsection{Temporal-Difference Learning}
+Temporal-Difference Learning (TD)\\
+TODO
+
+\subsection{Deep Deterministic Policy Gradient (DDPG) }
+Deep Deterministic Policy Gradient (DDPG) is an off-policy algorithm similar to Q-Learning - it learns an optimal action-value function $Q^*(s,a)$. The main difference between these two algorithms is that DDPG works with continuous action spaces and Q-Learning with discrete ones. For discrete action spaces there are finite number of actions, so Q-values for all possible actions can be calculated and compared, the biggest one would be the max value. However this approach would not work in continuous action spaces as there are endless number of possible actions.  .....TODO
+uses a deterministic target policy
+
+
+DDPG has the Actor\&Critic architecture for policy network and Q-network.
+\subsection{Actor Critic}
+The "Critic" estimates the value function (Q function = action-value function or V function = state-value)
+"Actor" "updates the policy distribution in the direction suggested by the Critic (such as with policy gradients)."\\
+TODO
+Value-based methods are based on maximizing a Q-function that is usually given by Bellmann equation(TODO), the optimal policy can be then calculated as $\pi(s)=arg\underset {a} {\max} Q^*(s, a)$. Policy-based methods learn the policy directly without the value-function. The goal for policy-based approches is to maximize the cumulative reward of the trajectory(TODO Definition) $J(\theta) = E_{\tau \sim \pi_{\theta}[R_\tau]}$ as opposed to the value-based approach where the goal is to minimize the error function (which is normally in the form of the temporal difference error). Policy gradient searches for parameters that maximize the goal function by moving in the direction of the gradient - gradient accent: $\theta_{k+1} = \theta_k + \alpha\nabla_{\theta}J(\theta)$, where $\nabla_{\theta}J(\theta) = E_{\tau \sim \pi_{\theta}}[\sum_{t=0}^T\nabla_\theta log\pi_\theta(a_t|s_t)R(\tau)]$, $R(\tau)$ is the cumulative reward of the trajectory. When the reward of the sampled trajectory is positive, the gradient of the goal function is also positive, the policy will be optimized in the direction of the gradient, this way it learns that the sampled trajectory was a good one and vice versa.  Discrete stochastic policy gives as output success probabilities for all actions (Karams Folie). Continuous stochastic policy-based approach makes it possible to work with continuous action spaces. (stochastic policy gives probability distribution over all actions)\\
+The idea of the actor-critic method is to use a Q-function instead of the (average??) cumulative reward $R(\tau)$ - the Q-function of the state gives an expected future reward after completing action a. The approximated policy gradient will then be:\\
+$\nabla_{\theta}J(\theta) = E_{\tau \sim \pi_{\theta}}[\sum_{t=0}^T\nabla_\theta log\pi_\theta(a_t|s_t)Q_w(s,a)]$ \\
+where w are the weights of the neural network that calculates the Q-function. That is a separate network that is called "the critic". The network that calculates the goal function is the "actor". The critic estimates the value-function, the actor uses it to update its policy.
+TOTO actor-crtitic scheme from Sutton Barto find it it's good!!
+
+\subsection{Soft Actor-Critic}
+Soft Actor-Critic(SAC) is an off-policy state-of-the art reinforcement learning algorithm, it outperformed other previous methods ( \cite{haarnoja2018soft)}. \\
+As the name suggests, it is based on the actor-critic approach. The key idea of SAC is the actor trying to maximize not only the expected return but also the entropy. The algorithm is stable and also sample-efficient, it is capable of solving high-dimensional complex tasks. 
+
+
+TODO Policy, value iteration????
+\subsection{HER}
+TODO
+
+
+
+\subsection{Mujoco}
+Mujoco (Multi-Joint dynamics with Contact) is a physics engine developed for model-based control (\cite{todorov2012mujoco}). It was developed at "Movement control laboratory", University of Washington for research projects in the area of 'optimal control, state estimation and system identification", as none of already existing tools delivered a satisfying performance. Mujoco has shown an especially more stable, fast and accurate performance for robotic tasks in comparison to other physics simulators \cite{erez2015simulation}. \\
+Mujoco is user-convenient as well as computation efficient. The model can be specified in a an XML-file format. The visualization is interactive and done by the rendering library OpenGL. Some of the key features of Mujoco include:
+\begin{itemize}
+	\item Generalized coordinates combined with modern contact dynamics
+	\item Soft, convex and analytically-invertible contact dynamics
+	\item Separation of model and data
+\end{itemize}
+and many more. Further description of Mujoco and its documentation can be found on the official website \cite{mujoco-documentation}.
+
+\subsection{OpenAI Gym}
+Gym is toolkit developed by OpenAI for researching in the area of reinforcement learning. Gym is an open-source library which includes collection of environments for different reinforcement learning problems. They include Atari (i.e. Breakout-v0) and Board games (Go), Robotics(HandManipulateBlock-v0) and many more \cite{1606.01540}. The user can update the environment and construct own agent, which would only have to implement the specified interface to use the environment. \\
+
+\subsection{Stable Baselines}
+OpenAi baselines \cite{baselines} is a library developed by OpenAI containing implementations of different reinforcement learning algorithms. Stable baselines \cite{stable_baselines} is a collection of improved RL algorithms based on OpeanAI baselines. The algorithms of stable baselines have unified structure, are better documented, there are more tests for them as well as some new new ones. They can be used for gym environments. Stable baselines also include a set already pretrained agents \cite{rl-zoo}. \\
+In order to train the agent using reinforcement learning algorithms from stable baselines the environment must follow the gym interface: it must implement methods {\_\_init\_\_()}, step(), reset(), render(), close() and inherit from gym.Env:
+\begin{figure*}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{graphics/CustomEnv}
+	\caption{Custom environment example for using stable baselines}
+\end{figure*}\\
+
+\section{Approach}
+\subsection{Simulation Setup}
+
+As a base for the simulation the gym "FetchPickAndPlace-v0" environment was used: "Fetch has to pick up a box from a table using its gripper and move it to a desired goal above the table". The step() function was adjusted in order to modulate following behavior: the movement starts with gripper having a constant height z above the table. The action is expressed as [x, y, $\alpha$], where x and y are cartesian coordinates of the target gripper x and y positions. The gripper goes to (x,y) preserving its height z. After then it rotates $\alpha$ degrees around the gravitation axis. Afterwards the planar grasp takes place: the gripper goes down, changing only its z-coordinate and having maximal jaw opening. Then the gripper closes and goes back up. \\
+The camera was adjusted to take a picture of the part of the table where the object is located:
+\begin{figure*}[h!]
+	\centering
+	\includegraphics[width=0.2\textwidth]{graphics/observation}
+	\caption{Observation from the camera}
+\end{figure*}\\
+
+
+
