@@ -20,9 +20,9 @@
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Entropy loss of the successful agent became constant after about 80k steps - when the agent learned the task. In the second experiment the agent was not sure which action to take.\relax }}{27}{figure.caption.24}% 
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Value loss statistics of two experiment.\relax }}{27}{figure.caption.25}% 
 \contentsline {figure}{\numberline {5.9}{\ignorespaces 400k step training of SAC on random position of the object\relax }}{28}{figure.caption.27}% 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces PPO performed extremely bad on the task without being able to learn the simplest set-up where the position of the object is constant during the whole training. In the first graphics there are some cases of reward 1 - there are so rare that they are most likely accidental.\relax }}{28}{figure.caption.30}% 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces 300k step training of PPO on random position of the object\relax }}{29}{figure.caption.32}% 
-\contentsline {figure}{\numberline {5.12}{\ignorespaces 300k step training of PPO on random position of the object\relax }}{29}{figure.caption.33}% 
+\contentsline {figure}{\numberline {5.10}{\ignorespaces PPO performed extremely bad on the task without being able to learn the simplest set-up where the position of the object is constant during the whole training. In the first graphics there are some cases of reward 1 - there are so rare that they are most likely accidental.\relax }}{28}{figure.caption.31}% 
+\contentsline {figure}{\numberline {5.11}{\ignorespaces 300k step training of PPO on random position of the object\relax }}{29}{figure.caption.33}% 
+\contentsline {figure}{\numberline {5.12}{\ignorespaces 500k step training of PPO on random position of the object. The evaluation of the model at the end showed 99.5\% success rate with 7\% variance. \relax }}{29}{figure.caption.34}% 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

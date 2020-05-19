@@ -23,9 +23,6 @@ Data-driven robotic grasp synthesis in a simulated environment.\\
 % \chapter{Implementation}
 % \section{System Architecture}
 % \chapter{Evaluation}
-% \chapter{Discussion}
-% \subsection{Conclusion}
-% \subsection{Future Work}
 % \subsection{ende fertig-------------------}
 
 \chapter{Introduction}
@@ -56,16 +53,16 @@ The focus of the thesis is to develop an approach for the robot to learn how to 
 
 \chapter{Related work}
 \section{Grasp Synthesis Algorithms}
-Sahbani et al. \cite{sahbani2012overview} divided different approaches in analytical and empirical. Analytical approaches investigate the physics, kinematics and geometry of the object and the robot in order to determine contact points and gripper position\cite{nguyen1988constructing},  \cite{murray2017mathematical}. 
-\cite{shimoga1996robot} defined a force-closure grasp as the one that guarantees that "the fingers are capable of resisting any arbitrary force and/or moment that may act on the object externally". Shimoga listed four independent properties that are crucial for a successful force-closure grasp : dexterity, equilibrium, stability, dynamic behavior. Analytical approaches concentrate on developing algorithms that satisfy these properties.\\
-\cite{ding2000computing} of Ding et al. is an example of the analytical approach. Having a multi-fingered gripper with n fingers, an object and the position of m of n fingers that do not form a form-closure grasp, the position of the remaining m-n fingers have to be determined to satisfy the requirement of the form-closure grasp. There is a Coloumb friction between object and fingers. In order for fingers not to slip while executing the grasp, the finger force must have a certain direction (lie in a friction cone), which can be expressed as a set of non-linear constraints. Calculations consider the center of mass of the object, combination of grasping force and torque, center of the contact points. A sufficient and necessary condition for form-closure grasps was formulated. \\ 
+Sahbani et al. \cite{sahbani2012overview} divided different grasp synthesis algorithms in analytical and empirical. Analytical approaches investigate the physics, kinematics and geometry of the object and the robot in order to determine contact points and gripper position\cite{nguyen1988constructing},  \cite{murray2017mathematical}. 
+Shimoga et al. \cite{shimoga1996robot} defined a force-closure grasp as the one that guarantees that "the fingers are capable of resisting any arbitrary force and/or moment that may act on the object externally". Four independent properties that are crucial for a successful force-closure grasp were listed: dexterity, equilibrium, stability, dynamic behavior. Analytical approaches concentrate on developing algorithms that satisfy these properties.\\
+\cite{ding2000computing} of Ding et al. is an example of the analytical approach. Having a multi-fingered gripper with n fingers, an object and the position of m of n fingers that do not form a form-closure grasp, the position of the remaining $(m-n)$ fingers have to be determined to satisfy the requirement of the form-closure grasp. There is a Coloumb friction between object and fingers. In order for fingers not to slip while executing the grasp, the finger force must have a certain direction (lie in a friction cone), which can be expressed as a set of non-linear constraints. Calculations consider the center of mass of the object, combination of grasping force and torque, center of the contact points. A sufficient and necessary condition for form-closure grasps was formulated. \\ 
 \begin{figure*}[h!]
 	\centering
 	\includegraphics[width=0.7\textwidth]{graphics/form_closure}
 	\caption{Outtake from "Computing 3-D Optimal Form-Closure Grasps" \cite{ding2000computing} of Ding et al.}
 \end{figure*}\\
 As Bohg et al. \cite{bohg2013data} stated, analytical approaches usually require exact 3D models of the object, rely on the knowledge of the object's surface properties, its weight distribution and are not robust to noise. \\
-\cite{bohg2013data} made a detailed overview of the data-driven grasp synthesis approaches. They define grasp synthesis as "the problem of finding a grasp configuration that satisfies a set of criteria relevant for the grasping task". Data-driven or also called empirical approaches sample various grasp candidates and then rank them using different strategies. \\
+In the same paper a detailed overview of the data-driven grasp synthesis approaches was made. Grasp synthesis is defined as "the problem of finding a grasp configuration that satisfies a set of criteria relevant for the grasping task". Data-driven or also called empirical approaches sample various grasp candidates and then rank them using different strategies. \\
 \begin{figure*}[h!]
 	\centering
 	\includegraphics[width=0.7\textwidth]{graphics/grasp_hypothesis}

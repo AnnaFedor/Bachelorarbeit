@@ -1,4 +1,4 @@
-\section*{Results of the training}
+
 % The movement of the robot consists of several steps: the robot rotates the gripper to the angle $\alpha$, after that it goes to the target (x,y) coordinate. The z-coordinate of the gripper stays constant during the first two parts of the movement. After reaching the target positions: (x,y, $\alpha$), the robot executes a planar grasp: it goes down to almost reach the height of the table with the max gripper opening, then it closes the jaws and goes up. In the final position, when the gripper is above the table, the width between the jaws of the gripper is calculated. If it is not null, then the object was successfully grasped. \\
 % In reality the simulation engine showed an unexpected behavior: when the gripper was down, closed the jaws and successfully grasped the object, the object did not stay through the whole way up, it slipped from the jaws. According to Mujoco documentation the type of numerical algorithm for solving convex optimization problems - solver - could be changed to reach the desirable behavior as well as some other parameters such as "$noslip_iterations$", "cone", "impratio". However tuning in those parameters did not help to solve the problem. The method that helped was to slightly close the gripper on the way up. \\
 % The observation input was an RGB 81x81 image, the action space continuous: $x \in [1.1, 1.45]$,  $y \in [0.55, 0.95]$, $\alpha \in [0, 90]$.\\
@@ -7,14 +7,12 @@
 
 
 
----------------------------------------------------------------------------------------------------------
-
-
 \subsection{Experiments with the Soft-Actor-Critic Algorithm}
 Several experiments using Soft-Actor-Critic(SAC) were conducted. The results were unstable: repeating the same experiment with same parameters delivered different results. In some cases the training was successful. However sometimes the network was showing good performance which dropped after some training steps, resulting in 0\% success rate at the end. Saving the model several times during training helped to retrieve the model that was giving a good performance. In some trainings the agent never achieved good performance. There might be several reasons for such unstable behavior, they will be discussed later on.  \\
 The implementation of SAC in stable\_baselines only works with continuous action space, so the action space for the robot in these experiments was a continuous, represented through gym Space Box:  
 $self.action\_space = spaces.Box(np.array([1.1, 0.55]), np.array([1.45, 0.95]), dtype='float32')$. 
 
+\subsubsection{Hyperparameters}
 \subsubsection{1 Constant Positions Of The Object}
 
 Among successful experiment runs, where the position of the object was learned even under 10k training steps, there were some that that were not stable. As an example a training that lasted 30k steps. After 14k steps the agent was performing with 100\% sucessrate. However shortly after the performance dropped and never recovered. 
@@ -170,6 +168,7 @@ Soft-Actor-Critic is a state-of-the-art reinforcement learning algorithm, it sho
 
 
 \subsection{Experiments with the Proximal Policy Optimization Algorithm}
+\subsubsection{Hyperparameters}
 \subsubsection{Continuous action space}
 The algorithm performed very poorly in the continuous action space ($self.action\_ space = spaces.Box(np.array([1.1, 0.55]), np.array([1.45, 0.95]), dtype='float32')$. ). It failed to learn even the simplest task where the object's position does not change. 
 \begin{figure}[H]
