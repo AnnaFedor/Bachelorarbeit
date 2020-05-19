@@ -1,161 +1,205 @@
 \section*{Results of the training}
-The movement of the robot consists of several steps: the robot rotates the gripper to the angle $\alpha$, after that it goes to the target (x,y) coordinate. The z-coordinate of the gripper stays constant during the first two parts of the movement. After reaching the target positions: (x,y, $\alpha$), the robot executes a planar grasp: it goes down to almost reach the height of the table with the max gripper opening, then it closes the jaws and goes up. In the final position, when the gripper is above the table, the width between the jaws of the gripper is calculated. If it is not null, then the object was successfully grasped. \\
-In reality the simulation engine showed an unexpected behavior: when the gripper was down, closed the jaws and successfully grasped the object, the object did not stay through the whole way up, it slipped from the jaws. According to Mujoco documentation the type of numerical algorithm for solving convex optimization problems - solver - could be changed to reach the desirable behavior as well as some other parameters such as "$noslip_iterations$", "cone", "impratio". However tuning in those parameters did not help to solve the problem. The method that helped was to slightly close the gripper on the way up. \\
-The observation input was an RGB 81x81 image, the action space continuous: $x \in [1.1, 1.45]$,  $y \in [0.55, 0.95]$, $\alpha \in [0, 90]$.\\
-In the beginning the algorithm was tested for the simplified task: the test object was a black cube with constant position on the table, within the reach of the robot arm. \\
-The first algorithm tested was DDPG with 25 000 steps. The expected outcome was that the model will memorize the position of the cube and will always predict the correct grasping action. \\
-\begin{figure*}[h!]
+% The movement of the robot consists of several steps: the robot rotates the gripper to the angle $\alpha$, after that it goes to the target (x,y) coordinate. The z-coordinate of the gripper stays constant during the first two parts of the movement. After reaching the target positions: (x,y, $\alpha$), the robot executes a planar grasp: it goes down to almost reach the height of the table with the max gripper opening, then it closes the jaws and goes up. In the final position, when the gripper is above the table, the width between the jaws of the gripper is calculated. If it is not null, then the object was successfully grasped. \\
+% In reality the simulation engine showed an unexpected behavior: when the gripper was down, closed the jaws and successfully grasped the object, the object did not stay through the whole way up, it slipped from the jaws. According to Mujoco documentation the type of numerical algorithm for solving convex optimization problems - solver - could be changed to reach the desirable behavior as well as some other parameters such as "$noslip_iterations$", "cone", "impratio". However tuning in those parameters did not help to solve the problem. The method that helped was to slightly close the gripper on the way up. \\
+% The observation input was an RGB 81x81 image, the action space continuous: $x \in [1.1, 1.45]$,  $y \in [0.55, 0.95]$, $\alpha \in [0, 90]$.\\
+% In the beginning the algorithm was tested for the simplified task: the test object was a black cube with constant position on the table, within the reach of the robot arm. \\
+% The first algorithm tested was DDPG with 25 000 steps. The expected outcome was that the model will memorize the position of the cube and will always predict the correct grasping action. \\
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+\subsection{Experiments with the Soft-Actor-Critic Algorithm}
+Several experiments using Soft-Actor-Critic(SAC) were conducted. The results were unstable: repeating the same experiment with same parameters delivered different results. In some cases the training was successful. However sometimes the network was showing good performance which dropped after some training steps, resulting in 0\% success rate at the end. Saving the model several times during training helped to retrieve the model that was giving a good performance. In some trainings the agent never achieved good performance. There might be several reasons for such unstable behavior, they will be discussed later on.  \\
+The implementation of SAC in stable\_baselines only works with continuous action space, so the action space for the robot in these experiments was a continuous, represented through gym Space Box:  
+$self.action\_space = spaces.Box(np.array([1.1, 0.55]), np.array([1.45, 0.95]), dtype='float32')$. 
+
+\subsubsection{1 Constant Positions Of The Object}
+
+Among successful experiment runs, where the position of the object was learned even under 10k training steps, there were some that that were not stable. As an example a training that lasted 30k steps. After 14k steps the agent was performing with 100\% sucessrate. However shortly after the performance dropped and never recovered. 
+\begin{figure}[H]
 	\centering
-	 \begin{subfigure}[h]{0.3\textwidth}
-	 	\centering
-	 	\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/25k/episode_reward_smoothing1}
-	% \caption{Model-based RL Quelle: s}\label{fig:RL}
-   \end{subfigure}%
-~	
-	\begin{subfigure}[h]{0.3\textwidth}
-		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/25k/actor_loss}
-	% \caption{Model-based RL Quelle: s}\label{fig:RL}
-   \end{subfigure}%
-~
-	\begin{subfigure}[h]{0.3\textwidth}
-		\centering
-	\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/25k/critic_loss}
-	% \caption{Model-based RL Quelle: s}\label{fig:RL}
-    \end{subfigure}%
-    \caption{DDPG 25k steps}
-\end{figure*}
+	\includegraphics[width=0.5\textwidth]{graphics/1_obj_pos_SAC/episode_reward}
+	\caption{An example of unstable behavior of the algorithm: after 14k training steps the agent learned correctly where the object is located. Then the performance dropped to 0 and did not recover after that.}
+\end{figure}
+\subsubsection{20 Constant Positions Of The Object}
+
+A list of 20 (x,y) coordinates in the range of robot's action space were randomly generated. During each episode the object is located on the table with its (x,y) coordinates one random position from the list. The goal of the experiment was to determine whether the network is able to learn how to grasp the object. \\
+
+The training statistics is: \\ 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{graphics/Results/1.DDPG_const_obj_pos/25k/critic_target}
-	\caption{DDPG critic target loss 25k steps}
+	\includegraphics[width=0.5\textwidth]{graphics/20_obj_pos_150k/episode_reward}
+	\caption{After about 45k training steps the success rate was almost always 1. The reason it dropped in some episodes might be due to inaccuracy in actions or some object positions occurred for the first time - the agent never saw them before which lead to bad performance, they were learned after that}
 \end{figure}
 
-DDPG with 50k steps:
-
-\begin{figure*}[h!]
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}[h]{0.3\textwidth}
 		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/50k/episode_reward}
+		\includegraphics[width=1.0\textwidth]{graphics/20_obj_pos_150k/ent_coef}
 		% \caption{Model-based RL Quelle: s}\label{fig:RL}
 	\end{subfigure}%
 	~	
 	\begin{subfigure}[h]{0.3\textwidth}
 		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/50k/actor_loss}
+		\includegraphics[width=1.0\textwidth]{graphics/20_obj_pos_150k/ent_coef_loss}
 		% \caption{Model-based RL Quelle: s}\label{fig:RL}
 	\end{subfigure}%
 	~
 	\begin{subfigure}[h]{0.3\textwidth}
 		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/50k/critic_loss}
-		% \caption{Model-based RL Quelle: s}\label{fig:RL}
-	\end{subfigure}%
-	\caption{DDPG 50k steps}
-\end{figure*}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{graphics/Results/1.DDPG_const_obj_pos/50k/critic_target}
-	\caption{DDPG critic target loss 50k steps}
-\end{figure}
-
-
-DDPG with 200k steps:
-
-\begin{figure*}[h!]
-	\centering
-	\begin{subfigure}[h]{0.3\textwidth}
-		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/200k/episode_reward_smoothing1}
-		% \caption{Model-based RL Quelle: s}\label{fig:RL}
-	\end{subfigure}%
-	~	
-	\begin{subfigure}[h]{0.3\textwidth}
-		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/200k/actor_loss}
-		% \caption{Model-based RL Quelle: s}\label{fig:RL}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[h]{0.3\textwidth}
-		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/1.DDPG_const_obj_pos/200k/critic_loss}
-		% \caption{Model-based RL Quelle: s}\label{fig:RL}
-	\end{subfigure}%
-	\caption{DDPG 200k steps}
-\end{figure*}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{graphics/Results/1.DDPG_const_obj_pos/200k/critic_target}
-	\caption{DDPG critic target loss 200k steps}
-\end{figure}
-
-------------------------------------------------------------------------------------------------------------\\
-Contrary to DDPG, SAC delivered expected behavior by learning the constant position of the cube and always successfully grasping it:
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/episode_reward}
-	\caption{SAC episode reward after 50k steps goes to 1}
-\end{figure}
-
-\begin{figure*}[h!]
-	\centering
-	\begin{subfigure}[h]{0.3\textwidth}
-		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/ent_coef}
-		% \caption{Model-based RL Quelle: s}\label{fig:RL}
-	\end{subfigure}%
-	~	
-	\begin{subfigure}[h]{0.3\textwidth}
-		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/ent_coef_loss}
-		% \caption{Model-based RL Quelle: s}\label{fig:RL}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[h]{0.3\textwidth}
-		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/entropy}
+		\includegraphics[width=1.0\textwidth]{graphics/20_obj_pos_150k/entropy}
 		% \caption{Model-based RL Quelle: s}\label{fig:RL}
 	\end{subfigure}%
 	
 	\begin{subfigure}[h]{0.3\textwidth}
 		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/learning_rate}
+		\includegraphics[width=1.0\textwidth]{graphics/20_obj_pos_150k/learning_rate}
 		% \caption{Model-based RL Quelle: s}\label{fig:RL}
 	\end{subfigure}%
 	\begin{subfigure}[h]{0.3\textwidth}
 		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/policy_loss}
+		\includegraphics[width=1.0\textwidth]{graphics/20_obj_pos_150k/policy_loss}
 		% \caption{Model-based RL Quelle: s}\label{fig:RL}
 	\end{subfigure}%
 	\begin{subfigure}[h]{0.3\textwidth}
 		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/qf1_loss}
+		\includegraphics[width=1.0\textwidth]{graphics/20_obj_pos_150k/qf1_loss}
 		% \caption{Model-based RL Quelle: s}\label{fig:RL}
 	\end{subfigure}
 	\begin{subfigure}[h]{0.3\textwidth}
 		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/qf2_loss}
+		\includegraphics[width=1.0\textwidth]{graphics/20_obj_pos_150k/qf2_loss}
 		% \caption{Model-based RL Quelle: s}\label{fig:RL}
 	\end{subfigure}
 	\begin{subfigure}[h]{0.3\textwidth}
 		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/Results/2.SAC_const_obj_pos/50k/value_loss}
+		\includegraphics[width=1.0\textwidth]{graphics/20_obj_pos_150k/value_loss}
 		% \caption{Model-based RL Quelle: s}\label{fig:RL}
 	\end{subfigure}
-	\caption{SAC 50k steps}
-\end{figure*}
+	\caption{Statistics of the training: object's position is one of 20 possible ones, learn to grasp the object in 150k steps. At the end of the training the entropy is becoming constant which means that the algorithm is sure which action to take. The entropy coefficient is going down as well because the agent does not need to do much exploration anymore. Policy loss is going to zero, as well as the losses from both Q-networks and the target value network, which means the weights of the network are adjusted in an optimal way to achieve success. }
+\end{figure}
+
+The evaluation consisted of 300 episodes, 100\% success rate - the task was completed successfully. \\
+The 150000 steps of the training resulted in 43998 episode steps.As max\_episode\_steps value was set to 50, in the beginning the majority of episodes lasted 50 steps, however at the end of the training the value shrank to 1, occasionally going up. \\
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/20_obj_pos_150k/episode_lengths_first10k}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	~	
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/20_obj_pos_150k/episode_lengths_last10k}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}
+    \caption{The first image shows the statistics of the length of first 10k episodes of the training, the second one - of the last 10k. It is noticeable, that in the second case tha majority of episodes were short because the agent has already learned most of positions of the objects. In case of inaccuracy of actions or incorrect assumptions about the location of the object the  episode lasted longer - up to 50 steps}
+\end{figure} 
+
+\subsubsection{50 Constant Positions Of The Object}
+The same experiment showed different results. In some cases the agent did not learn at all. Below there are two examples of training in which the agent reached relatively good performance. The first one is a successful learned model which achieved success rate 100\%. The second one showed 90\% success rate during evaluation with standard deviation approximately 30\% - the agent was not always sure which action to take. \\  
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/50_obj_pos_SAC/episode_reward_successful}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	~	
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/50_obj_pos_SAC/episode_reward_ok}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}
+	\caption{The same experiment that differed only in number of training steps. The first image shows that in the first experiment the agent learned positions successfully after 80k steps, in the second experiment the agent did not manage to succeed even after 250k steps of training. The evaluation proved it: the first agent always graspes the object, the second one only in 90\% of cases with a high uncertainty of 30\%.}
+\end{figure} 
+
+The training statistics show, that the entropy factor became constant in the first experiment, in the second one it variated: 
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/50_obj_pos_SAC/entropy_successful}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	~	
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/50_obj_pos_SAC/entropy_ok}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}
+	\caption{Entropy loss of the successful agent became constant after about 80k steps - when the agent learned the task. In the second experiment the agent was not sure which action to take.}
+\end{figure} 
+
+An unexpected behavior showed the statistics about the value loss. In the case of the successful agent the value loss was extremely high (from 1e+4 to 5e+5), going up and then down during training, which did not effect the agent's success rate, it stayed 100\%. The not so successful agent's value loss was ranging from 0 to 1.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/50_obj_pos_SAC/value_loss_successful}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}%
+	~	
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{graphics/50_obj_pos_SAC/value_loss_ok}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\end{subfigure}
+	\caption{Value loss statistics of two experiment.}
+\end{figure} 
+
+\subsubsection{Random Position Of The Object}
+In previous experiments the agent was expected to learn finite number of positions, which should have been an easy task because he could just learn them by heart. In case of a random position of the object, it is impossible to learn all combinations as there are endless. \\
+After 400k steps of training during the evaluation the agent performed with 97\% success rate and 17\% variance. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{graphics/random_SAC/episode_reward}
+	\caption{400k step training of SAC on random position of the object}
+\end{figure}
+
+\subsubsection{Reasons for Unstable Training with the Soft-Actor-Critic Algorithm}
+Soft-Actor-Critic is a state-of-the-art reinforcement learning algorithm, it showed impressive results on such gym tasks as Humanoid-v2 and Ant-v2 \cite{haarnoja2018soft}. The current grasping task is much more simple with a smaller action space, which is why the instable training results are very unlikely to be caused by the algorithm. Another reason could be the instablity of the environment. However, training with PPO was stable: repeating the experiments delivered same expected results, which means the task can be trained in the created environment. Another assumption about the cause of unstable behavior is the implementation of SAC by stable\_baselines. The actual reason should be discovered in future work. 
 
 
+\subsection{Experiments with the Proximal Policy Optimization Algorithm}
+\subsubsection{Continuous action space}
+The algorithm performed very poorly in the continuous action space ($self.action\_ space = spaces.Box(np.array([1.1, 0.55]), np.array([1.45, 0.95]), dtype='float32')$. ). It failed to learn even the simplest task where the object's position does not change. 
+\begin{figure}[H]
+	\centering
+		\centering
+		\includegraphics[width=0.5\textwidth]{graphics/continuous_PPO/episode_reward}
+		% \caption{Model-based RL Quelle: s}\label{fig:RL}
+	\caption{PPO performed extremely bad on the task without being able to learn the simplest set-up where the position of the object is constant during the whole training. In the first graphics there are some cases of reward 1 - there are so rare that they are most likely accidental.}
+\end{figure} 
 
+\subsubsection{Discrete action space}
+Following the idea of Zeng et al. in \cite{zeng2018learning}, \cite{zeng2019tossingbot}, the action space was discretized to consist of a 50x50 grid. The action (x,y) would mean the gripper would execute a planar grasp in the middle of the cell (x,y). The action space is represented by the gym.Space.MultiDiscrete: \\
+$ self.action\_space = spaces.MultiDiscrete([49, 49])$\\
+It then is translated to the coordinate system to accord to a grid on the table within the observation space. \\
+The results of the experiments with 1, 20 and 50 constant positions of the object were successful: during evaluation for all these cases the agent performed with almost 100\% success rate. \\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{graphics/50_obj_pos_PPO/episode_reward}
+	\caption{300k step training of PPO on random position of the object}
+\end{figure}
+For random object position after 400k training steps the success rate was 98\% with 11\% variance. The model created in another training with 500k steps showed 99.5\% success rate with 7\% variance during 1000 evaluation steps. \\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{graphics/random_PPO_500k/episode_reward}
+	\caption{500k step training of PPO on random position of the object. The evaluation of the model at the end showed 99.5\% success rate with 7\% variance.  }
+\end{figure}
+The idea of discretizing the action space was formulated in \cite{tang2019discretizing}. Although the idea is simple, it can drastically improve the performance of baseline on-policy algorithms.\\
 
+% \chapter{Discussion}
+% \subsection{Conclusion}
+% \subsection{Future Work}
 
-%\chapter{Überkritisches Wasser}
-%\section{Definition und Bedeutung}
-%\subsection{Überkritisches Fluid }
-
-%\section{Eigenschaften von Wasser (von Umgebungs- zu überkritischen Bedingungen)}
 

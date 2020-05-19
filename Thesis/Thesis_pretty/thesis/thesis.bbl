@@ -23,6 +23,12 @@ J.~Bohg, A.~Morales, T.~Asfour, and D.~Kragic.
 \newblock Data-driven grasp synthesis---a survey.
 \newblock {\em IEEE Transactions on Robotics}, 30(2):289--309, 2013.
 
+\bibitem{boularias2015learning}
+A.~Boularias, J.~A. Bagnell, and A.~Stentz.
+\newblock Learning to manipulate unknown objects in clutter by reinforcement.
+\newblock In {\em Twenty-Ninth AAAI Conference on Artificial Intelligence},
+  2015.
+
 \bibitem{bousmalis2018using}
 K.~Bousmalis, A.~Irpan, P.~Wohlhart, Y.~Bai, M.~Kelcey, M.~Kalakrishnan,
   L.~Downs, J.~Ibarz, P.~Pastor, K.~Konolige, et~al.
@@ -74,6 +80,12 @@ C.~Goldfeder and P.~K. Allen.
 \newblock Data-driven grasping.
 \newblock {\em Autonomous Robots}, 31(1):1--20, 2011.
 
+\bibitem{haarnoja2018soft}
+T.~Haarnoja, A.~Zhou, K.~Hartikainen, G.~Tucker, S.~Ha, J.~Tan, V.~Kumar,
+  H.~Zhu, A.~Gupta, P.~Abbeel, et~al.
+\newblock Soft actor-critic algorithms and applications.
+\newblock {\em arXiv preprint arXiv:1812.05905}, 2018.
+
 \bibitem{hasselt2010double}
 H.~V. Hasselt.
 \newblock Double q-learning.
@@ -111,6 +123,12 @@ B.~Le{\'o}n, S.~Ulbrich, R.~Diankov, G.~Puche, M.~Przybylski, A.~Morales,
 V.~Lepetit, F.~Moreno-Noguer, and P.~Fua.
 \newblock Epnp: An accurate o (n) solution to the pnp problem.
 \newblock {\em International journal of computer vision}, 81(2):155, 2009.
+
+\bibitem{levine2016end}
+S.~Levine, C.~Finn, T.~Darrell, and P.~Abbeel.
+\newblock End-to-end training of deep visuomotor policies.
+\newblock {\em The Journal of Machine Learning Research}, 17(1):1334--1373,
+  2016.
 
 \bibitem{levine2018learning}
 S.~Levine, P.~Pastor, A.~Krizhevsky, J.~Ibarz, and D.~Quillen.
@@ -191,6 +209,11 @@ K.~B. Shimoga.
 \newblock {\em The International Journal of Robotics Research}, 15(3):230--266,
   1996.
 
+\bibitem{tang2019discretizing}
+Y.~Tang and S.~Agrawal.
+\newblock Discretizing continuous action space for on-policy optimization.
+\newblock {\em arXiv preprint arXiv:1901.10500}, 2019.
+
 \bibitem{todorov2012mujoco}
 E.~Todorov, T.~Erez, and Y.~Tassa.
 \newblock Mujoco: A physics engine for model-based control.
@@ -203,11 +226,23 @@ J.~Tremblay, T.~To, B.~Sundaralingam, Y.~Xiang, D.~Fox, and S.~Birchfield.
   household objects.
 \newblock {\em arXiv preprint arXiv:1809.10790}, 2018.
 
+\bibitem{von2007tutorial}
+U.~Von~Luxburg.
+\newblock A tutorial on spectral clustering.
+\newblock {\em Statistics and computing}, 17(4):395--416, 2007.
+
 \bibitem{zeng2019tossingbot}
 A.~Zeng, S.~Song, J.~Lee, A.~Rodriguez, and T.~Funkhouser.
 \newblock Tossingbot: Learning to throw arbitrary objects with residual
   physics.
 \newblock 2019.
+
+\bibitem{zeng2018learning}
+A.~Zeng, S.~Song, S.~Welker, J.~Lee, A.~Rodriguez, and T.~Funkhouser.
+\newblock Learning synergies between pushing and grasping with self-supervised
+  deep reinforcement learning.
+\newblock In {\em 2018 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems (IROS)}, pages 4238--4245. IEEE, 2018.
 
 \bibitem{zeng2018robotic}
 A.~Zeng, S.~Song, K.-T. Yu, E.~Donlon, F.~R. Hogan, M.~Bauza, D.~Ma, O.~Taylor,

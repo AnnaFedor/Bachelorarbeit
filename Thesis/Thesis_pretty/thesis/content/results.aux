@@ -1,15 +1,31 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{lof}{\contentsline {figure}{\numberline {0.8}{\ignorespaces DDPG 25k steps\relax }}{14}{figure.caption.17}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {0.9}{\ignorespaces DDPG critic target loss 25k steps\relax }}{15}{figure.caption.18}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {0.10}{\ignorespaces DDPG 50k steps\relax }}{15}{figure.caption.19}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {0.11}{\ignorespaces DDPG critic target loss 50k steps\relax }}{15}{figure.caption.20}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {0.12}{\ignorespaces DDPG 200k steps\relax }}{16}{figure.caption.21}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {0.13}{\ignorespaces DDPG critic target loss 200k steps\relax }}{16}{figure.caption.22}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {0.14}{\ignorespaces SAC episode reward after 50k steps goes to 1\relax }}{16}{figure.caption.23}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {0.15}{\ignorespaces SAC 50k steps\relax }}{17}{figure.caption.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.0.2}Experiments with the Soft-Actor-Critic Algorithm}{24}{subsection.5.0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline 1 Constant Positions Of The Object}{24}{section*.16}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces An example of unstable behavior of the algorithm: after 14k training steps the agent learned correctly where the object is located. Then the performance dropped to 0 and did not recover after that.\relax }}{24}{figure.caption.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline 20 Constant Positions Of The Object}{24}{section*.18}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces After about 45k training steps the success rate was almost always 1. The reason it dropped in some episodes might be due to inaccuracy in actions or some object positions occurred for the first time - the agent never saw them before which lead to bad performance, they were learned after that\relax }}{25}{figure.caption.19}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Statistics of the training: object's position is one of 20 possible ones, learn to grasp the object in 150k steps. At the end of the training the entropy is becoming constant which means that the algorithm is sure which action to take. The entropy coefficient is going down as well because the agent does not need to do much exploration anymore. Policy loss is going to zero, as well as the losses from both Q-networks and the target value network, which means the weights of the network are adjusted in an optimal way to achieve success. \relax }}{25}{figure.caption.20}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces The first image shows the statistics of the length of first 10k episodes of the training, the second one - of the last 10k. It is noticeable, that in the second case tha majority of episodes were short because the agent has already learned most of positions of the objects. In case of inaccuracy of actions or incorrect assumptions about the location of the object the episode lasted longer - up to 50 steps\relax }}{26}{figure.caption.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline 50 Constant Positions Of The Object}{26}{section*.22}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces The same experiment that differed only in number of training steps. The first image shows that in the first experiment the agent learned positions successfully after 80k steps, in the second experiment the agent did not manage to succeed even after 250k steps of training. The evaluation proved it: the first agent always graspes the object, the second one only in 90\% of cases with a high uncertainty of 30\%.\relax }}{26}{figure.caption.23}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Entropy loss of the successful agent became constant after about 80k steps - when the agent learned the task. In the second experiment the agent was not sure which action to take.\relax }}{27}{figure.caption.24}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Value loss statistics of two experiment.\relax }}{27}{figure.caption.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Random Position Of The Object}{27}{section*.26}\protected@file@percent }
+\citation{haarnoja2018soft}
+\citation{zeng2018learning}
+\citation{zeng2019tossingbot}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces 400k step training of SAC on random position of the object\relax }}{28}{figure.caption.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Reasons for Unstable Training with the Soft-Actor-Critic Algorithm}{28}{section*.28}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.0.3}Experiments with the Proximal Policy Optimization Algorithm}{28}{subsection.5.0.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Continuous action space}{28}{section*.29}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces PPO performed extremely bad on the task without being able to learn the simplest set-up where the position of the object is constant during the whole training. In the first graphics there are some cases of reward 1 - there are so rare that they are most likely accidental.\relax }}{28}{figure.caption.30}\protected@file@percent }
+\citation{tang2019discretizing}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Discrete action space}{29}{section*.31}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces 300k step training of PPO on random position of the object\relax }}{29}{figure.caption.32}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces 300k step training of PPO on random position of the object\relax }}{29}{figure.caption.33}\protected@file@percent }
 \@setckpt{content/results}{
-\setcounter{page}{18}
+\setcounter{page}{30}
 \setcounter{equation}{0}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
@@ -18,13 +34,13 @@
 \setcounter{footnote}{0}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
-\setcounter{chapter}{0}
-\setcounter{section}{2}
-\setcounter{subsection}{1}
+\setcounter{chapter}{5}
+\setcounter{section}{0}
+\setcounter{subsection}{3}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{15}
+\setcounter{figure}{12}
 \setcounter{table}{0}
 \setcounter{lofdepth}{1}
 \setcounter{lotdepth}{1}
@@ -39,5 +55,5 @@
 \setcounter{Item}{0}
 \setcounter{Hfootnote}{0}
 \setcounter{bookmark@seq@number}{0}
-\setcounter{section@level}{2}
+\setcounter{section@level}{3}
 }

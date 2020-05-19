@@ -9,20 +9,24 @@ A level-1 auxiliary file: content/content.aux
 A level-1 auxiliary file: content/results.aux
 Database file #1: content/bibliography.bib
 Warning--entry type for "mujoco-documentation" isn't style-file defined
---line 71 of file content/bibliography.bib
+--line 124 of file content/bibliography.bib
 Warning--entry type for "Cornellgraspingdataset" isn't style-file defined
---line 76 of file content/bibliography.bib
-Repeated entry---line 182 of file content/bibliography.bib
+--line 129 of file content/bibliography.bib
+Repeated entry---line 235 of file content/bibliography.bib
  : @inproceedings{leon2010opengrasp
  :                                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 261 of file content/bibliography.bib
+Repeated entry---line 314 of file content/bibliography.bib
  : @article{kasper2012kit
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 271 of file content/bibliography.bib
+Repeated entry---line 324 of file content/bibliography.bib
  : @article{kaelbling1996reinforcement
  :                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 355 of file content/bibliography.bib
+ : @article{haarnoja2018soft
+ :                          ,
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "haarnoja2018soft)"
 Warning--I didn't find a database entry for "stable_baselines"
@@ -30,45 +34,45 @@ Warning--to sort, need author or key in Cornellgraspingdataset
 Warning--to sort, need author or key in mujoco-documentation
 Warning--empty journal in miller2004graspit
 Warning--empty journal in zeng2019tossingbot
-You've used 36 entries,
+You've used 42 entries,
             2118 wiz_defined-function locations,
-            693 strings with 11391 characters,
-and the built_in function-call counts, 15606 in all, are:
-= -- 1522
-> -- 899
-< -- 15
-+ -- 360
-- -- 320
-* -- 1129
-:= -- 2475
-add.period$ -- 115
-call.type$ -- 36
-change.case$ -- 261
+            722 strings with 12625 characters,
+and the built_in function-call counts, 18004 in all, are:
+= -- 1749
+> -- 1051
+< -- 16
++ -- 421
+- -- 374
+* -- 1310
+:= -- 2879
+add.period$ -- 134
+call.type$ -- 42
+change.case$ -- 305
 chr.to.int$ -- 0
-cite$ -- 40
-duplicate$ -- 559
-empty$ -- 1098
-format.name$ -- 320
-if$ -- 3311
+cite$ -- 46
+duplicate$ -- 640
+empty$ -- 1260
+format.name$ -- 374
+if$ -- 3800
 int.to.chr$ -- 0
-int.to.str$ -- 36
-missing$ -- 32
-newline$ -- 178
-num.names$ -- 68
-pop$ -- 316
+int.to.str$ -- 42
+missing$ -- 38
+newline$ -- 208
+num.names$ -- 80
+pop$ -- 363
 preamble$ -- 1
-purify$ -- 228
+purify$ -- 266
 quote$ -- 0
-skip$ -- 459
+skip$ -- 517
 stack$ -- 0
-substring$ -- 922
-swap$ -- 195
-text.length$ -- 15
+substring$ -- 1049
+swap$ -- 214
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 142
+type$ -- 166
 warning$ -- 4
-while$ -- 129
-width$ -- 38
-write$ -- 383
-(There were 3 error messages)
+while$ -- 148
+width$ -- 44
+write$ -- 447
+(There were 4 error messages)
