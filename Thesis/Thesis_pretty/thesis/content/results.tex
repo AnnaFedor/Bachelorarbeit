@@ -12,7 +12,8 @@ Several experiments using Soft-Actor-Critic(SAC) were conducted. The results wer
 The implementation of SAC in stable\_baselines only works with continuous action space, so the action space for the robot in these experiments was a continuous, represented through gym Space Box:  
 $self.action\_space = spaces.Box(np.array([1.1, 0.55]), np.array([1.45, 0.95]), dtype='float32')$. 
 
-\subsubsection{Hyperparameters}
+
+
 \subsubsection{1 Constant Positions Of The Object}
 
 Among successful experiment runs, where the position of the object was learned even under 10k training steps, there were some that that were not stable. As an example a training that lasted 30k steps. After 14k steps the agent was performing with 100\% sucessrate. However shortly after the performance dropped and never recovered. 
@@ -168,7 +169,8 @@ Soft-Actor-Critic is a state-of-the-art reinforcement learning algorithm, it sho
 
 
 \subsection{Experiments with the Proximal Policy Optimization Algorithm}
-\subsubsection{Hyperparameters}
+
+
 \subsubsection{Continuous action space}
 The algorithm performed very poorly in the continuous action space ($self.action\_ space = spaces.Box(np.array([1.1, 0.55]), np.array([1.45, 0.95]), dtype='float32')$. ). It failed to learn even the simplest task where the object's position does not change. 
 \begin{figure}[H]
