@@ -7,7 +7,7 @@ A level-1 auxiliary file: preface/titlepage.aux
 A level-1 auxiliary file: preface/affirmation.aux
 A level-1 auxiliary file: content/content.aux
 A level-1 auxiliary file: content/results.aux
-Illegal, another \bibstyle command---line 71 of file thesis.aux
+Illegal, another \bibstyle command---line 69 of file thesis.aux
  : \bibstyle
  :          {ieeetr}
 I'm skipping whatever remains of this command
@@ -27,50 +27,51 @@ Repeated entry---line 412 of file content/bibliography.bib
  :                       ,
 I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in Cornellgraspingdataset
+Warning--to sort, need author or key in spinningup
 Warning--to sort, need author or key in opengl
 Warning--to sort, need author or key in mujoco-documentation
 Warning--to sort, need author or key in openai
 Warning--empty journal in miller2004graspit
 Warning--empty journal in zeng2019tossingbot
-You've used 53 entries,
+You've used 57 entries,
             2118 wiz_defined-function locations,
-            765 strings with 14306 characters,
-and the built_in function-call counts, 21828 in all, are:
-= -- 2111
-> -- 1259
+            782 strings with 15165 characters,
+and the built_in function-call counts, 23252 in all, are:
+= -- 2235
+> -- 1374
 < -- 19
-+ -- 504
-- -- 446
-* -- 1559
-:= -- 3476
-add.period$ -- 163
-call.type$ -- 53
-change.case$ -- 373
++ -- 550
+- -- 488
+* -- 1676
+:= -- 3725
+add.period$ -- 173
+call.type$ -- 57
+change.case$ -- 404
 chr.to.int$ -- 0
-cite$ -- 59
-duplicate$ -- 782
-empty$ -- 1557
-format.name$ -- 446
-if$ -- 4620
+cite$ -- 64
+duplicate$ -- 820
+empty$ -- 1641
+format.name$ -- 488
+if$ -- 4897
 int.to.chr$ -- 0
-int.to.str$ -- 53
-missing$ -- 45
-newline$ -- 259
-num.names$ -- 98
-pop$ -- 460
+int.to.str$ -- 57
+missing$ -- 48
+newline$ -- 277
+num.names$ -- 104
+pop$ -- 496
 preamble$ -- 1
-purify$ -- 325
+purify$ -- 353
 quote$ -- 0
-skip$ -- 642
+skip$ -- 673
 stack$ -- 0
-substring$ -- 1241
-swap$ -- 259
+substring$ -- 1286
+swap$ -- 263
 text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 210
-warning$ -- 6
-while$ -- 177
-width$ -- 55
-write$ -- 551
+type$ -- 226
+warning$ -- 7
+while$ -- 185
+width$ -- 59
+write$ -- 587
 (There were 3 error messages)

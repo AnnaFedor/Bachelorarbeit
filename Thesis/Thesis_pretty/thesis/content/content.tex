@@ -153,63 +153,74 @@ This pixel-wise parameterization of state and action provides several advantages
 
 
 
-\section*{Reinforcement learning}
-TODO \\
-- Introduction history applications \\
-- Value vs policy based \\
+\section{Reinforcement learning}
+Reinforcement learning is one of the types of Machine Learning. Combined with deep learning, it is a powerful technique for solving complex problems. Deep reinforcement learning has been used in different areas, such as games  \cite{vinyals2017starcraft}, \cite{mnih2013playing} and robotics \cite{kormushev2013reinforcement}, \cite{zeng2018learning}.\\
 
-Reinforcement learning is one of the types of Machine Learning. The core idea of reinforcement learning is having an agent that can perform actions in a specified environment. The agent gets observations from  the environment as an input, the output is an action. At all times the agent is in one of the predefined states, the actions that are possible in the current state are a subset of all actions set. For every performed action the agent receives a feedback in form of a reward from the environment. According to the reward the agent can decide whether the chosen action was the right decision. The core idea of reinforcement learning is modeled as Markov decision process (MDP), which consists of 4-tuple (S, A, R, T) \cite{kaelbling1996reinforcement}:
+The core idea of reinforcement learning is having an agent that can perform actions in a specified environment. The agent gets observations from  the environment as an input, the output is an action. At all times the agent is in one of the predefined states, the actions that are possible in the current state are a subset of all actions set. For every performed action the agent receives a feedback in form of a reward from the environment. According to the reward the agent can decide whether the chosen action was the right decision. The core idea of reinforcement learning is modeled as Markov decision process (MDP), which consists of 4-tuple (S, A, R, P) \cite{kaelbling1996reinforcement}:
 \begin{itemize}
 	\item set of states S
 	\item set of actions A
-	\item a reward function r (R: SxAxS -> RR)
-	\item state transition function T: S x A ->P(S), where P(S) is a probability distribution over the set S (i.e. it maps states to probabilities)
+	\item a reward function $r_t = R(s_t, a_t, s_{t+1}), R: S \times A \times S \rightarrow \mathbb{R}$
+	\item state transition function $P: S \times A ->P(S)$, where P(S) is a probability distribution over the set S (i.e. it maps states to probabilities)
 \end{itemize}
-in some notation the  the starting state distribution r0  is defined as the fifth element of the MDP.
-The name of the process comes from the concept of Markov chains: having a sequence of events the probability of each event depends only on the state that was achieved in the previous event, ignoring all events before. Markov state: $P(s_{t+1}|s_t) = P(s_{t+1}|s_1, ..., s_t)$(TO DO: site).\\
-The policy Pi determines which action must be taken in a each state. The action might be deterministic: (Source: spinning up)\\
-$a_t = \mu(s_t)$\\
-or stochastic: \\ 
-$a_t \sim \pi(\cdot|s_t)$\\
+In some notations the starting state distribution $\rho_0$  is defined as the fifth element of the MDP.
+The name of the process comes from the concept of Markov chains: having a sequence of events the probability of each event depends only on the state that was achieved in the previous event, ignoring all events before. Markov state: $P(s_{t+1}|s_t) = P(s_{t+1}|s_1, ..., s_t)$.\\
+The policy $\pi$ determines which action must be taken in each state \cite{spinningup}. The action might be deterministic: 
+\begin{equation} 
+a_t = \mu(s_t)
+\end{equation}
+or stochastic: 
+\begin{equation} 
+a_t \sim \pi(\cdot|s_t)
+\end{equation}
 Same for the state transition function: deterministic $s_{t+1} = f(s_t, a_t)$ or stochastic $s_{t+1} \sim P(\cdot | s_t, a_t)$. \\
-Often there are possible ways for the agent to accomplish a task. For example, there might be a short and a long path to a destination point, both of them conform the requirements. However, the short path is better because it takes less time and less actions, so the agent should take this path. This can be expressed as following: goal of the optimal policy is to maximize the sum of rewards during action sequence that leads to completing the task. There are multiple ways to define the sum of the rewards: 
+Often there are multiple possible ways for the agent to accomplish a task. For example, there might be a short and a long path to a destination point, both of them conforming the requirements. However, the short path is better because it takes less time and less actions, so the agent should choose this path. This can be expressed as following: goal of the optimal policy is to maximize the sum of rewards during action sequence that leads to completing the task. There are multiple ways to define the sum of the rewards: 
 \begin{itemize}
 	\item  finite-horizon undiscounted return: R(t) = $\sum_{t=0}^{T} r(t) $, a straightforward sum of all rewards for all taken actions.
-	\item  infinite-horizon discounted return: R(t) = $\sum_{t=0}^{\infty} y^{t}r(t) $, where y is a discount factor ((0,1)). The discount factor makes sure the actions that are taken soon are more relevant that the ones that are taken many steps later. From mathematical point of view, the discount factor is one of the conditions that the infinite sum converges to a finite value.
+	\item  infinite-horizon discounted return: R(t) = $\sum_{t=0}^{\infty} y^{t}r(t) $, where y is a discount factor $\in$ (0,1). The discount factor makes sure the actions that are taken soon are more relevant that the ones that are taken many steps later. From mathematical point of view, the discount factor is one of the conditions that the infinite sum converges to a finite value.
 \end{itemize}
-Value function of the state s is an expected return that the agent will get if it starts in state s and act according to the policy. Action-Value Function adds dependency to an action a:  expected return after starting in state s and taking action a, continuing by acting forever according to the policy $\pi$: \\
-$Q^{\pi}(s,a) =\underset{\tau \sim \pi} {E}[{R(\tau)\left| s_0 = s, a_0 = a\right.}]$ \\
-the Optimal Action-Value Function, Q*(s,a), which gives the expected return if you start in state s, take an arbitrary action a, and then forever after act according to the optimal policy in the environment: \\
-Finally, the Optimal Action-Value Function, Q*(s,a):\\
-$Q^*(s,a) = \underset {\pi} {\max}  \underset {\tau \sim \pi}{E}[{R(\tau)\left| s_0 = s, a_0 = a\right]}$\\
-, where policy $\pi$ is optimal. \\
-There is a connection between value and action-value functions, that is helpful for some calculations: \\
-$V^{\pi}(s) = \underset {a\sim \pi} {E} [{Q^{\pi}(s,a)}]$ - the value function of the state is an expected return of the Q-function in this state if the action a taken comes from the policy $\pi$. \\
+Value function of the state $s$ is an expected return that the agent will get if it starts in state $s$ and acts according to the policy. Action-value function adds dependency to an action $a$:  expected return after starting in state $s$ and taking action $a$, continuing by acting forever according to the policy $\pi$: 
+\begin{equation} 
+Q^{\pi}(s,a) =\underset{\tau \sim \pi} {E}[{R(\tau)\left| s_0 = s, a_0 = a\right.}]
+\end{equation}
+The optimal action-value function Q*(s,a) gives the expected return if the agent starts in state $s$, takes an arbitrary action $a$, and then forever after acts according to the optimal policy in the environment: \\
+% Finally, the Optimal Action-Value Function, Q*(s,a):
+\begin{equation} 
+Q^*(s,a) = \underset {\pi} {\max}  \underset {\tau \sim \pi}{E}[{R(\tau)\left| s_0 = s, a_0 = a\right]}
+\end{equation}
+where policy $\pi$ is optimal. \\
+There is a connection between value and action-value functions, that is helpful for some calculations: 
+\begin{equation} 
+V^{\pi}(s) = \underset {a\sim \pi} {E} [{Q^{\pi}(s,a)}]
+\end{equation}
+ - the value function of the state is an expected return of the Q-function in this state if the action a taken comes from the policy $\pi$. \\
+and
+\begin{equation} 
+V^*(s) =  \underset {a} \max {Q^* (s,a)}
+\end{equation}
 
-and\\
 
-$V^*(s) =  \underset {a} \max {Q^* (s,a)}$. \\
-TODO: Bellman equations
+\section{Reinforcement Learning Algorithms}
 
-\section{Algorithms in reinforcement learning}
-There is a wide variety of reinforcement learning algorithms:
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1.0\textwidth]{graphics/taxonomy_of_RL_algorithms}
-	\caption{Reinforcement learning algorithms taxonomy Quelle: Spinning up
-		Ich werde ein ähnliches Bild machen, aber nur mit Algorithmen, die ich benutzt habe.}\label{fig:RL}
-\end{figure}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=1.0\textwidth]{graphics/taxonomy_of_RL_algorithms}
+%	\caption{Reinforcement learning algorithms taxonomy Quelle: Spinning up
+%		Ich werde ein ähnliches Bild machen, aber nur mit Algorithmen, die ich benutzt %habe.}\label{fig:RL}
+%\end{figure}
 
-Reinforcement learning algorithms can be categorized in model-based and model-free. As the name suggests, model-based algorithms have a model of the environment and use it to find an optimal policy. There are some advantages and disadvantages of both approaches. Deisenroth et al. \cite{deisenroth2013survey} talk about "robot control as a reinforcement learning problem": forming the trajectory of the robot, which is sequence of states and motor commands that lead to them. Model-free policy search methods usually use real robots to sample such trajectories, which in most cases requires human supervision and causes fast wear-and-tear of robots, especially the ones that are not industrial. What is more, it is time consuming. Model-based methods aim to develop efficiency by sampling some observation trajectories and building a model out of them. The model should decrease the number of real-robot manipulations and better adapt to new unseen environments or parameters. However, in practice, such models can be used not exact enough, which leads to learning a poor policy. \\
+There is a wide variety of reinforcement learning algorithms. Reinforcement learning algorithms can be categorized in model-based and model-free. As the name suggests, model-based algorithms have a model of the environment and use it to find an optimal policy. 
+% There are some advantages and disadvantages of both approaches. Deisenroth et al. \cite{deisenroth2013survey} talk about "robot control as a reinforcement learning problem": forming the trajectory of the robot, which is sequence of states and motor commands that lead to them. Model-free policy search methods usually use real robots to sample such trajectories, which in most cases requires human supervision and causes fast wear-and-tear of robots, especially the ones that are not industrial. What is more, it is time consuming. Model-based methods aim to develop efficiency by sampling some observation trajectories and building a model out of them. The model should decrease the number of real-robot manipulations and better adapt to new unseen environments or parameters. However, in practice, such models can be used not exact enough, which leads to learning a poor policy. \\
 Bansal et al. \cite{bansal2017mbmf} state that model-free reinforcement learning approaches are effective at finding complex policies, however they sometimes take very long time to converge. Model-based algorithms might be better at generalizing and reduce the number of steps to find an optimal policy, however without exact model the learned policy might be far from an optimal one. Also the model must be updated together with the policy.\\
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1.0\textwidth]{graphics/model-basedRL.png}
-	\caption{Model-based RL Quelle: s}\label{fig:RL}
-\end{figure}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=1.0\textwidth]{graphics/model-basedRL.png}
+%	\caption{Model-based RL Quelle: s}\label{fig:RL}
+% \end{figure}
 
-Model-free (?) reinforcement learning algorithms can also be divided in being on- and off-policy. Policy is used in reinforcement learning to decide which action to perform in the current state. While learning and building the policy up, the algorithm does not necessarily need to always chose the action that the latest version of the policy suggests. The chosen action might be for example the one that will maximize the value function for the state (????) as in Q-learning. In that case the algorithm is off-policy. In the opposite case, when algorithm strictly follows the policy while learning, it is an on-policy one.
+Model-free reinforcement learning algorithms can also be divided in being on- and off-policy. Policy is used in reinforcement learning to decide which action to perform in the current state. While learning and building the policy up, the algorithm does not necessarily need to always chose the action that the latest version of the policy suggests. The chosen action might be for example the one that will maximize the value function for the state as in Q-learning. In that case the algorithm is off-policy. In the opposite case, when algorithm strictly follows the policy while learning, it is an on-policy one.
 
+\begin{comment}
 \subsection{Q-Learning}
 Q-learning is a model-free algorithm that is based on approximating an objective function in order to find the optimal policy. \\
 $Q^*(s,a) =R(s,a) + \gamma \underset {s' \subset S} { \sum} P(s_{t+1}| a_t, s_t) * \underset {a'} {\max Q*(s', a')}$\\
@@ -235,8 +246,9 @@ $\theta = \theta + \gamma \nabla_\theta E_{s' \sim  P(s'|s,a)}[(T - Q_\theta(s,a
 $T - Q_\theta(s,a))^2$ is the temporal difference in form of the mean square error. The gradient of the error is used for calculating new weights for the network. \\
 While the error is calculated only for one state, the gradient of the error impacts all weights in the network - all states. This makes the learning become unstable. In order to cope with this problem another network with the same architecture - target network - is used to compute the target value T. Target network is initialized with the same weights as the main function approximator network, and it is updated every defined number of steps. \\
 Replay buffer is a technique that is also used in DQN. The agent's transitions $(s_t, a_t, r_t, s_{t+1})$ are saved to a replay memory D. After collecting some number of transitions, mini-batches containing random transitions from the replay buffer are sampled and then used for training the network with stochastic gradient descent(SGD). Due to the randomness of trajectories in mini-batches the learned knowledge does not tend to resemble only one type of trajectories. It is also more data-efficient as the experience data can be used multiple times for learning. \\
-Replay buffer and target network make Q-learning stable and efficient. Q-learning is one of the most popular reinforcement learning methods as it is simple to implement. However, it has its disadvantages. \cite{hasselt2010double}  stated that because of the fact that it uses max operator to calculate the Q-value for the state, there are often significant overestimations of these values. Double Q-Learning is an off-policy value based reinforcement learning algorithm that uses two different Q-functions: one for selecting the next action and the other for value evaluation. 
-
+Replay buffer and target network make Q-learning stable and efficient. Q-learning is one of the most popular reinforcement learning methods as it is simple to implement. However, it has its disadvantages. \cite{hasselt2010double}  stated that because of the fact that it uses max operator to calculate the Q-value for the state, there are often significant overestimations of these values. 
+% Double Q-Learning is an off-policy value based reinforcement learning algorithm that uses two different Q-functions: one for selecting the next action and the other for value evaluation. 
+\end{comment}
 
 
 %\begin{align*}
@@ -250,7 +262,7 @@ Replay buffer and target network make Q-learning stable and efficient. Q-learnin
 %uses a deterministic target policy
 
 
-DDPG has the Actor\&Critic architecture for policy network and Q-network.
+\begin{comment}
 \subsection{Actor Critic}
 The "Critic" estimates the value function (Q function = action-value function or V function = state-value)
 "Actor" "updates the policy distribution in the direction suggested by the Critic (such as with policy gradients)."\\
@@ -260,50 +272,50 @@ The idea of the actor-critic method is to use a Q-function instead of the (avera
 $\nabla_{\theta}J(\theta) = E_{\tau \sim \pi_{\theta}}[\sum_{t=0}^T\nabla_\theta log\pi_\theta(a_t|s_t)Q_w(s,a)]$ \\
 where w are the weights of the neural network that calculates the Q-function. That is a separate network that is called "the critic". The network that calculates the goal function is the "actor". The critic estimates the value-function, the actor uses it to update its policy.
 TOTO actor-crtitic scheme from Sutton Barto find it it's good!!
+\end{comment}
 
-TODO Policy, value iteration????
 
 \subsection{Soft Actor-Critic}
-Soft Actor-Critic(SAC) is an off-policy state-of-the art reinforcement learning algorithm, it outperformed other previous methods ( \cite{haarnoja2018soft}. \\
-As the name suggests, it is based on the actor-critic approach. The key idea of SAC is the actor trying to maximize not only the expected return but also the entropy. The algorithm is stable and also sample-efficient, it is capable of solving high-dimensional complex tasks. 
-
-- optimizes a stochastic policy \\
-- central feature of SAC is entropy regularization \\
--  entropy, a measure of randomness in the policy \\
-- increasing entropy results in more exploration, which can accelerate learning later on. It can also prevent the policy from prematurely converging to a bad local optimum. \\
-
-Usually the main goal of reinforcement learning approaches is to maximize the expected sum of rewards: \\
-$\sum_t E_({s_t, a_t)\sim\ \rho_\pi} [r(s_t, a_t)]$ \\
-
-In SAC the goal of the algorithm is to find a policy that will maximize the objection: \\
-$J(\pi) = \sum_{t=0}^T E_{(s_t, a_t)\sim\ \rho_\pi} [r(s_t, a_t)+ \alpha H(\pi(\cdot |s_t))] $ \\
-
-$\alpha$ is the temperature parameter that controls the influence of the entropy term on the reward function which means it "controls the stochasticity of the optimal policy" ??????\\
+Soft Actor-Critic(SAC) is a off-policy state-of-the art reinforcement learning algorithm  \cite{haarnoja2018soft}. As the name suggests, it is based on the actor-critic approach. The key idea of SAC is the actor trying to maximize not only the expected return but also the entropy. The algorithm is stable and also sample-efficient, it is capable of solving high-dimensional complex tasks. \\
 Entropy is a measure of randomness in the policy. The term 'entropy' comes from the area of information theory and means the amount of information or 'surprise' of the possible outcome of the variable. When the outcome of some source of data is rather unexpected because it has less probability, it's entropy is high. \\
-Wikipedia:\\
-Given a random variable X, with possible outcomes $x_i$, each with probability $P_X(x_i)$, the entropy H(X) of X: \\
+Entropy H of x from its distribution P: 
+\begin{equation} 
+H(P) = \underset {x \sim P} E [-\log P(x)]
+\end{equation}
+Increasing entropy results in more exploration, which can accelerate learning later on. It can also prevent the policy from prematurely converging to a bad local optimum. \\
+At each timestep the agent gets additional to the immediate reward $R(s_t, a_t, s_{t+1})$ a bonus reward proportional to entropy:  $\alpha H(\pi(\cdot |s_t)$.
 
-$H(x) = - \sum_i P_X(x_i) log_b P_X(x_i) = \sum_i P_X(x_i) I_X (x_i) = E[I_X]$ \\
+% Usually the main goal of reinforcement learning approaches is to maximize the expected % sum of rewards: \\
+% $\sum_t E_({s_t, a_t)\sim\ \rho_\pi} [r(s_t, a_t)]$ \\
 
-The higher the entropy value is, the more exploration the algorithm will perform. It can accelerate learning and avoid the premature(????) converging of the policy in a bad local minimum. 
+In SAC the goal of the algorithm is to find a policy that will maximize the objection: 
+\begin{equation} 
+J(\pi) = \underset {\tau \sim \pi } E [R(\tau)] = \underset {\tau \sim \pi } E [\sum_{t=0}^\infty 
+\gamma^t( R(s_t, a_t, s_{t+1})+ \alpha H(\pi(\cdot |s_t))) ]
+\end{equation}
+The target policy is: 
+\begin{equation} 
+\pi^* = arg \underset \pi max J(\pi) = arg \underset \pi max \underset {\tau \sim \pi } E [\sum_{t=0}^\infty 
+\gamma^t( R(s_t, a_t, s_{t+1})+ \alpha H(\pi(\cdot |s_t))) ]
+\end{equation}
 
-Entropy regularization. \\
-Entropy of x from its distribution P: \\
-$H(P) = \underset {x \sim P}{-\log P(x)}$ \\
+$\alpha$ is the temperature parameter that controls the influence of the entropy term on the reward function.
 
-Quote openai: "In entropy-regularized reinforcement learning, the agent gets a bonus reward at each time step proportional to the entropy of the policy at that timestep. This changes the RL problem"
+% Wikipedia:\\
+% Given a random variable X, with possible outcomes $x_i$, each with probability $P_X(x_i)$, % the entropy H(X) of X: \\
+% $H(x) = - \sum_i P_X(x_i) log_b P_X(x_i) = \sum_i P_X(x_i) I_X (x_i) = E[I_X]$ \\
 
-Three functions to be learned:\\
-Parameterized state value function $V_\psi(s_t)$, soft Q-function $Q_\theta(st, at)$, and a tractable policy $\pi_\phi(at|st)$. The parameters of these networks are $\psi$, $\theta$, and $\phi$. \\
+The implementation of SAC includes five neural networks which are aimed to enable learning of three functions:
+Parameterized state value function $V_\psi(s_t)$ , soft Q-function $Q_\theta(s_t, a_t)$, and a tractable policy $\pi_\phi(a_t|s_t)$. The parameters of these networks are $\psi$, $\theta$, and $\phi$. Additionally there is a target value network $V_{\bar\psi}$. The algorithm uses two Q-functions $\theta_1$ and $\theta_2$ which helps to avoid overestimations and speed up the training.\\
+First the agent collects some experience which is saved in the replay buffer D (distribution of previously sampled states and actions). After that all five networks are updated based on the information from the replay buffer.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\textwidth]{graphics/SAC}
-	\caption{Custom environment example for using stable baselines}
+	\caption{Description of the SAC algorithm from the original paper. First the agent collects some experience which is saved in the replay buffer D. After that all five networks are updated using information from the replay buffer.}
 \end{figure} 
 
-Quote paper: D is the distribution of previously sampled states and actions, or a replay buffer. \\
-
+\begin{comment}
 Value network: \\
 $V(s_t) = E_{a_t \sim \pi} [Q(s_t, a_t) - log \pi (a_t|s_t)] $ \\
 
@@ -337,23 +349,19 @@ Due to the reparameterizatin trick: \\
 $J_\pi(\phi) = E_{s_t \sim D, \epsilon_t \sim N} [log\pi_\phi (f_\phi (\epsilon_t; s_t) | s_t) - Q_\theta(s_t, f_\phi(\epsilon_t; s_t))]$ where $\epsilon_t$ is the input noise vector , sampled from some fixed distribution, such as a spherical Gaussian.
 
 polyak-averaging???
+\end{comment}
 
 \subsection{Proximal Policy Optimization Algorithm}
 Proximal Policy Optimization (PPO) \cite{schulman2017proximal} is the state-of-the-art on-policy algorithm. The main idea of the algorithm is following: after computing the update, the new policy should be not to far away from the old one. This idea is shared with another on-policy algorithm TRPO \cite{schulman2015trust}, however PPO algorithm is easier to implement and in has shown better performance on multiple reinforcement learning problems \cite{schulman2017proximal}. \\
-\begin{equation} 
-\bar{h}(\varphi,x) := \sum_{n\in\mathbb{N}} 2^{-n} \varphi(G_n)^{-1}\mathbf{1}\lbrace x\in G_n \rbrace,
-\end{equation}
-\begin{equation} 
-\int_{\mathbf{M}(G)}f(\varphi)\mathbb{P}(\mathrm{d}\varphi)=\int_{\mathbf{M}(G)}\int_G h(\theta_{-x}\varphi,x)f(\theta_{-x}\varphi)\mathrm{d}x\mathbb{P}^0(\mathrm{d}\mu)
-\end{equation}
-
+The policy update rule of the PPO algorithm:
 \begin{equation} 
 \theta_{k + 1}:=  arg \underset \theta max \underset {s, a \sim \pi_{\theta_k}} E \left[ L(s, a, \theta_k, \theta) \right ]
 \end{equation}
-
+where $\theta$ is the policy parameter, 
 \begin{equation} 
 L(s, a, \theta_k, \theta) = min (\frac {\pi _\theta(a|s)} {\pi _{\theta_k}(a|s)} A^{\pi_{\theta_k}} (s,a), g(\epsilon, A^{\pi_{\theta_k}} (s,a)))
 \end{equation}
+$\frac {\pi _\theta(a|s)} {\pi _{\theta_k}(a|s)}$ is the ratio of the probability under the new and old policies, $A^\pi$ - advantage function, $\epsilon$ is a hyperparameter which sets a limit how far can an new policy be far away from the old one. The advantage function $A^\pi(s, a)$ helps to determine how much better the action $a$ in state $s$ is in comparison to the random selected action according to $\pi(\cdot|s) : A^{\pi}(s,a) = Q^{\pi}(s,a) - V^{\pi}(s)$.
 \begin{equation} 
 g(\epsilon, A) = \begin{cases} 
 (1 + \epsilon)A & A \geq 0 \\
@@ -474,7 +482,7 @@ Example of the action: (x,y) = (2, 40) which corresponds to (1.1175, 0.9145).\\
 	\caption{Multidiscrete Action Space. The workspace is represented as 50*50 grid, the action (x, y) means going to the middle of the cell number (x, y) and completing the planar grasp.}
 \end{figure}
 
-\subsection{Multidiscrete Space with Rotation}
+\subsection{Multidiscrete Space with Rotation}\label{section:multidiscrete_with_rotation}
 As in the \hyperref[section:multidiscrete_no_rotation]{previous} method, the workspace is  represented as 50x50 grid, action (x, y) means going to the middle of the cell number (x, y). In this method one more variable is added to the action space - the target yaw gripper angle $\alpha$. $\alpha$ is an integer, $\alpha$ $\in$ [0, 6]. Before completing the top-down planar grasp, $\alpha$ is translated to degrees and the gripper is rotated in a degrees value that corresponds to the $\alpha$ angle. \\
 The angle range for the gripper is limited to [0$^\circ$, 90$^\circ$] with the 15$^\circ$ step, resulting in 7 possible rotations which are expressed by the $\alpha$ value.
 Example of the action: (x,y, $\alpha$) = (2, 40, 3) which corresponds to (1.1175, 0.9145, 45$^\circ$). 
@@ -550,31 +558,6 @@ The network consists of three constitutional layers, followed by a fully connect
 	\caption{The characteristics of the network. The network consists of three convolutional layers, followed by one fully connected layer. After each layer the ReLU function is applied.}
 \end{figure}
 
-\chapter{Evaluation}
-
-\subsection{Simulation Inaccuracies}
-\subsubsection{The Angle Of The Gripper}
-The action space consists of target (x,y) coordinates of the point that the gripper has to achieve before going down. The step() function computes the difference between target and current positions, the difference is then applied to the simulation using inverse kinematics. The inverse kinematics is calculated by solving the convex optimization problem. The optimization problem is defined combining description of bodies that are used in the simulation and physical constraints such as forces, friction, etc.\\
-One of the challenges that was faced during the set-up is that there can be many solutions to the problem of gripper achieving the target (x,y) position. In some cases the gripper developed an angle in different plains, successfully reaching target position but the angle made it impossible to compute a successful grasp. 
-\begin{figure*}[h!]
-	\centering
-	\begin{subfigure}[h]{0.3\textwidth}
-		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/simulation_problems/angle_1}
-		% \caption{Model-based RL Quelle: s}\label{fig:RL}
-	\end{subfigure}%
-	~	
-	\begin{subfigure}[h]{0.3\textwidth}
-		\centering
-		\includegraphics[width=1.0\textwidth]{graphics/simulation_problems/angle_2}
-		% \caption{Model-based RL Quelle: s}\label{fig:RL}
-	\end{subfigure}%
-\end{figure*}
-
-Setting the robot to the starting position for every step helped to correct that inaccuracy for the current task. However, this approach is time-consuming and might be not applicable for the similar problems in different set-ups. The possible better solution to this problem might be to set additional constraints for the position of joints of the robot that would effect the solution of the inverse kinematics problem. \\
-
-\subsubsection{Slipping Of The Object}
-The first version of grasping consisted of completely closing the gripper and going up with an object. However, the object did not stay in the gripper - it slipped down. This behavior was not expected as physical forces such as friction were set to the default values. The solution to the problem was to keep closing the gripper while going up - it helps to prevent the object from slipping. \\
 
 
 
