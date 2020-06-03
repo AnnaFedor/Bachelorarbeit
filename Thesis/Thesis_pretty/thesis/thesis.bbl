@@ -1,7 +1,7 @@
 \begin{thebibliography}{10}
 
 \bibitem{Cornellgraspingdataset}
-
+\url{http://pr.cs.cornell.edu/grasping/rect_data/data.php}.
 
 \bibitem{spinningup}
 \url{https://spinningup.openai.com/en/latest/}.
@@ -10,7 +10,7 @@
 \url{https://www.opengl.org/}.
 
 \bibitem{mujoco-documentation}
-
+\url{http://www.mujoco.org/book/index.html}.
 
 \bibitem{openai}
 \url{https://openai.com/}.
@@ -57,12 +57,6 @@ G.~Brockman, V.~Cheung, L.~Pettersson, J.~Schneider, J.~Schulman, J.~Tang, and
   W.~Zaremba.
 \newblock Openai gym, 2016.
 
-\bibitem{deisenroth2013survey}
-M.~P. Deisenroth, G.~Neumann, J.~Peters, et~al.
-\newblock A survey on policy search for robotics.
-\newblock {\em Foundations and Trends{\textregistered} in Robotics},
-  2(1--2):1--142, 2013.
-
 \bibitem{baselines}
 P.~Dhariwal, C.~Hesse, O.~Klimov, A.~Nichol, M.~Plappert, A.~Radford,
   J.~Schulman, S.~Sidor, Y.~Wu, and P.~Zhokhov.
@@ -100,12 +94,6 @@ T.~Haarnoja, A.~Zhou, P.~Abbeel, and S.~Levine.
 \newblock Soft actor-critic: Off-policy maximum entropy deep reinforcement
   learning with a stochastic actor.
 \newblock {\em arXiv preprint arXiv:1801.01290}, 2018.
-
-\bibitem{hasselt2010double}
-H.~V. Hasselt.
-\newblock Double q-learning.
-\newblock In {\em Advances in neural information processing systems}, pages
-  2613--2621, 2010.
 
 \bibitem{he2016deep}
 K.~He, X.~Zhang, S.~Ren, and J.~Sun.
@@ -202,6 +190,12 @@ L.~Manuelli, W.~Gao, P.~Florence, and R.~Tedrake.
 \newblock kpam: Keypoint affordances for category-level robotic manipulation.
 \newblock {\em arXiv preprint arXiv:1903.06684}, 2019.
 
+\bibitem{mao2016resource}
+H.~Mao, M.~Alizadeh, I.~Menache, and S.~Kandula.
+\newblock Resource management with deep reinforcement learning.
+\newblock In {\em Proceedings of the 15th ACM Workshop on Hot Topics in
+  Networks}, pages 50--56, 2016.
+
 \bibitem{miller2004graspit}
 A.~T. Miller and P.~K. Allen.
 \newblock Graspit! a versatile simulator for robotic grasping.
@@ -228,6 +222,11 @@ V.-D. Nguyen.
 OpenAI.
 \newblock Fetchpickandplace-v0.
 \newblock \url{https://gym.openai.com/envs/FetchPickAndPlace-v0/}, 2018.
+
+\bibitem{patel2015visual}
+V.~M. Patel, R.~Gopalan, R.~Li, and R.~Chellappa.
+\newblock Visual domain adaptation: A survey of recent advances.
+\newblock {\em IEEE signal processing magazine}, 32(3):53--69, 2015.
 
 \bibitem{pinto2016supersizing}
 L.~Pinto and A.~Gupta.
@@ -276,6 +275,12 @@ J.~Schulman, F.~Wolski, P.~Dhariwal, A.~Radford, and O.~Klimov.
 \newblock Proximal policy optimization algorithms.
 \newblock {\em arXiv preprint arXiv:1707.06347}, 2017.
 
+\bibitem{sengupta2019going}
+A.~Sengupta, Y.~Ye, R.~Wang, C.~Liu, and K.~Roy.
+\newblock Going deeper in spiking neural networks: Vgg and residual
+  architectures.
+\newblock {\em Frontiers in neuroscience}, 13, 2019.
+
 \bibitem{shimoga1996robot}
 K.~B. Shimoga.
 \newblock Robot grasp synthesis algorithms: A survey.
@@ -286,6 +291,13 @@ K.~B. Shimoga.
 Y.~Tang and S.~Agrawal.
 \newblock Discretizing continuous action space for on-policy optimization.
 \newblock {\em arXiv preprint arXiv:1901.10500}, 2019.
+
+\bibitem{tobin2017domain}
+J.~Tobin, R.~Fong, A.~Ray, J.~Schneider, W.~Zaremba, and P.~Abbeel.
+\newblock Domain randomization for transferring deep neural networks from
+  simulation to the real world.
+\newblock In {\em 2017 IEEE/RSJ international conference on intelligent robots
+  and systems (IROS)}, pages 23--30. IEEE, 2017.
 
 \bibitem{todorov2012mujoco}
 E.~Todorov, T.~Erez, and Y.~Tassa.

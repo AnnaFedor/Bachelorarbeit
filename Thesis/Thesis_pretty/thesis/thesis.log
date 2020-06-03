@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.30)  2 JUN 2020 11:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.30)  3 JUN 2020 22:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1006,6 +1006,9 @@ Writing index file thesis.idx
 
 LaTeX Warning: Label `exampletab' multiply defined.
 
+
+LaTeX Warning: Label `exampletab' multiply defined.
+
 ) (./content/results.aux
 
 LaTeX Warning: Label `exampletab' multiply defined.
@@ -1019,21 +1022,21 @@ LaTeX Warning: Label `exampletab' multiply defined.
 ))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 61.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
@@ -1115,7 +1118,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box47
-Package hyperref Info: Link coloring OFF on input line 62.
+Package hyperref Info: Link coloring OFF on input line 61.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1125,9 +1128,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count157
 )
-LaTeX Info: Redefining \ref on input line 62.
-LaTeX Info: Redefining \pageref on input line 62.
-LaTeX Info: Redefining \nameref on input line 62.
+LaTeX Info: Redefining \ref on input line 61.
+LaTeX Info: Redefining \pageref on input line 61.
+LaTeX Info: Redefining \nameref on input line 61.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write6
@@ -1139,7 +1142,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           You can avoid loading `bookmark' with KOMA-Script option
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message with `\usepackage{bookmark}'
-(scrbook)           before \begin{document} on input line 62.
+(scrbook)           before \begin{document} on input line 61.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/bookmark.sty
 Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
@@ -1218,28 +1221,23 @@ ics/kitlogo_en_rgb.pdf>])
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 8.
 
-Overfull \hbox (7.7093pt too wide) in paragraph at lines 8--12
-[]\T1/phv/b/n/17.28 Pixel-based ob-ject grasp-ing with Deep Re-in-force-ment
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 8--12
 
  []
 
-<graphics/not-the-final-title.png, id=45, 1027.84pt x 770.88pt>
-File: graphics/not-the-final-title.png Graphic file (type png)
-<use graphics/not-the-final-title.png>
-Package pdftex.def Info: graphics/not-the-final-title.png  used on input line 1
-3.
-(pdftex.def)             Requested size: 427.43153pt x 320.57971pt.
+<graphics/ppo_with_rotation.png, id=45, 394.47375pt x 409.53pt>
+File: graphics/ppo_with_rotation.png Graphic file (type png)
+<use graphics/ppo_with_rotation.png>
+Package pdftex.def Info: graphics/ppo_with_rotation.png  used on input line 13.
+
+(pdftex.def)             Requested size: 341.94652pt x 355.00095pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 21.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 21.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 21.
-<graphics/FZI-Logo.pdf, id=46, 248.93pt x 417.56pt>
+<graphics/FZI-Logo.pdf, id=47, 248.93pt x 417.56pt>
 File: graphics/FZI-Logo.pdf Graphic file (type pdf)
 <use graphics/FZI-Logo.pdf>
 Package pdftex.def Info: graphics/FZI-Logo.pdf  used on input line 24.
@@ -1249,11 +1247,11 @@ Overfull \hbox (3.66333pt too wide) in paragraph at lines 16--27
 $[]$ $[]$ 
  []
 
-[3 <./graphics/not-the-final-title.png (PNG copy)> <./graphics/FZI-Logo.pdf>]
-[4])
+[3 <./graphics/ppo_with_rotation.png> <./graphics/FZI-Logo.pdf>] [4])
 \openout2 = `preface/affirmation.aux'.
 
- (./preface/affirmation.tex
+
+(./preface/affirmation.tex
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 2.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1cmss.fd
@@ -1289,7 +1287,7 @@ Package scrpage2 Warning: you've used pagestyle ``headings''.
 (scrpage2)                You should not use this pagestyle with a
 (scrpage2)                scrpage2-pagestyle!
 (scrpage2)                You should use pagestyle ``useheadings'' instead
-(scrpage2)                 on input line 69.
+(scrpage2)                 on input line 68.
 
 [5
 
@@ -1309,7 +1307,7 @@ Package scrpage2 Warning: you've used pagestyle ``headings''.
 (scrpage2)                You should not use this pagestyle with a
 (scrpage2)                scrpage2-pagestyle!
 (scrpage2)                You should use pagestyle ``useheadings'' instead
-(scrpage2)                 on input line 36.
+(scrpage2)                 on input line 34.
 
 [7])
 \tf@toc=\write7
@@ -1349,64 +1347,70 @@ Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
+
+ []
+
+
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
 [2]
 chapter 2.
-<graphics/form_closure.png, id=181, 420.57124pt x 277.035pt>
+<graphics/form_closure.png, id=190, 307.1475pt x 225.84375pt>
 File: graphics/form_closure.png Graphic file (type png)
 <use graphics/form_closure.png>
-Package pdftex.def Info: graphics/form_closure.png  used on input line 76.
-(pdftex.def)             Requested size: 299.20076pt x 197.08934pt.
-<graphics/grasp_hypothesis.png, id=186, 665.48625pt x 686.565pt>
-File: graphics/grasp_hypothesis.png Graphic file (type png)
-<use graphics/grasp_hypothesis.png>
-Package pdftex.def Info: graphics/grasp_hypothesis.png  used on input line 83.
-(pdftex.def)             Requested size: 299.20076pt x 308.67902pt.
+Package pdftex.def Info: graphics/form_closure.png  used on input line 80.
+(pdftex.def)             Requested size: 299.20076pt x 220.01584pt.
 
-Overfull \vbox (2.9671pt too high) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 75--82
+
+ []
 
 
-[3
-
- <./graphics/form_closure.png>]
-Overfull \vbox (2.9671pt too high) has occurred while \output is active []
-
-
-[4 <./graphics/grasp_hypothesis.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 98--110
+[3
+
+]
+<graphics/grasp_hypothesis.png, id=206, 665.48625pt x 686.565pt>
+File: graphics/grasp_hypothesis.png Graphic file (type png)
+<use graphics/grasp_hypothesis.png>
+Package pdftex.def Info: graphics/grasp_hypothesis.png  used on input line 87.
+(pdftex.def)             Requested size: 299.20076pt x 308.67902pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--89
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (2.9671pt too high) has occurred while \output is active []
+
+
+[4 <./graphics/form_closure.png>]
+Overfull \vbox (2.9671pt too high) has occurred while \output is active []
+
+
+[5 <./graphics/grasp_hypothesis.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 127--129
-
- []
-
-
-Overfull \hbox (2.50517pt too wide) in paragraph at lines 130--132
-[]\T1/ptm/m/n/10.95 Reidual Neu-ral Net-work [[]] densely con-nected neu-ral ne
-t-works [[]] [[]] uses ResNet-7(TODO
- []
-
-
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 144--147
+Underfull \hbox (badness 10000) in paragraph at lines 132--136
 
  []
 
@@ -1415,6 +1419,13 @@ Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
 [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (2.9671pt too high) has occurred while \output is active []
+
+
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
  []
@@ -1430,7 +1441,7 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[9]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 185--188
 
  []
@@ -1444,36 +1455,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 212--220
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[10] Excluding 'comment' comment. Excluding 'comment' comment.
-Underfull \vbox (badness 1888) has occurred while \output is active []
-
-
+[11] Excluding 'comment' comment. Excluding 'comment' comment.
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[11]
-<graphics/SAC.png, id=360, 538.01pt x 429.605pt>
+[12]
+<graphics/SAC.png, id=379, 538.01pt x 429.605pt>
 File: graphics/SAC.png Graphic file (type png)
 <use graphics/SAC.png>
 Package pdftex.def Info: graphics/SAC.png  used on input line 314.
 (pdftex.def)             Requested size: 299.20076pt x 238.91212pt.
  Excluding 'comment' comment.
+Underfull \vbox (badness 2073) has occurred while \output is active []
+
+
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[12 <./graphics/SAC.png>]
+[13 <./graphics/SAC.png>]
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[13]
-Overfull \vbox (2.9671pt too high) has occurred while \output is active []
-
-
-[14
-
-]
+[14]
 chapter 3.
-<graphics/Approach.png, id=385, 714.67pt x 363.3575pt>
+<graphics/Approach.png, id=399, 714.67pt x 363.3575pt>
 File: graphics/Approach.png Graphic file (type png)
 <use graphics/Approach.png>
 Package pdftex.def Info: graphics/Approach.png  used on input line 386.
@@ -1485,7 +1490,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[15]
+[15
+
+]
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
@@ -1496,7 +1503,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 410--411
 
  []
 
-<graphics/CustomEnv.png, id=409, 705.63625pt x 468.75125pt>
+<graphics/CustomEnv.png, id=426, 705.63625pt x 468.75125pt>
 File: graphics/CustomEnv.png Graphic file (type png)
 <use graphics/CustomEnv.png>
 Package pdftex.def Info: graphics/CustomEnv.png  used on input line 417.
@@ -1513,42 +1520,37 @@ Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 [17
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 423--426
-
- []
-
-
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
 [18 <./graphics/CustomEnv.png>]
-<graphics/camera_setup.png, id=432, 356.33125pt x 235.88126pt>
+<graphics/camera_setup.png, id=449, 356.33125pt x 235.88126pt>
 File: graphics/camera_setup.png Graphic file (type png)
 <use graphics/camera_setup.png>
-Package pdftex.def Info: graphics/camera_setup.png  used on input line 433.
+Package pdftex.def Info: graphics/camera_setup.png  used on input line 434.
 (pdftex.def)             Requested size: 170.97325pt x 113.17851pt.
-<graphics/observation_2.png, id=433, 223.83624pt x 223.83624pt>
+<graphics/observation_2.png, id=450, 223.83624pt x 223.83624pt>
 File: graphics/observation_2.png Graphic file (type png)
 <use graphics/observation_2.png>
-Package pdftex.def Info: graphics/observation_2.png  used on input line 439.
+Package pdftex.def Info: graphics/observation_2.png  used on input line 440.
 (pdftex.def)             Requested size: 106.85788pt x 106.85954pt.
 
-Overfull \hbox (4.161pt too wide) in paragraph at lines 431--442
+Overfull \hbox (4.161pt too wide) in paragraph at lines 432--443
  []$[]$  $[]$ 
  []
 
-<graphics/gripper_closed.png, id=434, 130.4875pt x 173.64874pt>
+<graphics/gripper_closed.png, id=451, 130.4875pt x 173.64874pt>
 File: graphics/gripper_closed.png Graphic file (type png)
 <use graphics/gripper_closed.png>
-Package pdftex.def Info: graphics/gripper_closed.png  used on input line 452.
+Package pdftex.def Info: graphics/gripper_closed.png  used on input line 453.
 (pdftex.def)             Requested size: 106.85788pt x 142.20476pt.
-<graphics/gripper_opened.png, id=435, 141.52875pt x 203.76125pt>
+<graphics/gripper_opened.png, id=452, 141.52875pt x 203.76125pt>
 File: graphics/gripper_opened.png Graphic file (type png)
 <use graphics/gripper_opened.png>
-Package pdftex.def Info: graphics/gripper_opened.png  used on input line 458.
+Package pdftex.def Info: graphics/gripper_opened.png  used on input line 459.
 (pdftex.def)             Requested size: 106.85788pt x 153.84967pt.
 
-Overfull \hbox (4.161pt too wide) in paragraph at lines 450--461
+Overfull \hbox (4.161pt too wide) in paragraph at lines 451--462
  []$[]$  $[]$ 
  []
 
@@ -1560,20 +1562,20 @@ Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
 [19 <./graphics/camera_setup.png> <./graphics/observation_2.png>]
-<graphics/continuous_action_space.png, id=445, 369.38pt x 299.1175pt>
+<graphics/continuous_action_space.png, id=462, 369.38pt x 299.1175pt>
 File: graphics/continuous_action_space.png Graphic file (type png)
 <use graphics/continuous_action_space.png>
 Package pdftex.def Info: graphics/continuous_action_space.png  used on input li
-ne 472.
+ne 473.
 (pdftex.def)             Requested size: 213.71576pt x 173.0638pt.
-<graphics/multidiscrete_no_rotation.png, id=446, 350.30875pt x 306.14375pt>
+<graphics/multidiscrete_no_rotation.png, id=463, 350.30875pt x 306.14375pt>
 File: graphics/multidiscrete_no_rotation.png Graphic file (type png)
 <use graphics/multidiscrete_no_rotation.png>
 Package pdftex.def Info: graphics/multidiscrete_no_rotation.png  used on input 
-line 481.
+line 482.
 (pdftex.def)             Requested size: 213.71576pt x 186.77544pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--483
+Underfull \hbox (badness 10000) in paragraph at lines 478--484
 
  []
 
@@ -1583,11 +1585,11 @@ Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 [20 <./graphics/gripper_closed.png> <./graphics/gripper_opened.png> <./graphics
 /continuous_action_space.png>]
-<graphics/multidiscrete_with_rotation.png, id=457, 352.31625pt x 308.15125pt>
+<graphics/multidiscrete_with_rotation.png, id=474, 352.31625pt x 308.15125pt>
 File: graphics/multidiscrete_with_rotation.png Graphic file (type png)
 <use graphics/multidiscrete_with_rotation.png>
 Package pdftex.def Info: graphics/multidiscrete_with_rotation.png  used on inpu
-t line 491.
+t line 492.
 (pdftex.def)             Requested size: 213.71576pt x 186.92343pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1597,16 +1599,16 @@ Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
 [21 <./graphics/multidiscrete_no_rotation.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 496--497
+Underfull \hbox (badness 10000) in paragraph at lines 497--498
 
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 504.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 505.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 504.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 505.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 504.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 505.
 
 Class scrbook Warning: deprecated old font command `\bf' used.
 (scrbook)              You should note, that since 1994 LaTeX2e provides a
@@ -1626,10 +1628,10 @@ Class scrbook Warning: deprecated old font command `\bf' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\bf' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \bfseries ' on input line 506.
+(scrbook)              `\normalfont \bfseries ' on input line 507.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 506.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 507.
 
 Class scrbook Warning: deprecated old font command `\bf' used.
 (scrbook)              You should note, that since 1994 LaTeX2e provides a
@@ -1649,7 +1651,7 @@ Class scrbook Warning: deprecated old font command `\bf' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\bf' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \bfseries ' on input line 506.
+(scrbook)              `\normalfont \bfseries ' on input line 507.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1678,7 +1680,7 @@ Class scrbook Warning: deprecated old font command `\bf' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\bf' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \bfseries ' on input line 534.
+(scrbook)              `\normalfont \bfseries ' on input line 535.
 
 
 Class scrbook Warning: deprecated old font command `\bf' used.
@@ -1699,14 +1701,92 @@ Class scrbook Warning: deprecated old font command `\bf' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\bf' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \bfseries ' on input line 534.
+(scrbook)              `\normalfont \bfseries ' on input line 535.
 
-<graphics/network_structure.png, id=473, 261.97874pt x 145.54375pt>
-File: graphics/network_structure.png Graphic file (type png)
-<use graphics/network_structure.png>
-Package pdftex.def Info: graphics/network_structure.png  used on input line 557
-.
-(pdftex.def)             Requested size: 213.71576pt x 118.73369pt.
+
+Class scrbook Warning: deprecated old font command `\bf' used.
+(scrbook)              You should note, that since 1994 LaTeX2e provides a
+(scrbook)              new font selection scheme called NFSS2 with several
+(scrbook)              new, combinable font commands. New KOMA-Script classes
+(scrbook)              defined the old font commands like `\bf' only for
+(scrbook)              compatibility with LaTeX 2.09 document styles of
+(scrbook)              Script 2.0. These commands are deprecated and
+(scrbook)              undocumented at least since 2003. Since 2013,
+(scrbook)              KOMA-Script classes warned about soon removement of
+(scrbook)              these deprecated commands. Now, after two decades of
+(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
+(scrbook)              not work any longer. If loading a package results in
+(scrbook)              this message you should contact the author of that
+(scrbook)              package and ask him to replace the depracted font
+(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
+(scrbook)              Otherwise you should reconfigure or replace the
+(scrbook)              package. If you have used the old font command
+(scrbook)              `\bf' yourself you should replace it, e.g., by
+(scrbook)              `\normalfont \bfseries ' on input line 561.
+
+
+Class scrbook Warning: deprecated old font command `\bf' used.
+(scrbook)              You should note, that since 1994 LaTeX2e provides a
+(scrbook)              new font selection scheme called NFSS2 with several
+(scrbook)              new, combinable font commands. New KOMA-Script classes
+(scrbook)              defined the old font commands like `\bf' only for
+(scrbook)              compatibility with LaTeX 2.09 document styles of
+(scrbook)              Script 2.0. These commands are deprecated and
+(scrbook)              undocumented at least since 2003. Since 2013,
+(scrbook)              KOMA-Script classes warned about soon removement of
+(scrbook)              these deprecated commands. Now, after two decades of
+(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
+(scrbook)              not work any longer. If loading a package results in
+(scrbook)              this message you should contact the author of that
+(scrbook)              package and ask him to replace the depracted font
+(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
+(scrbook)              Otherwise you should reconfigure or replace the
+(scrbook)              package. If you have used the old font command
+(scrbook)              `\bf' yourself you should replace it, e.g., by
+(scrbook)              `\normalfont \bfseries ' on input line 561.
+
+
+Class scrbook Warning: deprecated old font command `\bf' used.
+(scrbook)              You should note, that since 1994 LaTeX2e provides a
+(scrbook)              new font selection scheme called NFSS2 with several
+(scrbook)              new, combinable font commands. New KOMA-Script classes
+(scrbook)              defined the old font commands like `\bf' only for
+(scrbook)              compatibility with LaTeX 2.09 document styles of
+(scrbook)              Script 2.0. These commands are deprecated and
+(scrbook)              undocumented at least since 2003. Since 2013,
+(scrbook)              KOMA-Script classes warned about soon removement of
+(scrbook)              these deprecated commands. Now, after two decades of
+(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
+(scrbook)              not work any longer. If loading a package results in
+(scrbook)              this message you should contact the author of that
+(scrbook)              package and ask him to replace the depracted font
+(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
+(scrbook)              Otherwise you should reconfigure or replace the
+(scrbook)              package. If you have used the old font command
+(scrbook)              `\bf' yourself you should replace it, e.g., by
+(scrbook)              `\normalfont \bfseries ' on input line 561.
+
+
+Class scrbook Warning: deprecated old font command `\bf' used.
+(scrbook)              You should note, that since 1994 LaTeX2e provides a
+(scrbook)              new font selection scheme called NFSS2 with several
+(scrbook)              new, combinable font commands. New KOMA-Script classes
+(scrbook)              defined the old font commands like `\bf' only for
+(scrbook)              compatibility with LaTeX 2.09 document styles of
+(scrbook)              Script 2.0. These commands are deprecated and
+(scrbook)              undocumented at least since 2003. Since 2013,
+(scrbook)              KOMA-Script classes warned about soon removement of
+(scrbook)              these deprecated commands. Now, after two decades of
+(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
+(scrbook)              not work any longer. If loading a package results in
+(scrbook)              this message you should contact the author of that
+(scrbook)              package and ask him to replace the depracted font
+(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
+(scrbook)              Otherwise you should reconfigure or replace the
+(scrbook)              package. If you have used the old font command
+(scrbook)              `\bf' yourself you should replace it, e.g., by
+(scrbook)              `\normalfont \bfseries ' on input line 561.
+
 
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
@@ -1715,27 +1795,81 @@ Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[24 <./graphics/network_structure.png>]
+[24]
 \openout2 = `content/results.aux'.
 
  (./content/results.tex
 chapter 5.
-<graphics/simulation_problems/angle_1.png, id=488, 704.6325pt x 641.39626pt>
-File: graphics/simulation_problems/angle_1.png Graphic file (type png)
-<use graphics/simulation_problems/angle_1.png>
-Package pdftex.def Info: graphics/simulation_problems/angle_1.png  used on inpu
-t line 22.
-(pdftex.def)             Requested size: 128.23076pt x 116.71863pt.
-<graphics/simulation_problems/angle_2.png, id=489, 609.27625pt x 553.06625pt>
-File: graphics/simulation_problems/angle_2.png Graphic file (type png)
-<use graphics/simulation_problems/angle_2.png>
-Package pdftex.def Info: graphics/simulation_problems/angle_2.png  used on inpu
-t line 28.
-(pdftex.def)             Requested size: 128.23076pt x 116.40051pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
+
+
+Class scrbook Warning: deprecated old font command `\bf' used.
+(scrbook)              You should note, that since 1994 LaTeX2e provides a
+(scrbook)              new font selection scheme called NFSS2 with several
+(scrbook)              new, combinable font commands. New KOMA-Script classes
+(scrbook)              defined the old font commands like `\bf' only for
+(scrbook)              compatibility with LaTeX 2.09 document styles of
+(scrbook)              Script 2.0. These commands are deprecated and
+(scrbook)              undocumented at least since 2003. Since 2013,
+(scrbook)              KOMA-Script classes warned about soon removement of
+(scrbook)              these deprecated commands. Now, after two decades of
+(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
+(scrbook)              not work any longer. If loading a package results in
+(scrbook)              this message you should contact the author of that
+(scrbook)              package and ask him to replace the depracted font
+(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
+(scrbook)              Otherwise you should reconfigure or replace the
+(scrbook)              package. If you have used the old font command
+(scrbook)              `\bf' yourself you should replace it, e.g., by
+(scrbook)              `\normalfont \bfseries ' on input line 25.
+
+
+Class scrbook Warning: deprecated old font command `\bf' used.
+(scrbook)              You should note, that since 1994 LaTeX2e provides a
+(scrbook)              new font selection scheme called NFSS2 with several
+(scrbook)              new, combinable font commands. New KOMA-Script classes
+(scrbook)              defined the old font commands like `\bf' only for
+(scrbook)              compatibility with LaTeX 2.09 document styles of
+(scrbook)              Script 2.0. These commands are deprecated and
+(scrbook)              undocumented at least since 2003. Since 2013,
+(scrbook)              KOMA-Script classes warned about soon removement of
+(scrbook)              these deprecated commands. Now, after two decades of
+(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
+(scrbook)              not work any longer. If loading a package results in
+(scrbook)              this message you should contact the author of that
+(scrbook)              package and ask him to replace the depracted font
+(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
+(scrbook)              Otherwise you should reconfigure or replace the
+(scrbook)              package. If you have used the old font command
+(scrbook)              `\bf' yourself you should replace it, e.g., by
+(scrbook)              `\normalfont \bfseries ' on input line 25.
+
+
+Class scrbook Warning: deprecated old font command `\bf' used.
+(scrbook)              You should note, that since 1994 LaTeX2e provides a
+(scrbook)              new font selection scheme called NFSS2 with several
+(scrbook)              new, combinable font commands. New KOMA-Script classes
+(scrbook)              defined the old font commands like `\bf' only for
+(scrbook)              compatibility with LaTeX 2.09 document styles of
+(scrbook)              Script 2.0. These commands are deprecated and
+(scrbook)              undocumented at least since 2003. Since 2013,
+(scrbook)              KOMA-Script classes warned about soon removement of
+(scrbook)              these deprecated commands. Now, after two decades of
+(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
+(scrbook)              not work any longer. If loading a package results in
+(scrbook)              this message you should contact the author of that
+(scrbook)              package and ask him to replace the depracted font
+(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
+(scrbook)              Otherwise you should reconfigure or replace the
+(scrbook)              package. If you have used the old font command
+(scrbook)              `\bf' yourself you should replace it, e.g., by
+(scrbook)              `\normalfont \bfseries ' on input line 25.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
@@ -1745,171 +1879,84 @@ Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
 
- <./graphics/simulation_problems/angle_1.png> <./graphics/simulation_problems/a
-ngle_2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
-
- []
-
-<graphics/ppo_with_rotation.png, id=499, 394.47375pt x 409.53pt>
-File: graphics/ppo_with_rotation.png Graphic file (type png)
-<use graphics/ppo_with_rotation.png>
-Package pdftex.def Info: graphics/ppo_with_rotation.png  used on input line 44.
-
-(pdftex.def)             Requested size: 213.71576pt x 221.87402pt.
-
-Class scrbook Warning: deprecated old font command `\bf' used.
-(scrbook)              You should note, that since 1994 LaTeX2e provides a
-(scrbook)              new font selection scheme called NFSS2 with several
-(scrbook)              new, combinable font commands. New KOMA-Script classes
-(scrbook)              defined the old font commands like `\bf' only for
-(scrbook)              compatibility with LaTeX 2.09 document styles of
-(scrbook)              Script 2.0. These commands are deprecated and
-(scrbook)              undocumented at least since 2003. Since 2013,
-(scrbook)              KOMA-Script classes warned about soon removement of
-(scrbook)              these deprecated commands. Now, after two decades of
-(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
-(scrbook)              not work any longer. If loading a package results in
-(scrbook)              this message you should contact the author of that
-(scrbook)              package and ask him to replace the depracted font
-(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
-(scrbook)              Otherwise you should reconfigure or replace the
-(scrbook)              package. If you have used the old font command
-(scrbook)              `\bf' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \bfseries ' on input line 53.
-
-
-Class scrbook Warning: deprecated old font command `\bf' used.
-(scrbook)              You should note, that since 1994 LaTeX2e provides a
-(scrbook)              new font selection scheme called NFSS2 with several
-(scrbook)              new, combinable font commands. New KOMA-Script classes
-(scrbook)              defined the old font commands like `\bf' only for
-(scrbook)              compatibility with LaTeX 2.09 document styles of
-(scrbook)              Script 2.0. These commands are deprecated and
-(scrbook)              undocumented at least since 2003. Since 2013,
-(scrbook)              KOMA-Script classes warned about soon removement of
-(scrbook)              these deprecated commands. Now, after two decades of
-(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
-(scrbook)              not work any longer. If loading a package results in
-(scrbook)              this message you should contact the author of that
-(scrbook)              package and ask him to replace the depracted font
-(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
-(scrbook)              Otherwise you should reconfigure or replace the
-(scrbook)              package. If you have used the old font command
-(scrbook)              `\bf' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \bfseries ' on input line 53.
-
-
-Class scrbook Warning: deprecated old font command `\bf' used.
-(scrbook)              You should note, that since 1994 LaTeX2e provides a
-(scrbook)              new font selection scheme called NFSS2 with several
-(scrbook)              new, combinable font commands. New KOMA-Script classes
-(scrbook)              defined the old font commands like `\bf' only for
-(scrbook)              compatibility with LaTeX 2.09 document styles of
-(scrbook)              Script 2.0. These commands are deprecated and
-(scrbook)              undocumented at least since 2003. Since 2013,
-(scrbook)              KOMA-Script classes warned about soon removement of
-(scrbook)              these deprecated commands. Now, after two decades of
-(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
-(scrbook)              not work any longer. If loading a package results in
-(scrbook)              this message you should contact the author of that
-(scrbook)              package and ask him to replace the depracted font
-(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
-(scrbook)              Otherwise you should reconfigure or replace the
-(scrbook)              package. If you have used the old font command
-(scrbook)              `\bf' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \bfseries ' on input line 53.
-
-
-Overfull \vbox (2.9671pt too high) has occurred while \output is active []
-
-
-[26 <./graphics/ppo_with_rotation.png>]
-<graphics/1_obj_pos_SAC/episode_reward.png, id=507, 345.29pt x 229.85875pt>
+]
+<graphics/1_obj_pos_SAC/episode_reward.png, id=512, 345.29pt x 229.85875pt>
 File: graphics/1_obj_pos_SAC/episode_reward.png Graphic file (type png)
 <use graphics/1_obj_pos_SAC/episode_reward.png>
 Package pdftex.def Info: graphics/1_obj_pos_SAC/episode_reward.png  used on inp
-ut line 70.
+ut line 42.
 (pdftex.def)             Requested size: 213.71576pt x 142.27243pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-<graphics/20_obj_pos_150k/episode_reward.png, id=508, 449.68pt x 315.1775pt>
+<graphics/20_obj_pos_150k/episode_reward.png, id=513, 449.68pt x 315.1775pt>
 File: graphics/20_obj_pos_150k/episode_reward.png Graphic file (type png)
 <use graphics/20_obj_pos_150k/episode_reward.png>
 Package pdftex.def Info: graphics/20_obj_pos_150k/episode_reward.png  used on i
-nput line 81.
+nput line 53.
 (pdftex.def)             Requested size: 213.71576pt x 149.79262pt.
-
-Underfull \vbox (badness 5563) has occurred while \output is active []
-
 
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[27 <./graphics/1_obj_pos_SAC/episode_reward.png>]
-<graphics/20_obj_pos_150k/ent_coef.png, id=516, 358.33875pt x 256.96pt>
+[26 <./graphics/1_obj_pos_SAC/episode_reward.png>]
+<graphics/20_obj_pos_150k/ent_coef.png, id=521, 358.33875pt x 256.96pt>
 File: graphics/20_obj_pos_150k/ent_coef.png Graphic file (type png)
 <use graphics/20_obj_pos_150k/ent_coef.png>
 Package pdftex.def Info: graphics/20_obj_pos_150k/ent_coef.png  used on input l
-ine 89.
+ine 61.
 (pdftex.def)             Requested size: 128.23076pt x 91.95268pt.
-<graphics/20_obj_pos_150k/ent_coef_loss.png, id=517, 358.33875pt x 254.9525pt>
+<graphics/20_obj_pos_150k/ent_coef_loss.png, id=522, 358.33875pt x 254.9525pt>
 File: graphics/20_obj_pos_150k/ent_coef_loss.png Graphic file (type png)
 <use graphics/20_obj_pos_150k/ent_coef_loss.png>
 Package pdftex.def Info: graphics/20_obj_pos_150k/ent_coef_loss.png  used on in
-put line 95.
+put line 67.
 (pdftex.def)             Requested size: 128.23076pt x 91.23428pt.
-<graphics/20_obj_pos_150k/entropy.png, id=518, 364.36125pt x 254.9525pt>
+<graphics/20_obj_pos_150k/entropy.png, id=523, 364.36125pt x 254.9525pt>
 File: graphics/20_obj_pos_150k/entropy.png Graphic file (type png)
 <use graphics/20_obj_pos_150k/entropy.png>
 Package pdftex.def Info: graphics/20_obj_pos_150k/entropy.png  used on input li
-ne 101.
+ne 73.
 (pdftex.def)             Requested size: 128.23076pt x 89.72487pt.
-<graphics/20_obj_pos_150k/learning_rate.png, id=519, 342.27875pt x 246.9225pt>
+<graphics/20_obj_pos_150k/learning_rate.png, id=524, 342.27875pt x 246.9225pt>
 File: graphics/20_obj_pos_150k/learning_rate.png Graphic file (type png)
 <use graphics/20_obj_pos_150k/learning_rate.png>
 Package pdftex.def Info: graphics/20_obj_pos_150k/learning_rate.png  used on in
-put line 107.
+put line 79.
 (pdftex.def)             Requested size: 128.23076pt x 92.50903pt.
-<graphics/20_obj_pos_150k/policy_loss.png, id=520, 360.34625pt x 254.9525pt>
+<graphics/20_obj_pos_150k/policy_loss.png, id=525, 360.34625pt x 254.9525pt>
 File: graphics/20_obj_pos_150k/policy_loss.png Graphic file (type png)
 <use graphics/20_obj_pos_150k/policy_loss.png>
 Package pdftex.def Info: graphics/20_obj_pos_150k/policy_loss.png  used on inpu
-t line 112.
+t line 84.
 (pdftex.def)             Requested size: 128.23076pt x 90.72467pt.
-<graphics/20_obj_pos_150k/qf1_loss.png, id=521, 362.35374pt x 258.9675pt>
+<graphics/20_obj_pos_150k/qf1_loss.png, id=526, 362.35374pt x 258.9675pt>
 File: graphics/20_obj_pos_150k/qf1_loss.png Graphic file (type png)
 <use graphics/20_obj_pos_150k/qf1_loss.png>
 Package pdftex.def Info: graphics/20_obj_pos_150k/qf1_loss.png  used on input l
-ine 117.
+ine 89.
 (pdftex.def)             Requested size: 128.23076pt x 91.64366pt.
-<graphics/20_obj_pos_150k/qf2_loss.png, id=522, 360.34625pt x 254.9525pt>
+<graphics/20_obj_pos_150k/qf2_loss.png, id=527, 360.34625pt x 254.9525pt>
 File: graphics/20_obj_pos_150k/qf2_loss.png Graphic file (type png)
 <use graphics/20_obj_pos_150k/qf2_loss.png>
 Package pdftex.def Info: graphics/20_obj_pos_150k/qf2_loss.png  used on input l
-ine 122.
+ine 94.
 (pdftex.def)             Requested size: 128.23076pt x 90.72467pt.
-<graphics/20_obj_pos_150k/value_loss.png, id=523, 362.35374pt x 255.95625pt>
+<graphics/20_obj_pos_150k/value_loss.png, id=528, 362.35374pt x 255.95625pt>
 File: graphics/20_obj_pos_150k/value_loss.png Graphic file (type png)
 <use graphics/20_obj_pos_150k/value_loss.png>
 Package pdftex.def Info: graphics/20_obj_pos_150k/value_loss.png  used on input
- line 127.
+ line 99.
 (pdftex.def)             Requested size: 128.23076pt x 90.57803pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--135
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
 
  []
 
@@ -1917,165 +1964,100 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--135
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[28 <./graphics/20_obj_pos_150k/episode_reward.png> <./graphics/20_obj_pos_150k
+[27 <./graphics/20_obj_pos_150k/episode_reward.png> <./graphics/20_obj_pos_150k
 /ent_coef.png> <./graphics/20_obj_pos_150k/ent_coef_loss.png> <./graphics/20_ob
 j_pos_150k/entropy.png> <./graphics/20_obj_pos_150k/learning_rate.png> <./graph
 ics/20_obj_pos_150k/policy_loss.png> <./graphics/20_obj_pos_150k/qf1_loss.png> 
 <./graphics/20_obj_pos_150k/qf2_loss.png> <./graphics/20_obj_pos_150k/value_los
 s.png>]
-<graphics/20_obj_pos_150k/episode_lengths_first10k.png, id=539, 462.528pt x 346
+<graphics/20_obj_pos_150k/episode_lengths_first10k.png, id=544, 462.528pt x 346
 .896pt>
 File: graphics/20_obj_pos_150k/episode_lengths_first10k.png Graphic file (type 
 png)
 <use graphics/20_obj_pos_150k/episode_lengths_first10k.png>
 Package pdftex.def Info: graphics/20_obj_pos_150k/episode_lengths_first10k.png 
- used on input line 140.
+ used on input line 112.
 (pdftex.def)             Requested size: 213.71576pt x 160.28867pt.
-<graphics/20_obj_pos_150k/episode_lengths_last10k.png, id=540, 462.528pt x 346.
+<graphics/20_obj_pos_150k/episode_lengths_last10k.png, id=545, 462.528pt x 346.
 896pt>
 File: graphics/20_obj_pos_150k/episode_lengths_last10k.png Graphic file (type p
 ng)
 <use graphics/20_obj_pos_150k/episode_lengths_last10k.png>
 Package pdftex.def Info: graphics/20_obj_pos_150k/episode_lengths_last10k.png  
-used on input line 146.
+used on input line 118.
 (pdftex.def)             Requested size: 213.71576pt x 160.28867pt.
 
-Overfull \hbox (4.161pt too wide) in paragraph at lines 138--149
+Overfull \hbox (4.161pt too wide) in paragraph at lines 110--121
  []$[]$  $[]$ 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--155
-
- []
-
-<graphics/50_obj_pos_SAC/episode_reward_successful.png, id=541, 346.29375pt x 2
-30.8625pt>
-File: graphics/50_obj_pos_SAC/episode_reward_successful.png Graphic file (type 
-png)
-<use graphics/50_obj_pos_SAC/episode_reward_successful.png>
-Package pdftex.def Info: graphics/50_obj_pos_SAC/episode_reward_successful.png 
- used on input line 160.
-(pdftex.def)             Requested size: 213.71576pt x 142.48157pt.
-<graphics/50_obj_pos_SAC/episode_reward_ok.png, id=542, 342.27875pt x 230.8625p
-t>
-File: graphics/50_obj_pos_SAC/episode_reward_ok.png Graphic file (type png)
-<use graphics/50_obj_pos_SAC/episode_reward_ok.png>
-Package pdftex.def Info: graphics/50_obj_pos_SAC/episode_reward_ok.png  used on
- input line 166.
-(pdftex.def)             Requested size: 213.71576pt x 144.1513pt.
-
-Overfull \hbox (4.161pt too wide) in paragraph at lines 158--169
- []$[]$  $[]$ 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \vbox (2.9671pt too high) has occurred while \output is active []
-
-
-[29 <./graphics/20_obj_pos_150k/episode_lengths_first10k.png> <./graphics/20_ob
-j_pos_150k/episode_lengths_last10k.png>]
-<graphics/50_obj_pos_SAC/entropy_successful.png, id=551, 350.30875pt x 240.9pt>
-
-File: graphics/50_obj_pos_SAC/entropy_successful.png Graphic file (type png)
-<use graphics/50_obj_pos_SAC/entropy_successful.png>
-Package pdftex.def Info: graphics/50_obj_pos_SAC/entropy_successful.png  used o
-n input line 178.
-(pdftex.def)             Requested size: 213.71576pt x 146.97083pt.
-<graphics/50_obj_pos_SAC/entropy_ok.png, id=552, 346.29375pt x 247.92625pt>
-File: graphics/50_obj_pos_SAC/entropy_ok.png Graphic file (type png)
-<use graphics/50_obj_pos_SAC/entropy_ok.png>
-Package pdftex.def Info: graphics/50_obj_pos_SAC/entropy_ok.png  used on input 
-line 184.
-(pdftex.def)             Requested size: 213.71576pt x 153.01282pt.
-
-Overfull \hbox (4.161pt too wide) in paragraph at lines 176--187
- []$[]$  $[]$ 
- []
-
-<graphics/50_obj_pos_SAC/value_loss_successful.png, id=553, 346.29375pt x 246.9
-225pt>
-File: graphics/50_obj_pos_SAC/value_loss_successful.png Graphic file (type png)
-
-<use graphics/50_obj_pos_SAC/value_loss_successful.png>
-Package pdftex.def Info: graphics/50_obj_pos_SAC/value_loss_successful.png  use
-d on input line 195.
-(pdftex.def)             Requested size: 213.71576pt x 152.39333pt.
-<graphics/50_obj_pos_SAC/value_loss_ok.png, id=554, 341.275pt x 240.9pt>
-File: graphics/50_obj_pos_SAC/value_loss_ok.png Graphic file (type png)
-<use graphics/50_obj_pos_SAC/value_loss_ok.png>
-Package pdftex.def Info: graphics/50_obj_pos_SAC/value_loss_ok.png  used on inp
-ut line 201.
-(pdftex.def)             Requested size: 213.71576pt x 150.85986pt.
-
-Overfull \hbox (4.161pt too wide) in paragraph at lines 193--204
- []$[]$  $[]$ 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \vbox (2.9671pt too high) has occurred while \output is active []
-
-
-[30 <./graphics/50_obj_pos_SAC/episode_reward_successful.png> <./graphics/50_ob
-j_pos_SAC/episode_reward_ok.png> <./graphics/50_obj_pos_SAC/entropy_successful.
-png> <./graphics/50_obj_pos_SAC/entropy_ok.png>]
-<graphics/random_SAC/episode_reward.png, id=565, 345.29pt x 232.87pt>
-File: graphics/random_SAC/episode_reward.png Graphic file (type png)
-<use graphics/random_SAC/episode_reward.png>
-Package pdftex.def Info: graphics/random_SAC/episode_reward.png  used on input 
-line 212.
-(pdftex.def)             Requested size: 213.71576pt x 144.13626pt.
-<graphics/continuous_PPO/episode_reward.png, id=568, 345.29pt x 226.8475pt>
+Excluding 'comment' comment. Excluding 'comment' comment.
+<graphics/continuous_PPO/episode_reward.png, id=548, 345.29pt x 226.8475pt>
 File: graphics/continuous_PPO/episode_reward.png Graphic file (type png)
 <use graphics/continuous_PPO/episode_reward.png>
 Package pdftex.def Info: graphics/continuous_PPO/episode_reward.png  used on in
-put line 227.
+put line 203.
 (pdftex.def)             Requested size: 213.71576pt x 140.40862pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[31 <./graphics/50_obj_pos_SAC/value_loss_successful.png> <./graphics/50_obj_po
-s_SAC/value_loss_ok.png> <./graphics/random_SAC/episode_reward.png>]
-<graphics/50_obj_pos_PPO/episode_reward.png, id=581, 347.2975pt x 236.885pt>
+[28 <./graphics/20_obj_pos_150k/episode_lengths_first10k.png> <./graphics/20_ob
+j_pos_150k/episode_lengths_last10k.png>]
+<graphics/50_obj_pos_PPO/episode_reward.png, id=559, 347.2975pt x 236.885pt>
 File: graphics/50_obj_pos_PPO/episode_reward.png Graphic file (type png)
 <use graphics/50_obj_pos_PPO/episode_reward.png>
 Package pdftex.def Info: graphics/50_obj_pos_PPO/episode_reward.png  used on in
-put line 237.
+put line 213.
 (pdftex.def)             Requested size: 213.71576pt x 145.77557pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--239
+Underfull \hbox (badness 10000) in paragraph at lines 209--215
 
  []
 
-<graphics/random_PPO_500k/episode_reward.png, id=582, 345.29pt x 233.87375pt>
+<graphics/random_PPO_500k/episode_reward.png, id=560, 345.29pt x 233.87375pt>
 File: graphics/random_PPO_500k/episode_reward.png Graphic file (type png)
 <use graphics/random_PPO_500k/episode_reward.png>
 Package pdftex.def Info: graphics/random_PPO_500k/episode_reward.png  used on i
-nput line 243.
+nput line 219.
 (pdftex.def)             Requested size: 213.71576pt x 144.75754pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--245
+Underfull \hbox (badness 10000) in paragraph at lines 216--221
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[32 <./graphics/continuous_PPO/episode_reward.png> <./graphics/50_obj_pos_PPO/e
+[29 <./graphics/continuous_PPO/episode_reward.png> <./graphics/50_obj_pos_PPO/e
 pisode_reward.png>]
-File: graphics/ppo_with_rotation.png Graphic file (type png)
-<use graphics/ppo_with_rotation.png>
-Package pdftex.def Info: graphics/ppo_with_rotation.png  used on input line 249
-.
-(pdftex.def)             Requested size: 213.71576pt x 221.87402pt.
+
+Class scrbook Warning: deprecated old font command `\bf' used.
+(scrbook)              You should note, that since 1994 LaTeX2e provides a
+(scrbook)              new font selection scheme called NFSS2 with several
+(scrbook)              new, combinable font commands. New KOMA-Script classes
+(scrbook)              defined the old font commands like `\bf' only for
+(scrbook)              compatibility with LaTeX 2.09 document styles of
+(scrbook)              Script 2.0. These commands are deprecated and
+(scrbook)              undocumented at least since 2003. Since 2013,
+(scrbook)              KOMA-Script classes warned about soon removement of
+(scrbook)              these deprecated commands. Now, after two decades of
+(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
+(scrbook)              not work any longer. If loading a package results in
+(scrbook)              this message you should contact the author of that
+(scrbook)              package and ask him to replace the depracted font
+(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
+(scrbook)              Otherwise you should reconfigure or replace the
+(scrbook)              package. If you have used the old font command
+(scrbook)              `\bf' yourself you should replace it, e.g., by
+(scrbook)              `\normalfont \bfseries ' on input line 229.
 
 
 Class scrbook Warning: deprecated old font command `\bf' used.
@@ -2096,7 +2078,7 @@ Class scrbook Warning: deprecated old font command `\bf' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\bf' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \bfseries ' on input line 258.
+(scrbook)              `\normalfont \bfseries ' on input line 229.
 
 
 Class scrbook Warning: deprecated old font command `\bf' used.
@@ -2117,41 +2099,96 @@ Class scrbook Warning: deprecated old font command `\bf' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\bf' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \bfseries ' on input line 258.
+(scrbook)              `\normalfont \bfseries ' on input line 229.
 
 
-Class scrbook Warning: deprecated old font command `\bf' used.
-(scrbook)              You should note, that since 1994 LaTeX2e provides a
-(scrbook)              new font selection scheme called NFSS2 with several
-(scrbook)              new, combinable font commands. New KOMA-Script classes
-(scrbook)              defined the old font commands like `\bf' only for
-(scrbook)              compatibility with LaTeX 2.09 document styles of
-(scrbook)              Script 2.0. These commands are deprecated and
-(scrbook)              undocumented at least since 2003. Since 2013,
-(scrbook)              KOMA-Script classes warned about soon removement of
-(scrbook)              these deprecated commands. Now, after two decades of
-(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
-(scrbook)              not work any longer. If loading a package results in
-(scrbook)              this message you should contact the author of that
-(scrbook)              package and ask him to replace the depracted font
-(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
-(scrbook)              Otherwise you should reconfigure or replace the
-(scrbook)              package. If you have used the old font command
-(scrbook)              `\bf' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \bfseries ' on input line 258.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
 
  []
 
 File: graphics/ppo_with_rotation.png Graphic file (type png)
 <use graphics/ppo_with_rotation.png>
-Package pdftex.def Info: graphics/ppo_with_rotation.png  used on input line 274
+Package pdftex.def Info: graphics/ppo_with_rotation.png  used on input line 245
 .
 (pdftex.def)             Requested size: 213.71576pt x 221.87402pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--276
+Underfull \hbox (badness 10000) in paragraph at lines 242--247
+
+ []
+
+
+Underfull \vbox (badness 5388) has occurred while \output is active []
+
+
+Overfull \vbox (2.9671pt too high) has occurred while \output is active []
+
+
+[30 <./graphics/random_PPO_500k/episode_reward.png>]
+
+Class scrbook Warning: deprecated old font command `\bf' used.
+(scrbook)              You should note, that since 1994 LaTeX2e provides a
+(scrbook)              new font selection scheme called NFSS2 with several
+(scrbook)              new, combinable font commands. New KOMA-Script classes
+(scrbook)              defined the old font commands like `\bf' only for
+(scrbook)              compatibility with LaTeX 2.09 document styles of
+(scrbook)              Script 2.0. These commands are deprecated and
+(scrbook)              undocumented at least since 2003. Since 2013,
+(scrbook)              KOMA-Script classes warned about soon removement of
+(scrbook)              these deprecated commands. Now, after two decades of
+(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
+(scrbook)              not work any longer. If loading a package results in
+(scrbook)              this message you should contact the author of that
+(scrbook)              package and ask him to replace the depracted font
+(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
+(scrbook)              Otherwise you should reconfigure or replace the
+(scrbook)              package. If you have used the old font command
+(scrbook)              `\bf' yourself you should replace it, e.g., by
+(scrbook)              `\normalfont \bfseries ' on input line 254.
+
+
+Class scrbook Warning: deprecated old font command `\bf' used.
+(scrbook)              You should note, that since 1994 LaTeX2e provides a
+(scrbook)              new font selection scheme called NFSS2 with several
+(scrbook)              new, combinable font commands. New KOMA-Script classes
+(scrbook)              defined the old font commands like `\bf' only for
+(scrbook)              compatibility with LaTeX 2.09 document styles of
+(scrbook)              Script 2.0. These commands are deprecated and
+(scrbook)              undocumented at least since 2003. Since 2013,
+(scrbook)              KOMA-Script classes warned about soon removement of
+(scrbook)              these deprecated commands. Now, after two decades of
+(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
+(scrbook)              not work any longer. If loading a package results in
+(scrbook)              this message you should contact the author of that
+(scrbook)              package and ask him to replace the depracted font
+(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
+(scrbook)              Otherwise you should reconfigure or replace the
+(scrbook)              package. If you have used the old font command
+(scrbook)              `\bf' yourself you should replace it, e.g., by
+(scrbook)              `\normalfont \bfseries ' on input line 254.
+
+
+Class scrbook Warning: deprecated old font command `\bf' used.
+(scrbook)              You should note, that since 1994 LaTeX2e provides a
+(scrbook)              new font selection scheme called NFSS2 with several
+(scrbook)              new, combinable font commands. New KOMA-Script classes
+(scrbook)              defined the old font commands like `\bf' only for
+(scrbook)              compatibility with LaTeX 2.09 document styles of
+(scrbook)              Script 2.0. These commands are deprecated and
+(scrbook)              undocumented at least since 2003. Since 2013,
+(scrbook)              KOMA-Script classes warned about soon removement of
+(scrbook)              these deprecated commands. Now, after two decades of
+(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
+(scrbook)              not work any longer. If loading a package results in
+(scrbook)              this message you should contact the author of that
+(scrbook)              package and ask him to replace the depracted font
+(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
+(scrbook)              Otherwise you should reconfigure or replace the
+(scrbook)              package. If you have used the old font command
+(scrbook)              `\bf' yourself you should replace it, e.g., by
+(scrbook)              `\normalfont \bfseries ' on input line 254.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--273
 
  []
 
@@ -2159,92 +2196,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 271--276
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[33 <./graphics/random_PPO_500k/episode_reward.png>]
+[31]
+<graphics/gen_test_SAC.png, id=591, 427.5975pt x 208.78pt>
+File: graphics/gen_test_SAC.png Graphic file (type png)
+<use graphics/gen_test_SAC.png>
+Package pdftex.def Info: graphics/gen_test_SAC.png  used on input line 278.
+(pdftex.def)             Requested size: 213.71576pt x 104.34831pt.
+<graphics/gen_test_PPO_no_rotation.png, id=592, 444.66125pt x 215.80624pt>
+File: graphics/gen_test_PPO_no_rotation.png Graphic file (type png)
+<use graphics/gen_test_PPO_no_rotation.png>
+Package pdftex.def Info: graphics/gen_test_PPO_no_rotation.png  used on input l
+ine 284.
+(pdftex.def)             Requested size: 213.71576pt x 103.72083pt.
+<graphics/gen_test_PPO_with_rotation.png, id=593, 436.63126pt x 209.78375pt>
+File: graphics/gen_test_PPO_with_rotation.png Graphic file (type png)
+<use graphics/gen_test_PPO_with_rotation.png>
+Package pdftex.def Info: graphics/gen_test_PPO_with_rotation.png  used on input
+ line 290.
+(pdftex.def)             Requested size: 213.71576pt x 102.68289pt.
+<graphics/legend.png, id=594, 371.3875pt x 179.67125pt>
+File: graphics/legend.png Graphic file (type png)
+<use graphics/legend.png>
+Package pdftex.def Info: graphics/legend.png  used on input line 296.
+(pdftex.def)             Requested size: 170.97pt x 82.71281pt.
 
-Class scrbook Warning: deprecated old font command `\bf' used.
-(scrbook)              You should note, that since 1994 LaTeX2e provides a
-(scrbook)              new font selection scheme called NFSS2 with several
-(scrbook)              new, combinable font commands. New KOMA-Script classes
-(scrbook)              defined the old font commands like `\bf' only for
-(scrbook)              compatibility with LaTeX 2.09 document styles of
-(scrbook)              Script 2.0. These commands are deprecated and
-(scrbook)              undocumented at least since 2003. Since 2013,
-(scrbook)              KOMA-Script classes warned about soon removement of
-(scrbook)              these deprecated commands. Now, after two decades of
-(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
-(scrbook)              not work any longer. If loading a package results in
-(scrbook)              this message you should contact the author of that
-(scrbook)              package and ask him to replace the depracted font
-(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
-(scrbook)              Otherwise you should reconfigure or replace the
-(scrbook)              package. If you have used the old font command
-(scrbook)              `\bf' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \bfseries ' on input line 283.
-
-
-Class scrbook Warning: deprecated old font command `\bf' used.
-(scrbook)              You should note, that since 1994 LaTeX2e provides a
-(scrbook)              new font selection scheme called NFSS2 with several
-(scrbook)              new, combinable font commands. New KOMA-Script classes
-(scrbook)              defined the old font commands like `\bf' only for
-(scrbook)              compatibility with LaTeX 2.09 document styles of
-(scrbook)              Script 2.0. These commands are deprecated and
-(scrbook)              undocumented at least since 2003. Since 2013,
-(scrbook)              KOMA-Script classes warned about soon removement of
-(scrbook)              these deprecated commands. Now, after two decades of
-(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
-(scrbook)              not work any longer. If loading a package results in
-(scrbook)              this message you should contact the author of that
-(scrbook)              package and ask him to replace the depracted font
-(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
-(scrbook)              Otherwise you should reconfigure or replace the
-(scrbook)              package. If you have used the old font command
-(scrbook)              `\bf' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \bfseries ' on input line 283.
+Overfull \hbox (4.161pt too wide) in paragraph at lines 276--299
+ []$[]$  $[]$ 
+ []
 
 
-Class scrbook Warning: deprecated old font command `\bf' used.
-(scrbook)              You should note, that since 1994 LaTeX2e provides a
-(scrbook)              new font selection scheme called NFSS2 with several
-(scrbook)              new, combinable font commands. New KOMA-Script classes
-(scrbook)              defined the old font commands like `\bf' only for
-(scrbook)              compatibility with LaTeX 2.09 document styles of
-(scrbook)              Script 2.0. These commands are deprecated and
-(scrbook)              undocumented at least since 2003. Since 2013,
-(scrbook)              KOMA-Script classes warned about soon removement of
-(scrbook)              these deprecated commands. Now, after two decades of
-(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
-(scrbook)              not work any longer. If loading a package results in
-(scrbook)              this message you should contact the author of that
-(scrbook)              package and ask him to replace the depracted font
-(scrbook)              command `\bf', e.g., by `\normalfont \bfseries '.
-(scrbook)              Otherwise you should reconfigure or replace the
-(scrbook)              package. If you have used the old font command
-(scrbook)              `\bf' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \bfseries ' on input line 283.
-
-)
-Overfull \vbox (2.9671pt too high) has occurred while \output is active []
-
-
-[34] (./thesis.tdo)
-\tf@tdo=\write8
-\openout8 = `thesis.tdo'.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[35
+[32 <./graphics/gen_test_SAC.png> <./graphics/gen_test_PPO_no_rotation.png> <./
+graphics/gen_test_PPO_with_rotation.png> <./graphics/legend.png>]
+<graphics/simulation_problems/angle_1.png, id=604, 704.6325pt x 641.39626pt>
+File: graphics/simulation_problems/angle_1.png Graphic file (type png)
+<use graphics/simulation_problems/angle_1.png>
+Package pdftex.def Info: graphics/simulation_problems/angle_1.png  used on inpu
+t line 311.
+(pdftex.def)             Requested size: 128.23076pt x 116.71863pt.
+<graphics/simulation_problems/angle_2.png, id=605, 609.27625pt x 553.06625pt>
+File: graphics/simulation_problems/angle_2.png Graphic file (type png)
+<use graphics/simulation_problems/angle_2.png>
+Package pdftex.def Info: graphics/simulation_problems/angle_2.png  used on inpu
+t line 317.
+(pdftex.def)             Requested size: 128.23076pt x 116.40051pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
+
+ []
+
+
+Overfull \vbox (2.9671pt too high) has occurred while \output is active []
+
+
+[33 <./graphics/simulation_problems/angle_1.png> <./graphics/simulation_problem
+s/angle_2.png>]
+Overfull \vbox (2.9671pt too high) has occurred while \output is active []
+
+
+[34
 
 ]
+chapter 6.
+
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[36
+[35])
+Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
-]
+
+[36]
 chapter A.
 (./thesis.lof
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2253,34 +2285,44 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[37]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[37
+
+
+])
+\tf@lof=\write8
+\openout8 = `thesis.lof'.
+
+
+Underfull \vbox (badness 6792) has occurred while \output is active []
 
 
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[38])
-\tf@lof=\write9
-\openout9 = `thesis.lof'.
+[38]
+chapter B.
+(./thesis.lot)
+\tf@lot=\write9
+\openout9 = `thesis.lot'.
 
-
+ (./thesis.bbl
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[39]
+[39
+
+]
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
 [40
 
 ]
-chapter B.
-(./thesis.lot)
-\tf@lot=\write10
-\openout10 = `thesis.lot'.
-
- (./thesis.bbl
+chapter C.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 4.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
@@ -2288,26 +2330,8 @@ Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[42
-
-]
-chapter C.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 7.
-(/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 63.
-
-Overfull \vbox (2.9671pt too high) has occurred while \output is active []
-
-
-[43]
-Overfull \vbox (2.9671pt too high) has occurred while \output is active []
-
-
-[44]
-Underfull \hbox (badness 10000) in paragraph at lines 228--231
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 222--225
 []\T1/ptm/m/n/10.95 OpenAI.  Fetchpickandplace-v0.  []$\T1/cmtt/m/n/10.95 https
  : / / gym . openai . com / envs /
  []
@@ -2316,39 +2340,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 228--231
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[45]
+[43]
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[46])
+[44])
 No file thesis.ind.
 
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[47]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 101.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
+[45]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 102.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 102.
  (./thesis.aux (./preface/kit_titlepage.aux) (./preface/titlepage.aux)
 (./preface/affirmation.aux) (./content/content.aux) (./content/results.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 101.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 101.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 102.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 102.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 101.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
  ) 
 Here is how much of TeX's memory you used:
- 23687 strings out of 492616
- 442480 string characters out of 6129481
+ 23673 strings out of 492616
+ 441521 string characters out of 6129481
  648442 words of memory out of 5000000
- 26835 multiletter control sequences out of 15000+600000
- 110737 words of font info for 173 fonts, out of 8000000 for 9000
+ 26830 multiletter control sequences out of 15000+600000
+ 112567 words of font info for 177 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,12n,106p,9086b,751s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,12n,106p,9086b,749s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
 live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texl
@@ -2363,10 +2387,10 @@ ist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
 ype1/urw/symbol/usyr.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/ti
 mes/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (55 pages, 2545413 bytes).
+Output written on thesis.pdf (53 pages, 2458077 bytes).
 PDF statistics:
- 986 PDF objects out of 1000 (max. 8388607)
- 810 compressed objects within 9 object streams
- 206 named destinations out of 1000 (max. 500000)
- 674 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1007 PDF objects out of 1200 (max. 8388607)
+ 842 compressed objects within 9 object streams
+ 202 named destinations out of 1000 (max. 500000)
+ 681 words of extra memory for PDF output out of 10000 (max. 10000000)
 

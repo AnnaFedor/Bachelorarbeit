@@ -9,7 +9,6 @@
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{comment}
-
 % Toggle the following two lines to switch between english and german layout
 \usepackage[english]{babel} % Neue deutsche Rechtschreibung und Silbentrennung.
 % \usepackage[ngerman]{babel} % Neue deutsche Rechtschreibung und Silbentrennung.
@@ -23,7 +22,7 @@
             plainpages=false,
             pdfpagelabels=true,
             pdfborder={0 0 0.5}]{hyperref}
-
+            
 
 \makeatletter
 \def\tagform@#1{\maketag@@@{\ignorespaces [#1]\unskip\@@italiccorr}}	% Anpassung der Formelnummerierung
@@ -32,12 +31,12 @@
 \makeindex
 
 \newcommand{\myname}{Anna~Fedorchenko}
-\newcommand{\headtitle}{Pixel-based object grasping with Deep Reinforcement Learning in simulation }
-\newcommand{\floatingtitle}{Pixel-based object grasping with Deep Reinforcement Learning in simulation }
+\newcommand{\headtitle}{Vision-based object grasping with Deep Reinforcement Learning in simulation }
+\newcommand{\floatingtitle}{Vision-based object grasping with Deep Reinforcement Learning in simulation }
 \newcommand{\thesistype}{Bachelor thesis}
 
-\newcommand{\reviewerone}{Prof.~Dr.--Ing.~R.~Dillmann}
-\newcommand{\reviewertwo}{-}
+\newcommand{\reviewerone}{Prof.~Dr.-Ing.~R.~Dillmann}
+\newcommand{\reviewertwo}{Prof. Dr.-Ing. R. Stiefelhagen}
 \newcommand{\advisor}{M. Sc. Atanas Tanev}
 
 \newcommand{\timestart}{01. January 2020}
@@ -57,7 +56,7 @@
                                           {FZI Forschungszentrum Informatik}}
 
 % A graphic best describing your thesis
-\newcommand{\titlefig}{\includegraphics[width=1.0\textwidth]{graphics/not-the-final-title}}
+\newcommand{\titlefig}{\includegraphics[width=0.8\textwidth]{graphics/ppo_with_rotation}}
 
 \begin{document}
 
@@ -89,9 +88,11 @@
 
 % \include{content/appendix}
 
-\listoftodos
+% \listoftodos
 \listoffigures
 \listoftables
+% \bibliographystyle{ieeetr} 
+% \bibliographystyle{unsrt} 
 \bibliographystyle{ieeetr}
 \bibliography{content/bibliography}
 

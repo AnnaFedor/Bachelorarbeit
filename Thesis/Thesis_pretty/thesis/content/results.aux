@@ -3,45 +3,54 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Evaluation}{25}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.0.1}Simulation Inaccuracies}{25}{subsection.5.0.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline The Angle Of The Gripper}{25}{section*.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Slipping Of The Object}{26}{section*.18}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Experiments with the Soft-Actor-Critic Algorithm}{26}{section.5.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces todo\relax }}{26}{figure.caption.19}\protected@file@percent }
-\newlabel{exampletab}{{\caption@xref {exampletab}{ on input line 60}}{27}{Experiments with the Soft-Actor-Critic Algorithm}{table.caption.20}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Results of the trainings\relax }}{27}{table.caption.20}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}One Constant Positions Of The Object}{27}{subsection.5.1.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces An example of unstable behavior of the algorithm: after 14k training steps the agent learned correctly where the object is located. Then the performance dropped to 0 and did not recover after that.\relax }}{27}{figure.caption.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}20 Constant Positions Of The Object}{27}{subsection.5.1.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces After about 45k training steps the success rate was almost always 1. The reason it dropped in some episodes might be due to inaccuracy in actions or some object positions occurred for the first time - the agent never saw them before which lead to bad performance, they were learned after that\relax }}{28}{figure.caption.22}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Statistics of the training: object's position is one of 20 possible ones, learn to grasp the object in 150k steps. At the end of the training the entropy is becoming constant which means that the algorithm is sure which action to take. The entropy coefficient is going down as well because the agent does not need to do much exploration anymore. Policy loss is going to zero, as well as the losses from both Q-networks and the target value network, which means the weights of the network are adjusted in an optimal way to achieve success. \relax }}{28}{figure.caption.23}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces The first image shows the statistics of the length of first 10k episodes of the training, the second one - of the last 10k. It is noticeable, that in the second case the majority of episodes were short because the agent has already learned most of positions of the objects. In case of inaccuracy of actions or incorrect assumptions about the location of the object the episode lasted longer - up to 50 steps\relax }}{29}{figure.caption.24}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}50 Constant Positions Of The Object}{29}{subsection.5.1.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces The same experiment that differed only in number of training steps. The first image shows that in the first experiment the agent learned positions successfully after 80k steps, in the second experiment the agent did not manage to succeed even after 250k steps of training. The evaluation proved it: the first agent always graspes the object, the second one only in 90\% of cases with a high uncertainty of 30\%.\relax }}{30}{figure.caption.25}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Entropy loss of the successful agent became constant after about 80k steps - when the agent learned the task. In the second experiment the agent was not sure which action to take.\relax }}{30}{figure.caption.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Experiments with the Soft-Actor-Critic Algorithm}{25}{section.5.1}\protected@file@percent }
+\newlabel{exampletab}{{\caption@xref {exampletab}{ on input line 32}}{26}{Experiments with the Soft-Actor-Critic Algorithm}{table.caption.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Results of the evaluation of best agents for each test scenario. These agents show high success rate and low variance. However if the trainings for each experiment will be repeated, the resulting agents might be not as successful as the ones represented in the table.\relax }}{26}{table.caption.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}One Constant Positions Of The Object}{26}{subsection.5.1.1}\protected@file@percent }
+\newlabel{evaluation:one_obj_SAC}{{5.1.1}{26}{One Constant Positions Of The Object}{subsection.5.1.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces An example of unstable behavior of the algorithm: after 14k training steps the agent learned correctly where the object is located. Then the performance dropped to 0 and did not recover after that.\relax }}{26}{figure.caption.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}20 Constant Positions Of The Object}{26}{subsection.5.1.2}\protected@file@percent }
+\newlabel{evaluation:20_obj_SAC}{{5.1.2}{26}{20 Constant Positions Of The Object}{subsection.5.1.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces After about 45k training steps the success rate was almost always 1. The reason it dropped in some episodes might be due to inaccuracy in actions or some object positions occurred for the first time - the agent never saw them before which lead to bad performance, they were learned after that\relax }}{27}{figure.caption.18}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Statistics of the training: object's position is one of 20 possible ones, learn to grasp the object in 150k steps. At the end of the training the entropy is becoming constant which means that the algorithm is sure which action to take. The entropy coefficient is going down as well because the agent does not need to do much exploration anymore. Policy loss is going to zero, as well as the losses from both Q-networks and the target value network, which means the weights of the network are adjusted in an optimal way to achieve success. \relax }}{27}{figure.caption.19}\protected@file@percent }
 \citation{haarnoja2018soft}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Value loss statistics of two experiment.\relax }}{31}{figure.caption.27}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.4}Random Position Of The Object}{31}{subsection.5.1.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces 400k step training of SAC on random position of the object\relax }}{31}{figure.caption.28}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.5}Reasons for Unstable Training with the Soft-Actor-Critic Algorithm}{31}{subsection.5.1.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces The first image shows the statistics of the length of first 10k episodes of the training, the second one - of the last 10k. It is noticeable, that in the second case the majority of episodes were short because the agent has already learned most of positions of the objects. In case of inaccuracy of actions or incorrect assumptions about the location of the object the episode lasted longer - up to 50 steps\relax }}{28}{figure.caption.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Reasons for Unstable Training with the Soft-Actor-Critic Algorithm}{28}{subsection.5.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Experiments with the Proximal Policy Optimization Algorithm}{28}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Continuous Action Space}{28}{subsection.5.2.1}\protected@file@percent }
 \citation{zeng2018learning}
 \citation{zeng2019tossingbot}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Experiments with the Proximal Policy Optimization Algorithm}{32}{section.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Continuous action space}{32}{subsection.5.2.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces PPO performed extremely bad on the task without being able to learn the simplest set-up where the position of the object is constant during the whole training. In the first graphics there are some cases of reward 1 - there are so rare that they are most likely accidental.\relax }}{32}{figure.caption.29}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Discrete action space without gripper rotation}{32}{subsection.5.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces 300k step training of PPO on random position of the object\relax }}{32}{figure.caption.30}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces PPO performed extremely bad on the task without being able to learn the simplest set-up where the position of the object is constant during the whole training. In the first graphics there are some cases of reward 1 - there are so rare that they are most likely accidental.\relax }}{29}{figure.caption.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Discrete Action Space without Gripper Rotation}{29}{subsection.5.2.2}\protected@file@percent }
+\newlabel{evaluation:multidiscrete_no_rotation}{{5.2.2}{29}{Discrete Action Space without Gripper Rotation}{subsection.5.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces 300k step training of PPO on random position of the object\relax }}{29}{figure.caption.22}\protected@file@percent }
 \citation{tang2019discretizing}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces 500k step training of PPO on random position of the object. The evaluation of the model at the end showed 99.5\% success rate with 7\% variance. \relax }}{33}{figure.caption.31}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces todo\relax }}{33}{figure.caption.32}\protected@file@percent }
-\newlabel{exampletab}{{\caption@xref {exampletab}{ on input line 265}}{33}{Discrete action space without gripper rotation}{table.caption.33}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Results of the trainings\relax }}{33}{table.caption.33}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Discrete action space with gripper rotation}{34}{subsection.5.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces todo\relax }}{34}{figure.caption.34}\protected@file@percent }
-\newlabel{exampletab}{{\caption@xref {exampletab}{ on input line 290}}{34}{Discrete action space with gripper rotation}{table.caption.35}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Results of the trainings\relax }}{34}{table.caption.35}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces 500k step training of PPO on random position of the object. The evaluation of the model at the end showed 99.5\% success rate with 7\% variance. \relax }}{30}{figure.caption.23}\protected@file@percent }
+\newlabel{exampletab}{{\caption@xref {exampletab}{ on input line 236}}{30}{Discrete Action Space without Gripper Rotation}{table.caption.24}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces The PPO algorithm in combination with the discrete action space showed high success rates for all four test scenarios. In the fourth scenario during evaluation some of the object's positions were new to the robot, which is why he did not manage to grasp them right away or in 2\% at all. Increasing the number of training steps might close this gap. \relax }}{30}{table.caption.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Discrete Action Space with Gripper Rotation}{30}{subsection.5.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces The target object has a random rotation from 0$^\circ $ to 90$^\circ $, however it is possible for the gripper to grasp it at any times if the correct gripper position is determined.\relax }}{31}{figure.caption.25}\protected@file@percent }
+\newlabel{exampletab}{{\caption@xref {exampletab}{ on input line 261}}{31}{Discrete Action Space with Gripper Rotation}{table.caption.26}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces The PPO algorithm in combination with the discrete action space and gripper rotation showed high success rates for all four test scenarios. In the third scenario with 50 possible positions the success rate is lower and the variance is higher than in the fourth case, which is a not expected behavior as the third scenario is meant to be easier than the fourth one. Increasing the number of training steps might be helpful to get better results for the third case as the agent will experience more object positions and thus can better learn. \relax }}{31}{table.caption.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Generalization Test}{31}{section.5.3}\protected@file@percent }
+\newlabel{fig:gen_test_sac}{{5.9a}{32}{SAC with continuous action space\relax }{figure.caption.27}{}}
+\newlabel{sub@fig:gen_test_sac}{{a}{32}{SAC with continuous action space\relax }{figure.caption.27}{}}
+\newlabel{fig:gen_test_PPO_no_rotation}{{5.9b}{32}{PPO with discrete action space without rotation\relax }{figure.caption.27}{}}
+\newlabel{sub@fig:gen_test_PPO_no_rotation}{{b}{32}{PPO with discrete action space without rotation\relax }{figure.caption.27}{}}
+\newlabel{fig:gen_test_PPO_with_rotation}{{5.9c}{32}{PPO with discrete action space with rotation\relax }{figure.caption.27}{}}
+\newlabel{sub@fig:gen_test_PPO_with_rotation}{{c}{32}{PPO with discrete action space with rotation\relax }{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces The diagrams show results of evaluation and generalization tests for three experiments: SAC with continuous action space, PPO with discrete action space without rotation, PPO with discrete action space with rotation. The x-axis represents the number of object positions that the agent was trained on, with "Random" being random object position during training. Green represents the success rate of the agent during the evaluation on the scenario that it was trained with, grey is the corresponding variance. Blue is the success rate at the generalization test, red is variance. \relax }}{32}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:gen_test}{{5.9}{32}{The diagrams show results of evaluation and generalization tests for three experiments: SAC with continuous action space, PPO with discrete action space without rotation, PPO with discrete action space with rotation. The x-axis represents the number of object positions that the agent was trained on, with "Random" being random object position during training. Green represents the success rate of the agent during the evaluation on the scenario that it was trained with, grey is the corresponding variance. Blue is the success rate at the generalization test, red is variance. \relax }{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Simulation Inaccuracies}{33}{section.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}The Angle Of The Gripper}{33}{subsection.5.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Slipping Of The Object}{33}{subsection.5.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{35}{chapter.6}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.0.1}Conclusion}{35}{subsection.6.0.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.0.2}Future Work}{35}{subsection.6.0.2}\protected@file@percent }
 \@setckpt{content/results}{
-\setcounter{page}{35}
+\setcounter{page}{37}
 \setcounter{equation}{0}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
@@ -50,20 +59,20 @@
 \setcounter{footnote}{0}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
-\setcounter{chapter}{5}
-\setcounter{section}{2}
-\setcounter{subsection}{3}
+\setcounter{chapter}{6}
+\setcounter{section}{0}
+\setcounter{subsection}{2}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{15}
-\setcounter{table}{3}
+\setcounter{figure}{0}
+\setcounter{table}{0}
 \setcounter{lofdepth}{1}
 \setcounter{lotdepth}{1}
 \setcounter{NAT@ctr}{0}
 \setcounter{parentequation}{0}
 \setcounter{@todonotes@numberoftodonotes}{0}
-\setcounter{caption@flags}{0}
+\setcounter{caption@flags}{4}
 \setcounter{ContinuedFloat}{0}
 \setcounter{subfigure}{0}
 \setcounter{subtable}{0}
