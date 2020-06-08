@@ -1,10 +1,329 @@
 \begin{thebibliography}{10}
 
+\bibitem{zeng2018learning}
+Andy Zeng, Shuran Song, Stefan Welker, Johnny Lee, Alberto Rodriguez, and
+  Thomas Funkhouser.
+\newblock Learning synergies between pushing and grasping with self-supervised
+  deep reinforcement learning.
+\newblock In {\em 2018 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems (IROS)}, pages 4238--4245. IEEE, 2018.
+
+\bibitem{pinto2016supersizing}
+Lerrel Pinto and Abhinav Gupta.
+\newblock Supersizing self-supervision: Learning to grasp from 50k tries and
+  700 robot hours.
+\newblock In {\em 2016 IEEE international conference on robotics and automation
+  (ICRA)}, pages 3406--3413. IEEE, 2016.
+
+\bibitem{sahbani2012overview}
+Anis Sahbani, Sahar El-Khoury, and Philippe Bidaud.
+\newblock An overview of 3d object grasp synthesis algorithms.
+\newblock {\em Robotics and Autonomous Systems}, 60(3):326--336, 2012.
+
+\bibitem{nguyen1988constructing}
+Van-Duc Nguyen.
+\newblock Constructing force-closure grasps.
+\newblock {\em The International Journal of Robotics Research}, 7(3):3--16,
+  1988.
+
+\bibitem{murray2017mathematical}
+Richard~M Murray.
+\newblock {\em A mathematical introduction to robotic manipulation}.
+\newblock CRC press, 2017.
+
+\bibitem{shimoga1996robot}
+Karun~B Shimoga.
+\newblock Robot grasp synthesis algorithms: A survey.
+\newblock {\em The International Journal of Robotics Research}, 15(3):230--266,
+  1996.
+
+\bibitem{ding2000computing}
+Dan Ding, Yun-Hui Liu, and Shuguo Wang.
+\newblock Computing 3-d optimal form-closure grasps.
+\newblock In {\em Proceedings 2000 ICRA. Millennium Conference. IEEE
+  International Conference on Robotics and Automation. Symposia Proceedings
+  (Cat. No. 00CH37065)}, volume~4, pages 3573--3578. IEEE, 2000.
+
+\bibitem{bohg2013data}
+Jeannette Bohg, Antonio Morales, Tamim Asfour, and Danica Kragic.
+\newblock Data-driven grasp synthesis---a survey.
+\newblock {\em IEEE Transactions on Robotics}, 30(2):289--309, 2013.
+
+\bibitem{ekvall2007learning}
+Staffan Ekvall and Danica Kragic.
+\newblock Learning and evaluation of the approach vector for automatic grasp
+  generation and planning.
+\newblock In {\em Proceedings 2007 IEEE International Conference on Robotics
+  and Automation}, pages 4715--4720. IEEE, 2007.
+
+\bibitem{redmon2015real}
+Joseph Redmon and Anelia Angelova.
+\newblock Real-time grasp tection using convolutional neural networks.
+\newblock In {\em 2015 IEEE International Conference on Robotics and Automation
+  (ICRA)}, pages 1316--1322. IEEE, 2015.
+
 \bibitem{Cornellgraspingdataset}
 \url{http://pr.cs.cornell.edu/grasping/rect_data/data.php}.
 
+\bibitem{mahler2017dex}
+Jeffrey Mahler, Jacky Liang, Sherdil Niyaz, Michael Laskey, Richard Doan, Xinyu
+  Liu, Juan~Aparicio Ojea, and Ken Goldberg.
+\newblock Dex-net 2.0: Deep learning to plan robust grasps with synthetic point
+  clouds and analytic grasp metrics.
+\newblock {\em arXiv preprint arXiv:1703.09312}, 2017.
+
+\bibitem{kasper2012kit}
+Alexander Kasper, Zhixing Xue, and R{\"u}diger Dillmann.
+\newblock The kit object models database: An object model database for object
+  recognition, localization and manipulation in service robotics.
+\newblock {\em The International Journal of Robotics Research}, 31(8):927--934,
+  2012.
+
+\bibitem{mahler2016dex}
+Jeffrey Mahler, Florian~T Pokorny, Brian Hou, Melrose Roderick, Michael Laskey,
+  Mathieu Aubry, Kai Kohlhoff, Torsten Kr{\"o}ger, James Kuffner, and Ken
+  Goldberg.
+\newblock Dex-net 1.0: A cloud-based network of 3d objects for robust grasp
+  planning using a multi-armed bandit model with correlated rewards.
+\newblock In {\em 2016 IEEE international conference on robotics and automation
+  (ICRA)}, pages 1957--1964. IEEE, 2016.
+
+\bibitem{tremblay2018deep}
+Jonathan Tremblay, Thang To, Balakumar Sundaralingam, Yu~Xiang, Dieter Fox, and
+  Stan Birchfield.
+\newblock Deep object pose estimation for semantic robotic grasping of
+  household objects.
+\newblock {\em arXiv preprint arXiv:1809.10790}, 2018.
+
+\bibitem{lepetit2009epnp}
+Vincent Lepetit, Francesc Moreno-Noguer, and Pascal Fua.
+\newblock Epnp: An accurate o (n) solution to the pnp problem.
+\newblock {\em International journal of computer vision}, 81(2):155, 2009.
+
+\bibitem{manuelli2019kpam}
+Lucas Manuelli, Wei Gao, Peter Florence, and Russ Tedrake.
+\newblock kpam: Keypoint affordances for category-level robotic manipulation.
+\newblock {\em arXiv preprint arXiv:1903.06684}, 2019.
+
+\bibitem{zeng2018robotic}
+Andy Zeng, Shuran Song, Kuan-Ting Yu, Elliott Donlon, Francois~R Hogan, Maria
+  Bauza, Daolin Ma, Orion Taylor, Melody Liu, Eudald Romo, et~al.
+\newblock Robotic pick-and-place of novel objects in clutter with
+  multi-affordance grasping and cross-domain image matching.
+\newblock In {\em 2018 IEEE international conference on robotics and automation
+  (ICRA)}, pages 1--8. IEEE, 2018.
+
+\bibitem{bohg2011mind}
+Jeannette Bohg, Matthew Johnson-Roberson, Beatriz Le{\'o}n, Javier Felip, Xavi
+  Gratal, Niklas Bergstr{\"o}m, Danica Kragic, and Antonio Morales.
+\newblock Mind the gap-robotic grasping under incomplete observation.
+\newblock In {\em 2011 IEEE International Conference on Robotics and
+  Automation}, pages 686--693. IEEE, 2011.
+
+\bibitem{zeng2019tossingbot}
+Andy Zeng, Shuran Song, Johnny Lee, Alberto Rodriguez, and Thomas Funkhouser.
+\newblock Tossingbot: Learning to throw arbitrary objects with residual
+  physics.
+\newblock 2019.
+
+\bibitem{levine2018learning}
+Sergey Levine, Peter Pastor, Alex Krizhevsky, Julian Ibarz, and Deirdre
+  Quillen.
+\newblock Learning hand-eye coordination for robotic grasping with deep
+  learning and large-scale data collection.
+\newblock {\em The International Journal of Robotics Research},
+  37(4-5):421--436, 2018.
+
+\bibitem{goldfeder2011data}
+Corey Goldfeder and Peter~K Allen.
+\newblock Data-driven grasping.
+\newblock {\em Autonomous Robots}, 31(1):1--20, 2011.
+
+\bibitem{miller2004graspit}
+Andrew~T Miller and Peter~K Allen.
+\newblock Graspit! a versatile simulator for robotic grasping.
+\newblock 2004.
+
+\bibitem{leon2010opengrasp}
+Beatriz Le{\'o}n, Stefan Ulbrich, Rosen Diankov, Gustavo Puche, Markus
+  Przybylski, Antonio Morales, Tamim Asfour, Sami Moisio, Jeannette Bohg, James
+  Kuffner, et~al.
+\newblock Opengrasp: a toolkit for robot grasping simulation.
+\newblock In {\em International Conference on Simulation, Modeling, and
+  Programming for Autonomous Robots}, pages 109--120. Springer, 2010.
+
+\bibitem{james2019sim}
+Stephen James, Paul Wohlhart, Mrinal Kalakrishnan, Dmitry Kalashnikov, Alex
+  Irpan, Julian Ibarz, Sergey Levine, Raia Hadsell, and Konstantinos Bousmalis.
+\newblock Sim-to-real via sim-to-sim: Data-efficient robotic grasping via
+  randomized-to-canonical adaptation networks.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 12627--12637, 2019.
+
+\bibitem{bousmalis2018using}
+Konstantinos Bousmalis, Alex Irpan, Paul Wohlhart, Yunfei Bai, Matthew Kelcey,
+  Mrinal Kalakrishnan, Laura Downs, Julian Ibarz, Peter Pastor, Kurt Konolige,
+  et~al.
+\newblock Using simulation and domain adaptation to improve efficiency of deep
+  robotic grasping.
+\newblock In {\em 2018 IEEE International Conference on Robotics and Automation
+  (ICRA)}, pages 4243--4250. IEEE, 2018.
+
+\bibitem{tobin2017domain}
+Josh Tobin, Rachel Fong, Alex Ray, Jonas Schneider, Wojciech Zaremba, and
+  Pieter Abbeel.
+\newblock Domain randomization for transferring deep neural networks from
+  simulation to the real world.
+\newblock In {\em 2017 IEEE/RSJ international conference on intelligent robots
+  and systems (IROS)}, pages 23--30. IEEE, 2017.
+
+\bibitem{patel2015visual}
+Vishal~M Patel, Raghuraman Gopalan, Ruonan Li, and Rama Chellappa.
+\newblock Visual domain adaptation: A survey of recent advances.
+\newblock {\em IEEE signal processing magazine}, 32(3):53--69, 2015.
+
+\bibitem{levine2016end}
+Sergey Levine, Chelsea Finn, Trevor Darrell, and Pieter Abbeel.
+\newblock End-to-end training of deep visuomotor policies.
+\newblock {\em The Journal of Machine Learning Research}, 17(1):1334--1373,
+  2016.
+
+\bibitem{saxena2008robotic}
+Ashutosh Saxena, Justin Driemeyer, and Andrew~Y Ng.
+\newblock Robotic grasping of novel objects using vision.
+\newblock {\em The International Journal of Robotics Research}, 27(2):157--173,
+  2008.
+
+\bibitem{sengupta2019going}
+Abhronil Sengupta, Yuting Ye, Robert Wang, Chiao Liu, and Kaushik Roy.
+\newblock Going deeper in spiking neural networks: Vgg and residual
+  architectures.
+\newblock {\em Frontiers in neuroscience}, 13, 2019.
+
+\bibitem{he2016deep}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 770--778, 2016.
+
+\bibitem{huang2017densely}
+Gao Huang, Zhuang Liu, Laurens Van Der~Maaten, and Kilian~Q Weinberger.
+\newblock Densely connected convolutional networks.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 4700--4708, 2017.
+
+\bibitem{liang2019knowledge}
+Hengyue Liang, Xibai Lou, and Changhyun Choi.
+\newblock Knowledge induced deep q-network for a slide-to-wall object grasping.
+\newblock {\em arXiv preprint arXiv:1910.03781}, 2019.
+
+\bibitem{berscheid2019improving}
+Lars Berscheid, Thomas R{\"u}hr, and Torsten Kr{\"o}ger.
+\newblock Improving data efficiency of self-supervised learning for robotic
+  grasping.
+\newblock {\em arXiv preprint arXiv:1903.00228}, 2019.
+
+\bibitem{kaelbling1996reinforcement}
+Leslie~Pack Kaelbling, Michael~L Littman, and Andrew~W Moore.
+\newblock Reinforcement learning: A survey.
+\newblock {\em Journal of artificial intelligence research}, 4:237--285, 1996.
+
+\bibitem{quillen2018deep}
+Deirdre Quillen, Eric Jang, Ofir Nachum, Chelsea Finn, Julian Ibarz, and Sergey
+  Levine.
+\newblock Deep reinforcement learning for vision-based robotic grasping: A
+  simulated comparative evaluation of off-policy methods.
+\newblock In {\em 2018 IEEE International Conference on Robotics and Automation
+  (ICRA)}, pages 6284--6291. IEEE, 2018.
+
+\bibitem{boularias2015learning}
+Abdeslam Boularias, James~Andrew Bagnell, and Anthony Stentz.
+\newblock Learning to manipulate unknown objects in clutter by reinforcement.
+\newblock In {\em Twenty-Ninth AAAI Conference on Artificial Intelligence},
+  2015.
+
+\bibitem{von2007tutorial}
+Ulrike Von~Luxburg.
+\newblock A tutorial on spectral clustering.
+\newblock {\em Statistics and computing}, 17(4):395--416, 2007.
+
+\bibitem{vinyals2017starcraft}
+Oriol Vinyals, Timo Ewalds, Sergey Bartunov, Petko Georgiev, Alexander~Sasha
+  Vezhnevets, Michelle Yeo, Alireza Makhzani, Heinrich K{\"u}ttler, John
+  Agapiou, Julian Schrittwieser, et~al.
+\newblock Starcraft ii: A new challenge for reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1708.04782}, 2017.
+
+\bibitem{mnih2013playing}
+Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis
+  Antonoglou, Daan Wierstra, and Martin Riedmiller.
+\newblock Playing atari with deep reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1312.5602}, 2013.
+
+\bibitem{kormushev2013reinforcement}
+Petar Kormushev, Sylvain Calinon, and Darwin~G Caldwell.
+\newblock Reinforcement learning in robotics: Applications and real-world
+  challenges.
+\newblock {\em Robotics}, 2(3):122--148, 2013.
+
 \bibitem{spinningup}
 \url{https://spinningup.openai.com/en/latest/}.
+
+\bibitem{bansal2017mbmf}
+Somil Bansal, Roberto Calandra, Kurtland Chua, Sergey Levine, and Claire
+  Tomlin.
+\newblock Mbmf: Model-based priors for model-free reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1709.03153}, 2017.
+
+\bibitem{haarnoja2018soft}
+Tuomas Haarnoja, Aurick Zhou, Pieter Abbeel, and Sergey Levine.
+\newblock Soft actor-critic: Off-policy maximum entropy deep reinforcement
+  learning with a stochastic actor.
+\newblock {\em arXiv preprint arXiv:1801.01290}, 2018.
+
+\bibitem{schulman2017proximal}
+John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov.
+\newblock Proximal policy optimization algorithms.
+\newblock {\em arXiv preprint arXiv:1707.06347}, 2017.
+
+\bibitem{schulman2015trust}
+John Schulman, Sergey Levine, Pieter Abbeel, Michael Jordan, and Philipp
+  Moritz.
+\newblock Trust region policy optimization.
+\newblock In {\em International conference on machine learning}, pages
+  1889--1897, 2015.
+
+\bibitem{mao2016resource}
+Hongzi Mao, Mohammad Alizadeh, Ishai Menache, and Srikanth Kandula.
+\newblock Resource management with deep reinforcement learning.
+\newblock In {\em Proceedings of the 15th ACM Workshop on Hot Topics in
+  Networks}, pages 50--56, 2016.
+
+\bibitem{todorov2012mujoco}
+Emanuel Todorov, Tom Erez, and Yuval Tassa.
+\newblock Mujoco: A physics engine for model-based control.
+\newblock In {\em 2012 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems}, pages 5026--5033. IEEE, 2012.
+
+\bibitem{erez2015simulation}
+Tom Erez, Yuval Tassa, and Emanuel Todorov.
+\newblock Simulation tools for model-based robotics: Comparison of bullet,
+  havok, mujoco, ode and physx.
+\newblock In {\em 2015 IEEE international conference on robotics and automation
+  (ICRA)}, pages 4397--4404. IEEE, 2015.
+
+\bibitem{pickplace2018openai}
+OpenAI.
+\newblock Fetchpickandplace-v0.
+\newblock \url{https://gym.openai.com/envs/FetchPickAndPlace-v0/}, 2018.
+
+\bibitem{stable-baselines}
+Ashley Hill, Antonin Raffin, Maximilian Ernestus, Adam Gleave, Anssi
+  Kanervisto, Rene Traore, Prafulla Dhariwal, Christopher Hesse, Oleg Klimov,
+  Alex Nichol, Matthias Plappert, Alec Radford, John Schulman, Szymon Sidor,
+  and Yuhuai Wu.
+\newblock Stable baselines.
+\newblock \url{https://github.com/hill-a/stable-baselines}, 2018.
 
 \bibitem{opengl}
 \url{https://www.opengl.org/}.
@@ -12,335 +331,29 @@
 \bibitem{mujoco-documentation}
 \url{http://www.mujoco.org/book/index.html}.
 
+\bibitem{1606.01540}
+Greg Brockman, Vicki Cheung, Ludwig Pettersson, Jonas Schneider, John Schulman,
+  Jie Tang, and Wojciech Zaremba.
+\newblock Openai gym, 2016.
+
 \bibitem{openai}
 \url{https://openai.com/}.
 
-\bibitem{bansal2017mbmf}
-S.~Bansal, R.~Calandra, K.~Chua, S.~Levine, and C.~Tomlin.
-\newblock Mbmf: Model-based priors for model-free reinforcement learning.
-\newblock {\em arXiv preprint arXiv:1709.03153}, 2017.
-
-\bibitem{berscheid2019improving}
-L.~Berscheid, T.~R{\"u}hr, and T.~Kr{\"o}ger.
-\newblock Improving data efficiency of self-supervised learning for robotic
-  grasping.
-\newblock {\em arXiv preprint arXiv:1903.00228}, 2019.
-
-\bibitem{bohg2011mind}
-J.~Bohg, M.~Johnson-Roberson, B.~Le{\'o}n, J.~Felip, X.~Gratal,
-  N.~Bergstr{\"o}m, D.~Kragic, and A.~Morales.
-\newblock Mind the gap-robotic grasping under incomplete observation.
-\newblock In {\em 2011 IEEE International Conference on Robotics and
-  Automation}, pages 686--693. IEEE, 2011.
-
-\bibitem{bohg2013data}
-J.~Bohg, A.~Morales, T.~Asfour, and D.~Kragic.
-\newblock Data-driven grasp synthesis---a survey.
-\newblock {\em IEEE Transactions on Robotics}, 30(2):289--309, 2013.
-
-\bibitem{boularias2015learning}
-A.~Boularias, J.~A. Bagnell, and A.~Stentz.
-\newblock Learning to manipulate unknown objects in clutter by reinforcement.
-\newblock In {\em Twenty-Ninth AAAI Conference on Artificial Intelligence},
-  2015.
-
-\bibitem{bousmalis2018using}
-K.~Bousmalis, A.~Irpan, P.~Wohlhart, Y.~Bai, M.~Kelcey, M.~Kalakrishnan,
-  L.~Downs, J.~Ibarz, P.~Pastor, K.~Konolige, et~al.
-\newblock Using simulation and domain adaptation to improve efficiency of deep
-  robotic grasping.
-\newblock In {\em 2018 IEEE International Conference on Robotics and Automation
-  (ICRA)}, pages 4243--4250. IEEE, 2018.
-
-\bibitem{1606.01540}
-G.~Brockman, V.~Cheung, L.~Pettersson, J.~Schneider, J.~Schulman, J.~Tang, and
-  W.~Zaremba.
-\newblock Openai gym, 2016.
-
 \bibitem{baselines}
-P.~Dhariwal, C.~Hesse, O.~Klimov, A.~Nichol, M.~Plappert, A.~Radford,
-  J.~Schulman, S.~Sidor, Y.~Wu, and P.~Zhokhov.
+Prafulla Dhariwal, Christopher Hesse, Oleg Klimov, Alex Nichol, Matthias
+  Plappert, Alec Radford, John Schulman, Szymon Sidor, Yuhuai Wu, and Peter
+  Zhokhov.
 \newblock Openai baselines.
 \newblock \url{https://github.com/openai/baselines}, 2017.
 
-\bibitem{ding2000computing}
-D.~Ding, Y.-H. Liu, and S.~Wang.
-\newblock Computing 3-d optimal form-closure grasps.
-\newblock In {\em Proceedings 2000 ICRA. Millennium Conference. IEEE
-  International Conference on Robotics and Automation. Symposia Proceedings
-  (Cat. No. 00CH37065)}, volume~4, pages 3573--3578. IEEE, 2000.
-
-\bibitem{ekvall2007learning}
-S.~Ekvall and D.~Kragic.
-\newblock Learning and evaluation of the approach vector for automatic grasp
-  generation and planning.
-\newblock In {\em Proceedings 2007 IEEE International Conference on Robotics
-  and Automation}, pages 4715--4720. IEEE, 2007.
-
-\bibitem{erez2015simulation}
-T.~Erez, Y.~Tassa, and E.~Todorov.
-\newblock Simulation tools for model-based robotics: Comparison of bullet,
-  havok, mujoco, ode and physx.
-\newblock In {\em 2015 IEEE international conference on robotics and automation
-  (ICRA)}, pages 4397--4404. IEEE, 2015.
-
-\bibitem{goldfeder2011data}
-C.~Goldfeder and P.~K. Allen.
-\newblock Data-driven grasping.
-\newblock {\em Autonomous Robots}, 31(1):1--20, 2011.
-
-\bibitem{haarnoja2018soft}
-T.~Haarnoja, A.~Zhou, P.~Abbeel, and S.~Levine.
-\newblock Soft actor-critic: Off-policy maximum entropy deep reinforcement
-  learning with a stochastic actor.
-\newblock {\em arXiv preprint arXiv:1801.01290}, 2018.
-
-\bibitem{he2016deep}
-K.~He, X.~Zhang, S.~Ren, and J.~Sun.
-\newblock Deep residual learning for image recognition.
-\newblock In {\em Proceedings of the IEEE conference on computer vision and
-  pattern recognition}, pages 770--778, 2016.
-
-\bibitem{stable-baselines}
-A.~Hill, A.~Raffin, M.~Ernestus, A.~Gleave, A.~Kanervisto, R.~Traore,
-  P.~Dhariwal, C.~Hesse, O.~Klimov, A.~Nichol, M.~Plappert, A.~Radford,
-  J.~Schulman, S.~Sidor, and Y.~Wu.
-\newblock Stable baselines.
-\newblock \url{https://github.com/hill-a/stable-baselines}, 2018.
-
-\bibitem{huang2017densely}
-G.~Huang, Z.~Liu, L.~Van Der~Maaten, and K.~Q. Weinberger.
-\newblock Densely connected convolutional networks.
-\newblock In {\em Proceedings of the IEEE conference on computer vision and
-  pattern recognition}, pages 4700--4708, 2017.
-
-\bibitem{james2019sim}
-S.~James, P.~Wohlhart, M.~Kalakrishnan, D.~Kalashnikov, A.~Irpan, J.~Ibarz,
-  S.~Levine, R.~Hadsell, and K.~Bousmalis.
-\newblock Sim-to-real via sim-to-sim: Data-efficient robotic grasping via
-  randomized-to-canonical adaptation networks.
-\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
-  Pattern Recognition}, pages 12627--12637, 2019.
-
-\bibitem{kaelbling1996reinforcement}
-L.~P. Kaelbling, M.~L. Littman, and A.~W. Moore.
-\newblock Reinforcement learning: A survey.
-\newblock {\em Journal of artificial intelligence research}, 4:237--285, 1996.
-
-\bibitem{kasper2012kit}
-A.~Kasper, Z.~Xue, and R.~Dillmann.
-\newblock The kit object models database: An object model database for object
-  recognition, localization and manipulation in service robotics.
-\newblock {\em The International Journal of Robotics Research}, 31(8):927--934,
-  2012.
-
-\bibitem{kormushev2013reinforcement}
-P.~Kormushev, S.~Calinon, and D.~G. Caldwell.
-\newblock Reinforcement learning in robotics: Applications and real-world
-  challenges.
-\newblock {\em Robotics}, 2(3):122--148, 2013.
-
-\bibitem{leon2010opengrasp}
-B.~Le{\'o}n, S.~Ulbrich, R.~Diankov, G.~Puche, M.~Przybylski, A.~Morales,
-  T.~Asfour, S.~Moisio, J.~Bohg, J.~Kuffner, et~al.
-\newblock Opengrasp: a toolkit for robot grasping simulation.
-\newblock In {\em International Conference on Simulation, Modeling, and
-  Programming for Autonomous Robots}, pages 109--120. Springer, 2010.
-
-\bibitem{lepetit2009epnp}
-V.~Lepetit, F.~Moreno-Noguer, and P.~Fua.
-\newblock Epnp: An accurate o (n) solution to the pnp problem.
-\newblock {\em International journal of computer vision}, 81(2):155, 2009.
-
-\bibitem{levine2016end}
-S.~Levine, C.~Finn, T.~Darrell, and P.~Abbeel.
-\newblock End-to-end training of deep visuomotor policies.
-\newblock {\em The Journal of Machine Learning Research}, 17(1):1334--1373,
-  2016.
-
-\bibitem{levine2018learning}
-S.~Levine, P.~Pastor, A.~Krizhevsky, J.~Ibarz, and D.~Quillen.
-\newblock Learning hand-eye coordination for robotic grasping with deep
-  learning and large-scale data collection.
-\newblock {\em The International Journal of Robotics Research},
-  37(4-5):421--436, 2018.
-
-\bibitem{liang2019knowledge}
-H.~Liang, X.~Lou, and C.~Choi.
-\newblock Knowledge induced deep q-network for a slide-to-wall object grasping.
-\newblock {\em arXiv preprint arXiv:1910.03781}, 2019.
-
-\bibitem{mahler2017dex}
-J.~Mahler, J.~Liang, S.~Niyaz, M.~Laskey, R.~Doan, X.~Liu, J.~A. Ojea, and
-  K.~Goldberg.
-\newblock Dex-net 2.0: Deep learning to plan robust grasps with synthetic point
-  clouds and analytic grasp metrics.
-\newblock {\em arXiv preprint arXiv:1703.09312}, 2017.
-
-\bibitem{mahler2016dex}
-J.~Mahler, F.~T. Pokorny, B.~Hou, M.~Roderick, M.~Laskey, M.~Aubry,
-  K.~Kohlhoff, T.~Kr{\"o}ger, J.~Kuffner, and K.~Goldberg.
-\newblock Dex-net 1.0: A cloud-based network of 3d objects for robust grasp
-  planning using a multi-armed bandit model with correlated rewards.
-\newblock In {\em 2016 IEEE international conference on robotics and automation
-  (ICRA)}, pages 1957--1964. IEEE, 2016.
-
-\bibitem{manuelli2019kpam}
-L.~Manuelli, W.~Gao, P.~Florence, and R.~Tedrake.
-\newblock kpam: Keypoint affordances for category-level robotic manipulation.
-\newblock {\em arXiv preprint arXiv:1903.06684}, 2019.
-
-\bibitem{mao2016resource}
-H.~Mao, M.~Alizadeh, I.~Menache, and S.~Kandula.
-\newblock Resource management with deep reinforcement learning.
-\newblock In {\em Proceedings of the 15th ACM Workshop on Hot Topics in
-  Networks}, pages 50--56, 2016.
-
-\bibitem{miller2004graspit}
-A.~T. Miller and P.~K. Allen.
-\newblock Graspit! a versatile simulator for robotic grasping.
-\newblock 2004.
-
-\bibitem{mnih2013playing}
-V.~Mnih, K.~Kavukcuoglu, D.~Silver, A.~Graves, I.~Antonoglou, D.~Wierstra, and
-  M.~Riedmiller.
-\newblock Playing atari with deep reinforcement learning.
-\newblock {\em arXiv preprint arXiv:1312.5602}, 2013.
-
-\bibitem{murray2017mathematical}
-R.~M. Murray.
-\newblock {\em A mathematical introduction to robotic manipulation}.
-\newblock CRC press, 2017.
-
-\bibitem{nguyen1988constructing}
-V.-D. Nguyen.
-\newblock Constructing force-closure grasps.
-\newblock {\em The International Journal of Robotics Research}, 7(3):3--16,
-  1988.
-
-\bibitem{pickplace2018openai}
-OpenAI.
-\newblock Fetchpickandplace-v0.
-\newblock \url{https://gym.openai.com/envs/FetchPickAndPlace-v0/}, 2018.
-
-\bibitem{patel2015visual}
-V.~M. Patel, R.~Gopalan, R.~Li, and R.~Chellappa.
-\newblock Visual domain adaptation: A survey of recent advances.
-\newblock {\em IEEE signal processing magazine}, 32(3):53--69, 2015.
-
-\bibitem{pinto2016supersizing}
-L.~Pinto and A.~Gupta.
-\newblock Supersizing self-supervision: Learning to grasp from 50k tries and
-  700 robot hours.
-\newblock In {\em 2016 IEEE international conference on robotics and automation
-  (ICRA)}, pages 3406--3413. IEEE, 2016.
-
-\bibitem{quillen2018deep}
-D.~Quillen, E.~Jang, O.~Nachum, C.~Finn, J.~Ibarz, and S.~Levine.
-\newblock Deep reinforcement learning for vision-based robotic grasping: A
-  simulated comparative evaluation of off-policy methods.
-\newblock In {\em 2018 IEEE International Conference on Robotics and Automation
-  (ICRA)}, pages 6284--6291. IEEE, 2018.
-
 \bibitem{rl-zoo}
-A.~Raffin.
+Antonin Raffin.
 \newblock Rl baselines zoo.
 \newblock \url{https://github.com/araffin/rl-baselines-zoo}, 2018.
 
-\bibitem{redmon2015real}
-J.~Redmon and A.~Angelova.
-\newblock Real-time grasp tection using convolutional neural networks.
-\newblock In {\em 2015 IEEE International Conference on Robotics and Automation
-  (ICRA)}, pages 1316--1322. IEEE, 2015.
-
-\bibitem{sahbani2012overview}
-A.~Sahbani, S.~El-Khoury, and P.~Bidaud.
-\newblock An overview of 3d object grasp synthesis algorithms.
-\newblock {\em Robotics and Autonomous Systems}, 60(3):326--336, 2012.
-
-\bibitem{saxena2008robotic}
-A.~Saxena, J.~Driemeyer, and A.~Y. Ng.
-\newblock Robotic grasping of novel objects using vision.
-\newblock {\em The International Journal of Robotics Research}, 27(2):157--173,
-  2008.
-
-\bibitem{schulman2015trust}
-J.~Schulman, S.~Levine, P.~Abbeel, M.~Jordan, and P.~Moritz.
-\newblock Trust region policy optimization.
-\newblock In {\em International conference on machine learning}, pages
-  1889--1897, 2015.
-
-\bibitem{schulman2017proximal}
-J.~Schulman, F.~Wolski, P.~Dhariwal, A.~Radford, and O.~Klimov.
-\newblock Proximal policy optimization algorithms.
-\newblock {\em arXiv preprint arXiv:1707.06347}, 2017.
-
-\bibitem{sengupta2019going}
-A.~Sengupta, Y.~Ye, R.~Wang, C.~Liu, and K.~Roy.
-\newblock Going deeper in spiking neural networks: Vgg and residual
-  architectures.
-\newblock {\em Frontiers in neuroscience}, 13, 2019.
-
-\bibitem{shimoga1996robot}
-K.~B. Shimoga.
-\newblock Robot grasp synthesis algorithms: A survey.
-\newblock {\em The International Journal of Robotics Research}, 15(3):230--266,
-  1996.
-
 \bibitem{tang2019discretizing}
-Y.~Tang and S.~Agrawal.
+Yunhao Tang and Shipra Agrawal.
 \newblock Discretizing continuous action space for on-policy optimization.
 \newblock {\em arXiv preprint arXiv:1901.10500}, 2019.
-
-\bibitem{tobin2017domain}
-J.~Tobin, R.~Fong, A.~Ray, J.~Schneider, W.~Zaremba, and P.~Abbeel.
-\newblock Domain randomization for transferring deep neural networks from
-  simulation to the real world.
-\newblock In {\em 2017 IEEE/RSJ international conference on intelligent robots
-  and systems (IROS)}, pages 23--30. IEEE, 2017.
-
-\bibitem{todorov2012mujoco}
-E.~Todorov, T.~Erez, and Y.~Tassa.
-\newblock Mujoco: A physics engine for model-based control.
-\newblock In {\em 2012 IEEE/RSJ International Conference on Intelligent Robots
-  and Systems}, pages 5026--5033. IEEE, 2012.
-
-\bibitem{tremblay2018deep}
-J.~Tremblay, T.~To, B.~Sundaralingam, Y.~Xiang, D.~Fox, and S.~Birchfield.
-\newblock Deep object pose estimation for semantic robotic grasping of
-  household objects.
-\newblock {\em arXiv preprint arXiv:1809.10790}, 2018.
-
-\bibitem{vinyals2017starcraft}
-O.~Vinyals, T.~Ewalds, S.~Bartunov, P.~Georgiev, A.~S. Vezhnevets, M.~Yeo,
-  A.~Makhzani, H.~K{\"u}ttler, J.~Agapiou, J.~Schrittwieser, et~al.
-\newblock Starcraft ii: A new challenge for reinforcement learning.
-\newblock {\em arXiv preprint arXiv:1708.04782}, 2017.
-
-\bibitem{von2007tutorial}
-U.~Von~Luxburg.
-\newblock A tutorial on spectral clustering.
-\newblock {\em Statistics and computing}, 17(4):395--416, 2007.
-
-\bibitem{zeng2019tossingbot}
-A.~Zeng, S.~Song, J.~Lee, A.~Rodriguez, and T.~Funkhouser.
-\newblock Tossingbot: Learning to throw arbitrary objects with residual
-  physics.
-\newblock 2019.
-
-\bibitem{zeng2018learning}
-A.~Zeng, S.~Song, S.~Welker, J.~Lee, A.~Rodriguez, and T.~Funkhouser.
-\newblock Learning synergies between pushing and grasping with self-supervised
-  deep reinforcement learning.
-\newblock In {\em 2018 IEEE/RSJ International Conference on Intelligent Robots
-  and Systems (IROS)}, pages 4238--4245. IEEE, 2018.
-
-\bibitem{zeng2018robotic}
-A.~Zeng, S.~Song, K.-T. Yu, E.~Donlon, F.~R. Hogan, M.~Bauza, D.~Ma, O.~Taylor,
-  M.~Liu, E.~Romo, et~al.
-\newblock Robotic pick-and-place of novel objects in clutter with
-  multi-affordance grasping and cross-domain image matching.
-\newblock In {\em 2018 IEEE international conference on robotics and automation
-  (ICRA)}, pages 1--8. IEEE, 2018.
 
 \end{thebibliography}

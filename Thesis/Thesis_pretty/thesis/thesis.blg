@@ -1,12 +1,16 @@
 This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
-The style file: abbrv.bst
+The style file: unsrt.bst
 A level-1 auxiliary file: preface/kit_titlepage.aux
 A level-1 auxiliary file: preface/titlepage.aux
 A level-1 auxiliary file: preface/affirmation.aux
 A level-1 auxiliary file: content/content.aux
 A level-1 auxiliary file: content/results.aux
+Illegal, another \bibstyle command---line 88 of file thesis.aux
+ : \bibstyle
+ :          {ieeetr}
+I'm skipping whatever remains of this command
 Database file #1: content/bibliography.bib
 Warning--entry type for "pickplace2018openai" isn't style-file defined
 --line 11 of file content/bibliography.bib
@@ -18,52 +22,47 @@ Repeated entry---line 337 of file content/bibliography.bib
  : @article{kaelbling1996reinforcement
  :                                    ,
 I'm skipping whatever remains of this entry
-Warning--to sort, need author or key in Cornellgraspingdataset
-Warning--to sort, need author or key in spinningup
-Warning--to sort, need author or key in opengl
-Warning--to sort, need author or key in mujoco-documentation
-Warning--to sort, need author or key in openai
-Warning--empty journal in miller2004graspit
 Warning--empty journal in zeng2019tossingbot
+Warning--empty journal in miller2004graspit
 You've used 59 entries,
-            2118 wiz_defined-function locations,
-            794 strings with 15851 characters,
-and the built_in function-call counts, 24187 in all, are:
-= -- 2327
-> -- 1451
+            1791 wiz_defined-function locations,
+            743 strings with 15661 characters,
+and the built_in function-call counts, 16156 in all, are:
+= -- 1400
+> -- 881
 < -- 20
-+ -- 579
-- -- 516
-* -- 1752
-:= -- 3892
++ -- 317
+- -- 258
+* -- 1049
+:= -- 2430
 add.period$ -- 180
 call.type$ -- 59
-change.case$ -- 425
+change.case$ -- 53
 chr.to.int$ -- 0
-cite$ -- 66
-duplicate$ -- 847
-empty$ -- 1690
-format.name$ -- 516
-if$ -- 5089
+cite$ -- 61
+duplicate$ -- 729
+empty$ -- 1498
+format.name$ -- 258
+if$ -- 3702
 int.to.chr$ -- 0
 int.to.str$ -- 59
 missing$ -- 50
 newline$ -- 287
-num.names$ -- 108
-pop$ -- 520
+num.names$ -- 54
+pop$ -- 246
 preamble$ -- 1
-purify$ -- 372
+purify$ -- 0
 quote$ -- 0
-skip$ -- 683
+skip$ -- 458
 stack$ -- 0
-substring$ -- 1303
+substring$ -- 1004
 swap$ -- 269
 text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 234
-warning$ -- 7
-while$ -- 192
+type$ -- 0
+warning$ -- 2
+while$ -- 138
 width$ -- 61
 write$ -- 612
-(There was 1 error message)
+(There were 2 error messages)
