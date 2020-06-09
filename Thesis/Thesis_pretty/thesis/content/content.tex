@@ -26,11 +26,20 @@
 % \subsection{ende fertig-------------------}
 \definecolor{my_background_code_color}{RGB}{236,240,243}
 
-\chapter{Zusammenfassung}
+\chapter*{Zusammenfassung}
 Greifen ist ein wichtiges und komplexes Problem. Aktuelle Lösung in der Industrie basiert sich auf bereits im Voraus bekannten Objekten und vordefinierten Bewegungen. Allerdings eine kleine Änderung bei dem Objekten oder in der Umgebung kann dazu führen, dass der Roboter nicht mehr in der Lage sein wird das Objekt erfolgreich zu greifen. \\
 Ein System mit höherem Grad der Autonomität ist erwünscht. Solches System soll in der Lage sein sich an Objekte von unterschiedlichen Formen und Größen anzupassen, sowie an diverse Umfeldbedingungen, Lichtverhältnisse und andere mögliche Störungen. Der Roboter soll seine Entscheidungen auf der Wahrnehmung der aktuellen Umgebung basieren und nicht auf dem preprogrammierten Verhalten. Solches System könnte mithilfe von Reinforcement Learning erzeugt werden.\\
 Das Ziel dieser Arbeit ist ein System zum Greifen in der Simulation basierend auf Deep Reinforcement learning zu entwickeln. Die Herangehensweise muss datengetrieben und selbstüberwacht sein. Der Roboter soll ohne Informationen über das Zielobjekt und Teilnahme des Menschen durch Versuch und Irrtum lernen. Basierend auf der binären Belohnung ob das Objekt erfolgreich gegriffen wurde oder nicht und auf dem RGB-Bild der Umgebung soll der Roboter eine Policy entwickeln. \\
 Abschnitt \ref{related work} gibt Übersicht über verwandte Arbeiten im Bereich Greifen, sowie Reinforcement learning Algorithmen. Im Abschnitt \ref{chapter:approach} wird die entwickelte Herangehensweise erklärt und die Implementierung wird im Abschnitt  \ref{chapter:implementation} vorgestellt. Die Ergebnisse werden im Kapitel  \ref{chapter:evaluation} beschrieben. Abschließend folgt der Ausblick auf die zukünftige Arbeit.
+\addcontentsline{toc}{chapter}{\numberline{}Zusammenfassung}%
+
+\chapter*{Abstract}
+Grasping is an important and difficult problem. The current approach in the industry is mostly based on knowing in advance what objects are to be grasped and predefined movements of the robot. However, a small modification of the object or in the environment can lead to the robot not being able to grasp the object anymore. \\
+A system with a higher degree of autonomy is desired. Such system should be able to generalize to objects of different shapes and sizes, as well as various settings, light conditions and other possible noise.  The robot should base its decisions on the perception of the current environment rather than on the preprogrammed behavior. Such system can de developed with the help of reinforcement learning. \\
+The goal of this thesis is to develop a robotic grasping system in simulation with the help of reinforcement learning. The approach should be data-driven and self-supervised. Without any information about the target object and human involvement the robot should learn to grasp by trial-and-error. Based on binary reward whether the object was grasped or not and the RGB-image of the environment the robot should develop a grasping policy. \\
+Chapter \ref{related work} gives an overview of related work in the field of robotic grasping as well as reinforcement learning. In chapter \ref{chapter:approach} the approach of the thesis is explained with detailed information on the implementation in chapter  \ref{chapter:implementation}. The results are represented in chapter \ref{chapter:evaluation}.
+
+\addcontentsline{toc}{chapter}{\numberline{}Abstract}%
 
 \chapter{Introduction}
 % \section{Motivation}
@@ -46,14 +55,12 @@ Abschnitt \ref{related work} gibt Übersicht über verwandte Arbeiten im Bereich
 %grasping strategyy. Finally, because of the variety of objects shapes and sizes,
 %grasping novel objects is required."
 
-
 %The grasping problem has been profoundly researched throughout the last decades. Many different approaches have been developed. Since the beginning of the 21century, Machine Learning has been used in more and more of them. ——> Übergang zum Reinforcement learning 404 not found ——
 %Reinforcement learning, one of the types of Maschine Learning, has shown promising results in business strategy planning(???), continuous control problems(?) and creating artificial intelligence for computer games. Reinforcement learning approach is similar to how humans learn. One of the simple everyday tasks that every human learns is catching a ball. Either we watch somebody else doing it or try it out ourselves. We automatically in the course of split seconds estimate the size and mass of the ball, what our position should be in order to catch it. The result of catching - positive or negative - influences our behavior for the next time when we have to perform the same task. (????)\\ 
 %Robotic control pipeline Aussage von Sergey Levine - nicht (ein)verstanden.
 %End-to-end training ?
-
-
 \section{Motivation}
+\enlargethispage{\baselineskip}
 Nowadays there is a big variety of use cases in the field of robotics in everyday life, starting from smart home devices to autonomous driving vehicles and space ship robots. Due to the significant development of software and hardware in the last decades it is becoming possible to create new robots that could considerably impact humans’ lives. \\ 
 In high number of various scenarios robots have to grasp an object and then perform different actions on it: lift, shift, put on a desired position. The robot will not be able to complete its task unless the target object is grasped successfully. Therefore grasping is a crucial problem in robotics that requires a precise solution. \\
 The current approach for the grasping problem in the industry is mostly based on knowing the exact positions of the robotic gripper and the object, what kind of the object that is, its size, shape and position. So the grasping motion is also already predefined. If the characteristics of the object or its position slightly change, the robot might not be able to grasp it anymore. Such grasping systems function under a set of limitations for the objects and the setup. \\ 
@@ -91,7 +98,7 @@ Shimoga et al. Schimoga  \cite{shimoga1996robot} defined a force-closure grasp a
 	\caption{Outtake from "Computing 3-D Optimal Form-Closure Grasps" \cite{ding2000computing} by Ding et al. The image shows the position of the friction cone at a grasping point on the object's surface. In order for fingers not to clip while executing the grasp, the finger force must lie in the friction cone.}\label{figure:form_closure}
 \end{figure}
 As Bohg et al. \cite{bohg2013data} stated, analytical approaches usually require exact 3D models of the object, rely on the knowledge of the object's surface properties, its weight distribution and are not robust to noise. \\
-In the same paper a detailed overview of the data-driven grasp synthesis approaches was presented \ref{figure:grasp_hypothesis}. Grasp synthesis is defined as "the problem of finding a grasp configuration that satisfies a set of criteria relevant for the grasping task". Data-driven or also called empirical approaches sample various grasp candidates and then rank them using different strategies. \\
+In the same paper a detailed overview of the data-driven grasp synthesis approaches was presented. Grasp synthesis is defined as "the problem of finding a grasp configuration that satisfies a set of criteria relevant for the grasping task". Data-driven or also called empirical approaches sample various grasp candidates and then rank them using different strategies. The overview of aspects that influence grasp hypothesis is presented in figure \ref{figure:grasp_hypothesis}.\\
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{graphics/grasp_hypothesis}
@@ -382,12 +389,18 @@ g(\epsilon, A) = \begin{cases}
 
 \chapter{Approach}\label{chapter:approach}
 In order to combine vision with robotic grasping, the DRL approach is introduced. As described in section \ref{section:RL}, the goal is to develop a policy $\pi$ according to which the agent will decide what action $a_t$ he will take at the current state $s_t$. The policy is trained through trial-and-error. After getting information about the current state $s_t$, the agent takes an action $a_t$. The environment yields reward $r_t$ for this action and the next state $s_{t+1}$, that the action lead to. With the help of this information the agent builds up its policy. The approach is visualized in figure \ref{fig:DRL}. At all times there is only one object on the table that is the same during the whole training. 
-\section {State representation}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{graphics/Approach}
+	\caption{The goal of the DRL approach is to develop a policy that decides which action at which step the agent should take. In order to do that the agent interacts with the environment by observing environment's state, taking actions and getting rewards for them. This way the agent determines through trial-and-error the correct behavior. Source of the image: \cite{mao2016resource}}\label{fig:DRL}
+\end{figure}
+\subsubsection* {State representation}
 	The state is represented as an RGB-image of the work surface. The camera is positioned to capture only the part of the table where the object can be located. The image does not include the gripper. 
-\section {Action space}
+\subsubsection* {Action space}
 	The robot movements are modeled as planar grasps. In the beginning of the iteration the gripper has a predefined fixed height $z$ over the table. The actions are target $(x, y)$ coordinates. The gripper goes to $(x,y)$ preserving its height $z$.  Afterwards it goes down, changing only its $z$-coordinate and having maximal jaw opening. Then the gripper closes and goes back up. \\
 	In some experiments the gripper yaw-rotation is part of the action space $(x, y, \alpha)$. After reaching target $(x, y)$ position, the gripper rotates the angle $\alpha$ and then completes a top-down planar grasp. 
-\section {Reward function}
+\subsubsection* {Reward function}
 	 The reward function is sparse:
 	 \begin{equation} 
 	 r_t = \begin{cases} 
@@ -395,13 +408,9 @@ In order to combine vision with robotic grasping, the DRL approach is introduced
 	 0 & \text{otherwise} \\
 	 \end{cases}
 	 \end{equation} 
-	  
+	 	
+This type of reward is intuitively logical as it grants 1 only if the whole task of picking the object is completed successfully. However, it is also challenging as in cases when the agent gets 0 as reward it does not know how far he was from the correct action and how it should change its policy to achieve success. 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1.0\textwidth]{graphics/Approach}
-	\caption{The goal of the DRL approach is to develop a policy that decides which action at which step the agent should take. In order to do that the agent interacts with the environment by observing environment's state, taking actions and getting rewards for them. This way the agent determines through trial-and-error the correct behavior. Source of the image: \cite{mao2016resource}}\label{fig:DRL}
-\end{figure}
 
 
 \chapter{Implementation}\label{chapter:implementation}
@@ -574,12 +583,12 @@ If not explicitly stated otherwise, the hyperparameters that were applied during
 			Discount factor $\gamma$ & 0.99\\ \hline
 			learning rate & 0.0003 \\ \hline
 			replay buffer size & 50000 \\ \hline
-			learning starts (how many steps of the model \\ to collect transitions for before learning starts) & 100 \\ \hline
+			learning starts (how many steps of the model \newline to collect transitions for before learning starts) & 100 \\ \hline
 			train\_freq (update the model every train\_freq steps & 1 \\ \hline
 			batch size & 64 \\ \hline
 			$\tau$  (the soft update coefficient: “polyak update”) & 0.005 \\ \hline
 			Entropy regularization coefficient & auto (learned automatically) \\ \hline
-			target\_update\_interval (update the target network every \\ target\_network\_update\_freq steps)& 1 \\ \hline
+			target\_update\_interval (update the target network every \newline target\_network\_update\_freq steps)& 1 \\ \hline
 			gradient\_steps (how many gradient update after each step) & 1 \\ \hline
 			target\_entropy & auto \\ \hline
 			action\_noise & None \\ \hline
