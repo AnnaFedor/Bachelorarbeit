@@ -56,14 +56,14 @@ Among successful experiment runs, where the position of the object was learned e
 \end{figure}
 
 \subsection{20 Constant Positions Of The Object}\label{evaluation:20_obj_SAC}
-A list of 20 $(x,y)$ coordinates in the range of robot's action space were randomly generated. During each episode the object is located on the table with its $(x,y)$ coordinates one random position from the list. The goal of the experiment was to determine whether the network is able to learn how to grasp the object. \\
+A list of 20 $(x,y)$ coordinates in the range of robot's action space were randomly generated. During each episode the object is located on the table with its $(x,y)$ coordinates being one random position from the list. The goal of the experiment was to determine whether the network is able to learn how to grasp the object. \\
 
 The training statistics is: \\ 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{graphics/20_obj_pos_150k/episode_reward}
-	\caption{After about 45k training steps the success rate was almost always 1. The reason it dropped in some episodes might be due to inaccuracy in actions or some object positions occurred for the first time - the agent never saw them before which lead to bad performance, they were learned after that}
+	\caption{After about 45k training steps the success rate was almost always 1. The reason it dropped in some episodes might be due to inaccuracy in actions or some object positions occurred for the first time - the agent never saw them before which led to bad performance, they were learned after that.}
 \end{figure}
 
 \begin{figure}[H]
@@ -131,7 +131,7 @@ The 150000 steps of the training resulted in 43998 episodes. As max\_episode\_st
 		\includegraphics[width=1.0\textwidth]{graphics/20_obj_pos_150k/episode_lengths_last10k}
 		% \caption{Model-based RL Quelle: s}\label{fig:RL}
 	\end{subfigure}
-    \caption{The first image shows the statistics of the length of first 10k episodes of the training, the second one - of the last 10k. It is noticeable, that in the second case the majority of episodes were short because the agent has already learned most of positions of the objects. In case of inaccuracy of actions or incorrect assumptions about the location of the object the  episode lasted longer - up to 50 steps}
+    \caption{The first image shows the statistics of the length of first 10k episodes of the training, the second one - of the last 10k. It is noticeable, that in the second case the majority of episodes were short because the agent has already learned most of positions of the objects. In case of inaccuracy of actions or incorrect assumptions about the location of the object the  episode lasted longer - up to 50 steps.}
 \end{figure} 
 
 \begin{comment}
@@ -219,7 +219,7 @@ The algorithm performed very poorly in the \hyperref[section:continuous_action_s
 \end{figure} 
 
 \subsection{Discrete Action Space without Gripper Rotation}\label{evaluation:multidiscrete_no_rotation}
-Following the idea of Zeng et al. in \cite{zeng2018learning}, \cite{zeng2019tossingbot}, the action space was \hyperref[section:multidiscrete_no_rotation]{discretized} to consist of a 50x50 grid. The action (x,y) would mean the gripper would execute a planar grasp in the middle of the cell (x,y). \\
+Following the idea of Zeng et al. in \cite{zeng2018learning}, \cite{zeng2019tossingbot}, the action space was \hyperref[section:multidiscrete_no_rotation]{discretized} to consist of a 50 $\times$ 50 grid. The action $(x,y)$ would mean the gripper would execute a planar grasp in the middle of the cell $(x,y)$. \\
 The results of the experiments with 1, 20 and 50 constant positions of the object were successful: during evaluation for all these cases the agent performed with almost 100\% success rate. \\
 \begin{figure}[H]
 	\centering
@@ -259,7 +259,7 @@ For all four test scenarios the best agents are represented in the table below. 
 	\includegraphics[width=1.0\textwidth]{graphics/results_ppo_without_rotation}
 	% \caption{}
 \end{subfigure}%
-\caption{The PPO algorithm in combination with the discrete action space showed high success rates for all four test scenarios. In the fourth scenario during evaluation some of the object's positions were new to the robot, which is why he did not manage to grasp them right away or in 2\% at all. Increasing the number of training steps might close this gap. }
+\caption{The PPO algorithm in combination with the discrete action space showed high success rates for all four test scenarios. In the fourth scenario during evaluation some of the object's positions were new to the robot, which is why he did not manage to grasp them right away or in 0.5\% at all. Increasing the number of training steps might close this gap. }
 \end{figure} 
 The idea of discretizing the action space was formulated in \cite{tang2019discretizing}. Although the idea is simple, it can drastically improve the performance of baseline on-policy algorithms.\\
 
@@ -302,33 +302,33 @@ For all four test scenarios the best agents are represented in the table below. 
 During evaluation it was noticeable that the gripper made several attempts before successfully grasping the object. Often during these attempts the object was slightly shifted and rotated, accidentally resulting in more convenient for the gripper positions to be grasped. This kind of approach might be effective in simulation, however it is not desired in the real-world setup - the gripper's actions should be precise and be aimed at grasping the object at first attempt. 
 
 \section{Generalization Test}
-For each experiment four different training scenarios were conducted: one, 20, 50 and random object positions. For first three scenarios the agents were evaluated using the same list of object positions that they were trained on. This brings up the following question: how well would these agents perform on the general case with the object position being randomly assigned on the working space? \\
+For each experiment four different training scenarios were conducted: one, 20, 50 and random object positions. For the first three scenarios the agents were evaluated using the same list of object positions that they were trained on. This brings up the following question: how well would these agents perform on the general case with the object position being randomly assigned on the working space? \\
 The generalization test was conducted. The results showed, that the agents that were trained on specific object positions were not able to show good performance on the general case where the object position was random. \\
 The results of the generalization test together with evaluation results are shown in figure \ref{fig:gen_test}. The expected behavior is shown in figure \ref{fig:gen_test_PPO_no_rotation}: with the rising number of object positions seen in the training the success rate for the general case rises and the variance becomes lower. \\
-In figure \ref{fig:gen_test_sac} this idea is violated by the case with 50 possible positions of the object. This can be explained by the the fact that the trained agent for this case performed worse during its own evaluation: lower success rate and higher variance as in the case with 20 objects. Which suggests that the agent was not good trained overall, which is why he performed very poorly at the generalization test. \\
+In figure \ref{fig:gen_test_sac} this idea is violated by the case with 50 possible positions of the object. This can be explained by the the fact that the trained agent for this case performed worse during its own evaluation: lower success rate and higher variance as in the case with 20 objects. Which suggests that the agent was not well trained overall, which is why he performed very poorly at the generalization test. \\
 In figure \ref{fig:gen_test_PPO_with_rotation} the agents trained for 20 and 50 object positions showed a high success rate for the general case - over 75\%. However the variance for both  cases is over 40\%, which means the agents were often not entirely sure which action to take and after several attempts succeeded to chose the right one. Such high variance signifies that these trained agents cannot be used for the general case as they are too uncertain in their actions. \\
 
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}[h]{0.3\textwidth}
+	\begin{subfigure}[h]{0.5\textwidth}
 		\centering
 		\includegraphics[width=1.0\textwidth]{graphics/gen_test_SAC}
 		\caption{SAC with continuous action space}\label{fig:gen_test_sac}
 	\end{subfigure}%
 	~	
-	\begin{subfigure}[h]{0.3\textwidth}
+	\begin{subfigure}[h]{0.5\textwidth}
 		\centering
 		\includegraphics[width=1.0\textwidth]{graphics/gen_test_PPO_no_rotation}
 		\caption{PPO with discrete action space without rotation}\label{fig:gen_test_PPO_no_rotation}
 	\end{subfigure}
 	~	
-	\begin{subfigure}[h]{0.3\textwidth}
+	\begin{subfigure}[h]{0.5\textwidth}
 		\centering
 		\includegraphics[width=1.0\textwidth]{graphics/gen_test_PPO_with_rotation}
 		\caption{PPO with discrete action space with rotation}\label{fig:gen_test_PPO_with_rotation}
 	\end{subfigure}
 	~	
-	\begin{subfigure}[h]{0.3\textwidth}
+	\begin{subfigure}[h]{0.4\textwidth}
 		\centering
 		\includegraphics[width=1.0\textwidth]{graphics/legend}
 		% \caption{PPO with discrete action space with rotation}
@@ -356,23 +356,23 @@ One of the challenges that was faced during the set-up is that there can be many
 	\end{subfigure}%
 \end{figure*}
 
-Setting the robot to the starting position for every step helped to correct that inaccuracy for the current task. However, this approach is time-consuming and might be not applicable for the similar problems in different set-ups. The possible better solution to this problem might be to set additional constraints for the position of joints of the robot that would effect the solution of the inverse kinematics problem. \\
+Setting the robot to the starting position for every step helped to correct that inaccuracy for the current task. However, this approach is time-consuming and might be not applicable for similar problems in different set-ups. The possible better solution to this problem might be to set additional constraints for the position of the joints of the robot that would effect the solution of the inverse kinematics problem. \\
 
 \subsection{Slipping Of The Object}
-The first version of grasping consisted of completely closing the gripper and going up with an object. However, the object did not stay in the gripper - it slipped down. This behavior was not expected as physical forces such as friction were set to the default values. The solution to the problem was to keep closing the gripper while going up - it helps to prevent the object from slipping. \\
+The first version of grasping consisted of completely closing the gripper and going up with an object. However, the object did not stay in the gripper - it slipped down. This behavior was not expected as physical forces such as friction were set to default values. The solution to the problem was to keep closing the gripper while going up - it helps to prevent the object from slipping. \\
 
 
  \chapter{Conclusion}
-In this thesis the system for robotic vision-based grasping with reinforcement learning in simulation was presented. Two reinforcement learning algorithms were tested in combination with different representations of action spaces. The reward for taken action was sparse. Discretizing action space can be a powerful tool that helps to achieve high success rate of a task. The generalization tests showed that with the increasing amount of randomness during experiments, the trained agents learn to perform better on the general case that does not include limitations.\\
-Deep reinforcement learning helps to combine perception and control. The DRL approach can be applied to develop end-to-end self-supervised grasping systems that are data-driven and require little to none human involvement during training. \\
+In this thesis the system for robotic vision-based grasping with reinforcement learning in simulation is presented. Two reinforcement learning algorithms were tested in combination with different representations of action spaces. The reward for taken action was sparse. Discretizing action space can be a powerful tool that helps to achieve high success rate of a task. The generalization tests showed that with the increasing amount of randomness during experiments, the trained agents learn to perform better on the general case that does not include limitations.\\
+Deep reinforcement learning helps to combine perception and control. The DRL approach can be applied to develop end-to-end self-supervised grasping systems that are data-driven and require little or no human involvement during training. \\
 Training the robot in simulation is helpful for fast collecting large quantities of data with little cost. 
 
-\subsection{Discussion}
-Two reinforcement learning algorithms PPO and SAC were applied. The SAC algorithm in combination with continuous action space showed instable results, which might be due to a bug in the implementation from the stable baselines library. PPO for the case without rotation of the gripper in combination with discrete action space showed good consistent results, with success rate over 99\% for all test scenarios. PPO applied to continuous action space showed poor results not being able to solve even the simplest task where the object is always located on the same spot. PPO in combination with discrete action space including rotation of the gripper showed stable behavior with success rate over 90\% for all test scenarios. However in this experiment during evaluation the gripper often needed several attempts to grasp the object, slightly adjusting the position of the object during each attempt in order to make it more convenient to grasp, which is not a desirable behavior for the real-world setup. \\
-Additionally the generalization test was conducted. The results showed that the agents trained for a specific case of predefined finite small number of positions do not perform well on the general case where the object position is random. The more randomness the agent experiences during training, the better its performance is on the general case. 
+\section{Discussion}
+Two reinforcement learning algorithms PPO and SAC were applied. The SAC algorithm in combination with continuous action space showed instable results, which might be due to a bug in the implementation from the stable baselines library. PPO for the case without rotation of the gripper in combination with discrete action space showed good consistent results, with success rate over 99\% for all test scenarios. PPO applied to continuous action space showed poor results not being able to solve even the simplest task where the object is always located on the same spot. PPO in combination with discrete action space including rotation of the gripper showed stable behavior with success rate over 90\% for all test scenarios. However, in this experiment during evaluation the gripper often needed several attempts to grasp the object, slightly adjusting the position of the object during each attempt in order to make it more convenient to grasp, which is not a desirable behavior for the real-world setup. \\
+Additionally, the generalization test was conducted. The results showed that the agents trained for a specific case of predefined finite small number of positions do not perform well on the general case where the object position is random. The more randomness the agent experiences during training, the better its performance is on the general case. 
  
 % It is especially important for complex data-driven systems as without sufficient data the 
- \subsection{Future Work}
+ \section{Future Work}
 The conducted approach included a set of limitations which suggest directions for future work. First of all, the robot should be able to grasp target objects of different shapes, sizes, forms and colors. What is more, the scenario of cluttered environment where there are multiple objects on the workspace partially covering each other should be researched. For more general problems planar grasps might not be sufficient to grasp the object, so pitch- and roll-angles of the gripper should be included in the action space of the robot. Other reinforcement leaning algorithms should be tried out as they might be more effective for the grasping problem. \\
 The ultimate goal is to create a real-world system for robotic grasping. In future researches the transition from simulation to the real world environment must be analyzed in order to effectively transfer the agent pretrained in simulation, so that either the reality gap problem is eliminated during training in simulation or as little as possible additional real-world training is required. 
 

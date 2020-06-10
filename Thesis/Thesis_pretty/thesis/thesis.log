@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.30)  9 JUN 2020 17:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.30)  10 JUN 2020 10:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1053,21 +1053,21 @@ LaTeX Warning: Label `sub@exampletab' multiply defined.
 ))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 65.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 67.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
@@ -1151,7 +1151,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count165
 \AtBeginShipoutBox=\box49
-Package hyperref Info: Link coloring OFF on input line 65.
+Package hyperref Info: Link coloring OFF on input line 67.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1161,9 +1161,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count166
 )
-LaTeX Info: Redefining \ref on input line 65.
-LaTeX Info: Redefining \pageref on input line 65.
-LaTeX Info: Redefining \nameref on input line 65.
+LaTeX Info: Redefining \ref on input line 67.
+LaTeX Info: Redefining \pageref on input line 67.
+LaTeX Info: Redefining \nameref on input line 67.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write6
@@ -1175,7 +1175,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           You can avoid loading `bookmark' with KOMA-Script option
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message with `\usepackage{bookmark}'
-(scrbook)           before \begin{document} on input line 65.
+(scrbook)           before \begin{document} on input line 67.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/bookmark.sty
 Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
@@ -1320,7 +1320,7 @@ Package scrpage2 Warning: you've used pagestyle ``headings''.
 (scrpage2)                You should not use this pagestyle with a
 (scrpage2)                scrpage2-pagestyle!
 (scrpage2)                You should use pagestyle ``useheadings'' instead
-(scrpage2)                 on input line 72.
+(scrpage2)                 on input line 74.
 
 [5
 
@@ -2268,53 +2268,61 @@ Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 File: graphics/gen_test_SAC.png Graphic file (type png)
 <use graphics/gen_test_SAC.png>
 Package pdftex.def Info: graphics/gen_test_SAC.png  used on input line 315.
-(pdftex.def)             Requested size: 128.23076pt x 62.60898pt.
-
-Underfull \hbox (badness 3492) in paragraph at lines 316--316
-[][][]|\T1/ptm/m/n/9 SAC with con-tin-u-ous ac-tion
- []
-
+(pdftex.def)             Requested size: 213.71576pt x 104.34831pt.
 <graphics/gen_test_PPO_no_rotation.png, id=668, 444.66125pt x 215.80624pt>
 File: graphics/gen_test_PPO_no_rotation.png Graphic file (type png)
 <use graphics/gen_test_PPO_no_rotation.png>
 Package pdftex.def Info: graphics/gen_test_PPO_no_rotation.png  used on input l
 ine 321.
-(pdftex.def)             Requested size: 128.23076pt x 62.23315pt.
+(pdftex.def)             Requested size: 213.71576pt x 103.72083pt.
 <graphics/gen_test_PPO_with_rotation.png, id=669, 436.63126pt x 209.78375pt>
 File: graphics/gen_test_PPO_with_rotation.png Graphic file (type png)
 <use graphics/gen_test_PPO_with_rotation.png>
 Package pdftex.def Info: graphics/gen_test_PPO_with_rotation.png  used on input
  line 327.
-(pdftex.def)             Requested size: 128.23076pt x 61.61037pt.
+(pdftex.def)             Requested size: 213.71576pt x 102.68289pt.
 <graphics/legend.png, id=670, 371.3875pt x 179.67125pt>
 File: graphics/legend.png Graphic file (type png)
 <use graphics/legend.png>
 Package pdftex.def Info: graphics/legend.png  used on input line 333.
-(pdftex.def)             Requested size: 128.23076pt x 62.03598pt.
+(pdftex.def)             Requested size: 170.97pt x 82.71281pt.
+
+Overfull \hbox (4.161pt too wide) in paragraph at lines 313--336
+ []$[]$  $[]$ 
+ []
+
 
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[36 <./graphics/gen_test_SAC.png> <./graphics/gen_test_PPO_no_rotation.png> <./
-graphics/gen_test_PPO_with_rotation.png> <./graphics/legend.png>]
-<graphics/simulation_problems/angle_1.png, id=680, 704.6325pt x 641.39626pt>
+[36]
+<graphics/simulation_problems/angle_1.png, id=676, 704.6325pt x 641.39626pt>
 File: graphics/simulation_problems/angle_1.png Graphic file (type png)
 <use graphics/simulation_problems/angle_1.png>
 Package pdftex.def Info: graphics/simulation_problems/angle_1.png  used on inpu
 t line 348.
 (pdftex.def)             Requested size: 128.23076pt x 116.71863pt.
-<graphics/simulation_problems/angle_2.png, id=681, 609.27625pt x 553.06625pt>
+<graphics/simulation_problems/angle_2.png, id=677, 609.27625pt x 553.06625pt>
 File: graphics/simulation_problems/angle_2.png Graphic file (type png)
 <use graphics/simulation_problems/angle_2.png>
 Package pdftex.def Info: graphics/simulation_problems/angle_2.png  used on inpu
 t line 354.
 (pdftex.def)             Requested size: 128.23076pt x 116.40051pt.
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 359--360
 
  []
 
 
+Overfull \vbox (2.9671pt too high) has occurred while \output is active []
+
+
+[37 <./graphics/gen_test_SAC.png> <./graphics/gen_test_PPO_no_rotation.png> <./
+graphics/gen_test_PPO_with_rotation.png> <./graphics/legend.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 362--363
 
  []
@@ -2323,20 +2331,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 362--363
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[37 <./graphics/simulation_problems/angle_1.png> <./graphics/simulation_problem
+[38 <./graphics/simulation_problems/angle_1.png> <./graphics/simulation_problem
 s/angle_2.png>]
-Overfull \vbox (2.9671pt too high) has occurred while \output is active []
-
-
-[38
-
-]
 chapter 6.
 
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
-[39])
+[39
+
+])
 Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
@@ -2417,24 +2421,24 @@ Overfull \vbox (2.9671pt too high) has occurred while \output is active []
 
 
 [51]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
  (./thesis.aux (./preface/kit_titlepage.aux) (./preface/titlepage.aux)
 (./preface/affirmation.aux) (./content/content.aux) (./content/results.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
  ) 
 Here is how much of TeX's memory you used:
  25323 strings out of 492616
- 463672 string characters out of 6129481
- 678612 words of memory out of 5000000
+ 463662 string characters out of 6129481
+ 679612 words of memory out of 5000000
  28425 multiletter control sequences out of 15000+600000
  113062 words of font info for 179 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2453,7 +2457,7 @@ ist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
 ype1/urw/symbol/usyr.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/ti
 mes/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (59 pages, 2679697 bytes).
+Output written on thesis.pdf (59 pages, 2679995 bytes).
 PDF statistics:
  1113 PDF objects out of 1200 (max. 8388607)
  934 compressed objects within 10 object streams

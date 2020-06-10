@@ -43,10 +43,10 @@
 \contentsline {section}{\numberline {5.3}Generalization Test}{36}{section.5.3}% 
 \contentsline {section}{\numberline {5.4}Simulation Inaccuracies}{37}{section.5.4}% 
 \contentsline {subsection}{\numberline {5.4.1}The Angle Of The Gripper}{37}{subsection.5.4.1}% 
-\contentsline {subsection}{\numberline {5.4.2}Slipping Of The Object}{37}{subsection.5.4.2}% 
+\contentsline {subsection}{\numberline {5.4.2}Slipping Of The Object}{38}{subsection.5.4.2}% 
 \contentsline {chapter}{\numberline {6}Conclusion}{39}{chapter.6}% 
-\contentsline {subsection}{\numberline {6.0.1}Discussion}{39}{subsection.6.0.1}% 
-\contentsline {subsection}{\numberline {6.0.2}Future Work}{39}{subsection.6.0.2}% 
+\contentsline {section}{\numberline {6.1}Discussion}{39}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Future Work}{39}{section.6.2}% 
 \contentsline {chapter}{\numberline {A}List of Figures}{41}{appendix.A}% 
 \contentsline {chapter}{\numberline {B}List of Tables}{45}{appendix.B}% 
 \contentsline {chapter}{\numberline {C}Bibliography}{47}{appendix.C}% 
