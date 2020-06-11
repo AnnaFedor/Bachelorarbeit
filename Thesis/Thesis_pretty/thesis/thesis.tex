@@ -15,6 +15,8 @@
 % \usepackage[ngerman]{babel} % Neue deutsche Rechtschreibung und Silbentrennung.
 \raggedbottom
 
+\usepackage[hidelinks]{hyperref}
+\begin{comment}
 \usepackage[raiselinks=true,
             bookmarks=true,
             bookmarksopenlevel=1,
@@ -24,6 +26,7 @@
             plainpages=false,
             pdfpagelabels=true,
             pdfborder={0 0 0.5}]{hyperref}
+\end{comment}
             
 
 \makeatletter
@@ -33,8 +36,8 @@
 \makeindex
 
 \newcommand{\myname}{Anna~Fedorchenko}
-\newcommand{\headtitle}{Vision-based object grasping with Deep Reinforcement Learning in simulation }
-\newcommand{\floatingtitle}{Vision-based object grasping with Deep Reinforcement Learning in simulation }
+\newcommand{\headtitle}{Vision-based Object Grasping with Deep Reinforcement Learning in Simulation }
+\newcommand{\floatingtitle}{Vision-based Object Grasping with Deep Reinforcement Learning in Simulation }
 \newcommand{\thesistype}{Bachelor thesis}
 
 \newcommand{\reviewerone}{Prof.~Dr.-Ing.~R.~Dillmann}
@@ -43,7 +46,7 @@
 
 \newcommand{\timestart}{1st January 2020}
 \newcommand{\releaseyear}{2020}
-\newcommand{\timeend}{11th June \releaseyear}
+\newcommand{\timeend}{15th June \releaseyear}
 \newcommand{\releasemonth}{June \releaseyear}
 
 
@@ -69,6 +72,8 @@
 \pagenumbering{roman}
 \include{preface/kit_titlepage}
 \include{preface/titlepage}
+
+
 % \include{preface/thesis}
 \parindent 1em
 \include{preface/affirmation}

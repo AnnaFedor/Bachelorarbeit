@@ -8,15 +8,15 @@
 \@writefile{toc}{\contentsline {section}{\numberline {5.1}Experiments with the Soft-Actor-Critic Algorithm}{29}{section.5.1}\protected@file@percent }
 \newlabel{exampletab}{{\caption@xref {exampletab}{ on input line 35}}{30}{Experiments with the Soft-Actor-Critic Algorithm}{figure.caption.21}{}}
 \newlabel{sub@exampletab}{{}{30}{Experiments with the Soft-Actor-Critic Algorithm}{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Results of the evaluation of best agents for each test scenario. These agents show high success rate and low variance. However if the trainings for each experiment will be repeated, the resulting agents might be not as successful as the ones represented in the table.\relax }}{30}{figure.caption.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}One Constant Positions Of The Object}{30}{subsection.5.1.1}\protected@file@percent }
-\newlabel{evaluation:one_obj_SAC}{{5.1.1}{30}{One Constant Positions Of The Object}{subsection.5.1.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Results of the evaluation of best agents for each test scenario. These agents show high success rate and low variance. However, if the trainings for each experiment are repeated, the resulting agents might be not as successful as the ones represented in the table.\relax }}{30}{figure.caption.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}One Constant Positions of the Object}{30}{subsection.5.1.1}\protected@file@percent }
+\newlabel{evaluation:one_obj_SAC}{{5.1.1}{30}{One Constant Positions of the Object}{subsection.5.1.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces An example of unstable behavior of the algorithm based on the reward value: after 14k training steps the agent learned correctly where the object is located. Then the performance dropped to 0 and did not recover after that.\relax }}{30}{figure.caption.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}20 Constant Positions Of The Object}{30}{subsection.5.1.2}\protected@file@percent }
-\newlabel{evaluation:20_obj_SAC}{{5.1.2}{30}{20 Constant Positions Of The Object}{subsection.5.1.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}20 Constant Positions of the Object}{30}{subsection.5.1.2}\protected@file@percent }
+\newlabel{evaluation:20_obj_SAC}{{5.1.2}{30}{20 Constant Positions of the Object}{subsection.5.1.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces After about 45k training steps the success rate was almost always 1. The reason it dropped in some episodes might be due to inaccuracy in actions or some object positions occurred for the first time - the agent never saw them before which led to bad performance, they were learned after that.\relax }}{31}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:sub-first}{{\caption@xref {fig:sub-first}{ on input line 75}}{31}{20 Constant Positions Of The Object}{figure.caption.24}{}}
-\newlabel{sub@fig:sub-first}{{}{31}{20 Constant Positions Of The Object}{figure.caption.24}{}}
+\newlabel{fig:sub-first}{{\caption@xref {fig:sub-first}{ on input line 75}}{31}{20 Constant Positions of the Object}{figure.caption.24}{}}
+\newlabel{sub@fig:sub-first}{{}{31}{20 Constant Positions of the Object}{figure.caption.24}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Statistics of the training: object's position is one of 20 possible ones, learn to grasp the object in 150k steps. At the end of the training the entropy is becoming constant which means that the algorithm is sure which action to take. The entropy coefficient is going down as well because the agent does not need to do much exploration anymore. Policy loss is going to zero, as well as the losses from both Q-networks and the target value network, which means the weights of the network are adjusted in an optimal way to achieve success. \relax }}{31}{figure.caption.24}\protected@file@percent }
 \citation{haarnoja2018soft}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces The first image shows the statistics of the length of first 10k episodes of the training, the second one - of the last 10k. It is noticeable, that in the second case the majority of episodes were short because the agent has already learned most of positions of the objects. In case of inaccuracy of actions or incorrect assumptions about the location of the object the episode lasted longer - up to 50 steps.\relax }}{32}{figure.caption.25}\protected@file@percent }
@@ -49,8 +49,9 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces The diagrams show results of evaluation and generalization tests for three experiments: SAC with continuous action space, PPO with discrete action space without rotation, PPO with discrete action space with rotation. The x-axis represents the number of object positions that the agent was trained on, with "Random" being random object position during training. Green represents the success rate of the agent during the evaluation on the scenario that it was trained with, grey is the corresponding variance. Blue is the success rate at the generalization test, red is its variance. \relax }}{37}{figure.caption.32}\protected@file@percent }
 \newlabel{fig:gen_test}{{5.12}{37}{The diagrams show results of evaluation and generalization tests for three experiments: SAC with continuous action space, PPO with discrete action space without rotation, PPO with discrete action space with rotation. The x-axis represents the number of object positions that the agent was trained on, with "Random" being random object position during training. Green represents the success rate of the agent during the evaluation on the scenario that it was trained with, grey is the corresponding variance. Blue is the success rate at the generalization test, red is its variance. \relax }{figure.caption.32}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.4}Simulation Inaccuracies}{37}{section.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}The Angle Of The Gripper}{37}{subsection.5.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Slipping Of The Object}{38}{subsection.5.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}The Angle of the Gripper}{37}{subsection.5.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces The gripper developed an angle in different plains that made it impossible to successfully complete a planar grasp.\relax }}{38}{figure.caption.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Slipping of the Object}{38}{subsection.5.4.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusion}{39}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -80,7 +81,7 @@
 \setcounter{NAT@ctr}{0}
 \setcounter{parentequation}{0}
 \setcounter{@todonotes@numberoftodonotes}{0}
-\setcounter{caption@flags}{4}
+\setcounter{caption@flags}{0}
 \setcounter{ContinuedFloat}{0}
 \setcounter{subfigure}{0}
 \setcounter{subtable}{0}

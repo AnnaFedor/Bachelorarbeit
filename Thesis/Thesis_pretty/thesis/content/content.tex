@@ -28,7 +28,7 @@
 
 \chapter*{Zusammenfassung}
 Greifen ist ein wichtiges und komplexes Problem. Aktuelle Lösung in der Industrie basiert sich auf bereits im Voraus bekannten Objekten und vordefinierten Bewegungen. Allerdings eine kleine Änderung bei dem Objekten oder in der Umgebung kann dazu führen, dass der Roboter nicht mehr in der Lage sein wird das Objekt erfolgreich zu greifen. \\
-Ein System mit höherem Grad der Autonomität ist erwünscht. Solches System soll in der Lage sein sich an Objekte von unterschiedlichen Formen und Größen anzupassen, sowie an diverse Umfeldbedingungen, Lichtverhältnisse und andere mögliche Störungen. Der Roboter soll seine Entscheidungen auf der Wahrnehmung der aktuellen Umgebung basieren und nicht auf dem preprogrammierten Verhalten. Solches System könnte mithilfe von Reinforcement Learning erzeugt werden.\\
+Ein System mit höherem Grad der Autonomität ist erwünscht. Solches System soll in der Lage sein sich an Objekte von unterschiedlichen Formen und Größen anzupassen, sowie an diverse Umfeldbedingungen, Lichtverhältnisse und andere mögliche Störungen. Der Roboter soll seine Entscheidungen auf der Wahrnehmung der aktuellen Umgebung basieren und nicht auf dem vorprogrammierten Verhalten. Solches System könnte mithilfe von Reinforcement Learning erzeugt werden.\\
 Das Ziel dieser Arbeit ist ein System zum Greifen in der Simulation basierend auf Deep Reinforcement learning zu entwickeln. Die Herangehensweise ist datengetrieben und selbstüberwacht. Der Roboter lernt ohne Informationen über das Zielobjekt und Teilnahme des Menschen durch Versuch und Irrtum. Basierend auf der binären Belohnung ob das Objekt erfolgreich gegriffen wurde oder nicht und auf dem RGB-Bild der Umgebung entwickelt der Roboter eine Policy. \\
 Abschnitt \ref{related work} gibt Übersicht über verwandte Arbeiten im Bereich Greifen, sowie Reinforcement learning Algorithmen. Im Abschnitt \ref{chapter:approach} wird die entwickelte Herangehensweise erklärt und die Implementierung wird im Abschnitt  \ref{chapter:implementation} vorgestellt. Die Ergebnisse werden im Kapitel  \ref{chapter:evaluation} beschrieben. Abschließend folgt der Ausblick auf die zukünftige Arbeit.
 \addcontentsline{toc}{chapter}{\numberline{}Zusammenfassung}%
@@ -66,7 +66,7 @@ In high number of various scenarios robots have to grasp an object and then perf
 The current approach for the grasping problem in the industry is mostly based on knowing the exact positions of the robotic gripper and the object, what kind of the object that is, its size, shape and position. So the grasping motion is also already predefined. If the characteristics of the object or its position slightly change, the robot might not be able to grasp it anymore. Such grasping systems function under a set of limitations for the objects and the setup. \\ 
 % This provides a set of limitations for the objects that can be grasped and the setup. \\   
 The goal solution of the grasping problem would be the one that reduces the number of required limitations. The robot should be able to generalize to objects of any size and shape, regardless of their positions and surrounding environment. It should be able to adapt to new surroundings, light conditions, noise and any other constraints. The higher degree of autonomy is desired, so that the robot could base its decisions on the perception of the current environment rather than according to a preprogrammed behavior. \\
-Due to the development of machine learning in recent years it has become possible to create intelligent systems that show high success rates in coping with different tasks: image and speech recognition, self-driving vehicles, game playing. Machine learning techniques have also been used in various approaches that aim to solve the grasping problem. Reinforcement learning(RL) is one of the types of machine learning which in combination with deep learning results in the deep reinforcement learning(DRL) approach that could effectively be used for the grasping problem. DRL is a general purpose algorithm that is based on learning from experience and can help combine perception and control. It has been used to create self-supervised grasping systems that are trained end-to-end with minimal to none human involvement. These systems have shown high success rates and proved to be able to generalize to novel objects. \cite{zeng2018learning}, \cite{pinto2016supersizing}.\\
+Due to the development of machine learning in recent years it has become possible to create intelligent systems that show high success rates in coping with different tasks: image and speech recognition, self-driving vehicles, game playing. Machine learning techniques have also been used in various approaches that aim to solve the grasping problem. Reinforcement learning (RL) is one of the types of machine learning which in combination with deep learning results in the deep reinforcement learning (DRL) approach that could effectively be used for the grasping problem. DRL is a general purpose algorithm that is based on learning from experience and can help combine perception and control. It has been used to create self-supervised grasping systems that are trained end-to-end with minimal or none human involvement. These systems have shown high success rates and proved to be able to generalize to novel objects. \cite{zeng2018learning}, \cite{pinto2016supersizing}.\\
 In order to train a system based on the reinforcement learning approach, the robot has to complete a big number of trial-and-error steps before it finds a good policy. Training the robot in simulation is helpful for fast collecting large quantities of data with little cost. After verifying that the suggested algorithm is indeed successful at solving the defined problem in simulation, it can be transferred to the real world environment. 
 
 % The agent pretrained in simulation can be used for the grasping problem in real world using either additional training or techniques that help to overcome the reality gap problem. 
@@ -76,7 +76,7 @@ In order to train a system based on the reinforcement learning approach, the rob
                                              
 
 
-\section{Problem statement}
+\section{Problem Statement}
 The focus of this thesis is to develop a method for vision-based robotic object grasping in simulation using reinforcement learning approach. The learning-based approach must be data-driven and self-supervised: there is no information about the target object and no human involvement in the training process. The robot must learn how to grasp by trial-and-error. Using only the RGB image of the workspace, it must decide which action to take. During training it will get binary reward from the environment whether the object was successfully grasped or not and based on this information it must train a policy. \\
 The robot consists of a 7-DOF robotic arm with a two-finger jaw gripper. The executed grasps are planar. The end-to-end method must combine vision with robotic control. The training and testing will be conducted in a simulated environment. \\
 
@@ -141,7 +141,7 @@ Another technique to overcome the reality gap is domain adaptation \cite{patel20
 
 
 
-\section{End-To-End Learning}
+\section{End-to-end Learning}
 In robotics the classical control over the robot consists of several steps, each one of them usually represented by a separate module which are connected with each other and pass the data to each other. For example: after retrieving an observation of the scene using a calibrated camera another module detects objects in the image. The next module might create a physics model of the scene to plan an action that needs to be executed. The next step would calculate the positions of robot's joints and after that the actual action would be executed. If an error is made in one of these steps, it might become even more significant in the next steps resulting in incorrect output. End-to-end approach suggests making such connection between modules, that can be changed and adapted during the learning. In that way mistakes that would happen in one of the modules would be corrected in the following ones so that in the end the output would not be influenced by them. \\
 Levine et al. \cite{levine2016end} discovered that training perception and control systems end-to-end shows better results and consistency than training each component separately. 
 
@@ -157,7 +157,7 @@ Levine et al. \cite{levine2018learning} developed a grasping approach that is ba
 
 % The approach consists of two major parts: the prediction network $g(T_t, v_t)$ that accepts visual input $I_t$ and a task-space motion command $v_t$ and outputs the probability of success of grasping after completing $v_t$. The second part is the servoing function $f(I_t)$ that uses the output of the prediction network to control the gripper for executing a good grasp. The grasping attempt consists of $T$ steps: The robot makes T steps before closing the gripper. It creates $T$ training samples: $(I^i_t, p^i_T - p^i_t, l^i)$: image, collected every step, vector that is calculated through reached pose at the end and the pose at the timestep $t$, and label $l_i$ that is the same for the whole attempt i and which denotes the success of the attempted grasp. ????? The whole self-supervised method can be interpreted as a type of reinforcement learning but without standard reinforcement learning algorithms.  \\
 
-\section{Deep reinforcement learning for grasping problems}
+\section{Deep Reinforcement Learning for Grasping Problems}
 One of the most important goals of learning-based approaches is for system to be able to perform effectively on previously unseen objects - generalization. Another essential aspect that is considered during the development of the approach is the intention of minimizing human's participation in the training of the system. In recent years several approaches based on reinforcement learning have been successfully applied for solving the grasping problem \cite{pinto2016supersizing}, \cite{zeng2018learning},  \cite{berscheid2019improving}. With the help of reinforcement learning it is possible to create a self-supervised system that can learn through trial-and-error. This way the human involvement can be minimized as the robot collects training data by itself. Systems trained with reinforcement learning are also able to generalize to novel objects and scenarios.\\
 Kaelbling et al. \cite{kaelbling1996reinforcement} made following definition for the reinforcement learning problem: "Reinforcement learning is the problem faced by an agent that must learn behavior through trial-and-error interactions with a dynamic environment." The trial-and-error interactions are the factor that is crucial for a self-supervised system: it supervises itself by committing an action, getting the result of this action and learning from it. \\
 Quillen et al. \cite{quillen2018deep} compared different reinforcement learning off-policy algorithms for vision-based robotic grasping. The authors state that on-policy algorithms struggle with diverse grasping scenarios as the robot has to go back to previously seen objects in order to avoid forgetting the gained experience. Therefore off-policy methods might be preferred for the grasping problems. The criteria for evaluating the RL algorithms were: overall performance, data-efficiency, robustness to off-policy data and hyperparameter sensitivity. These factors are important when applying the grasping algorithms to robotic systems in real life. \\
@@ -165,12 +165,12 @@ Boularias et al. \cite{boularias2015learning} used reinforcement learning approa
 % The state-of-the art end-to-end self-supervised system for solving the grasping problem is presented in \cite{zeng2018learning}. Zeng et al. used model-free deep reinforcement learning approach to modulate the system. In the MDP the RGB-D the state was represented as a RGB-D image of the scene. The actions are either a grasping or a pushing motion. The reward is 1 for successful grasps, 0.5 for pushing motions that make a considerable change to the environment, otherwise 0. The system consists of two DenseNet-121 neral networks (TODO cite) that take the image as input and output the probability that .  
 Several of recent researches have achieved impressive results at solving the grasping problem with the extended version of Deep Q-Learning based on Convolutional Neural Networks. In \cite{zeng2018learning}, \cite{zeng2019tossingbot} and  \cite{liang2019knowledge} in the grasp planning part the robot estimates the state of the environment through RGB-D image of the workspace, it is used as input to a CNN. The workspace is represented as a discrete action grid with the same resolution as the input RGB-D image. The CNN is used as a Q-function approximator. The network outputs a probability map of the same size as the input image, each value $(x, y)$ in the probability map is an estimated Q-value of completing a top-down planar grasp in the middle of pixel $(x, y)$ which corresponds to grasping in the middle of the cell $(x, y)$ of the action grid. The action is defined as the coordinate of the cell $(x, y)$ in the action grid and the rotation angle. The number of possible rotation angles is predefined: in \cite{liang2019knowledge} there are three possible rotation angles: 0$^\circ$, 45$^\circ$ and 90$^\circ$. \cite{zeng2019tossingbot} and \cite{zeng2018learning} used 16 possible rotations (different multiples of 22.5$^\circ$). Before inputting the image to the network, it is rotated by an according angle, altogether resulting in $n$ input images for one state, with $n$ -  the number of possible rotation angles. For each input image the probability map is calculated. Then the cell of the map with the biggest value across all output maps is greedily chosen and an according top-down grasp with the gripper rotated as the input image containing the biggest Q-value is executed. \\
 This pixel-wise parameterization of state and action provides several advantages: the actions have a spatial locality to each other, CNNs are efficient for pixel-wise computations, the training can converge with less data. \\
- It is necessary to point out that in these researches \cite{zeng2018learning}, \cite{zeng2019tossingbot}, \cite{liang2019knowledge} grasping was studied in combination with other actions: pushing in \cite{zeng2018learning}, sliding to wall in \cite{liang2019knowledge} and throwing in \cite{zeng2019tossingbot}. The approaches were trained end-to-end, which helped to reach high success rates. The reward function in \cite{liang2019knowledge} is binary: if the object is grasped 1, otherwise 0. In \cite{zeng2018learning} the pushing action that has a noticeable change to the system is additionally rewarded with 0.5. In \cite{zeng2019tossingbot}, the grasping part was trained with the help of obtaining a success label. Binary signal whether the throwing part succeeded was more efficient than calculating the antipodal distance between gripper fingers directly after the grasping part.\\
+ It is necessary to point out that in these researches \cite{zeng2018learning}, \cite{zeng2019tossingbot}, \cite{liang2019knowledge} grasping was studied in combination with other actions: pushing in \cite{zeng2018learning}, sliding to wall in \cite{liang2019knowledge} and throwing in \cite{zeng2019tossingbot}. The approaches were trained end-to-end, which helped to reach high success rates. The reward function in \cite{liang2019knowledge} is binary: if the object is grasped 1, otherwise 0. In \cite{zeng2018learning} the pushing action that has a noticeable change to the system is additionally rewarded with 0.5. In \cite{zeng2019tossingbot}, the grasping part was trained with the help of obtaining a overall success label. Binary signal whether the throwing part succeeded was more efficient than calculating the antipodal distance between gripper fingers directly after the grasping part.\\
  RBG-D image as state representation, action space corresponding to image resolution, binary rewards, extending Deep Q-Learning based on CNN and end-to-end training is an effective way to train the robot to reach a high success rate in grasping and to quickly generalize to new objects and scenarios.
 
 
 
-\section{Reinforcement learning}\label{section:RL}
+\section{Reinforcement Learning}\label{section:RL}
 Reinforcement learning is one of the types of Machine Learning. Combined with deep learning, it is a powerful technique for solving complex problems. Deep reinforcement learning has been used in different areas, such as games  \cite{vinyals2017starcraft}, \cite{mnih2013playing} and robotics \cite{kormushev2013reinforcement}, \cite{zeng2018learning}.\\
 
 The core idea of reinforcement learning is having an agent that can perform actions in a specified environment. The agent gets observations from  the environment as an input, the output is an action. At all times the agent is in one of the predefined states, the actions that are possible in the current state are a subset of all actions set. For every performed action the agent receives a feedback in form of a reward from the environment. According to the reward the agent can decide whether the chosen action was the right decision. The core idea of reinforcement learning is modeled as Markov decision process (MDP), which consists of 4-tuple $(S, A, R, P)$ \cite{kaelbling1996reinforcement}:
@@ -194,7 +194,7 @@ Same for the state transition function: deterministic $s_{t+1} = f(s_t, a_t)$ or
 Often there are multiple possible ways for the agent to accomplish a task. For example, there might be a short and a long path to a destination point, both of them conforming the requirements. However, the short path is better because it takes less time and less actions, so the agent should choose this path. This can be expressed as following: goal of the optimal policy is to maximize the sum of rewards during action sequence that leads to completing the task. There are multiple ways to define the sum of the rewards: 
 \begin{itemize}
 	\item  finite-horizon undiscounted return: $R(t) = \sum_{t=0}^{T} r(t) $, a straightforward sum of all rewards for all taken actions.
-	\item  infinite-horizon discounted return: $R(t) = \sum_{t=0}^{\infty} y^{t}r(t) $, where y is a discount factor $\in$ (0,1). The discount factor makes sure the actions that are taken soon are more relevant that the ones that are taken many steps later. From mathematical point of view, the discount factor is one of the conditions that the infinite sum converges to a finite value.
+	\item  infinite-horizon discounted return: $R(t) = \sum_{t=0}^{\infty} y^{t}r(t) $, where $y$ is a discount factor $\in$ (0,1). The discount factor makes sure the actions that are taken soon are more relevant that the ones that are taken many steps later. From mathematical point of view, the discount factor is one of the conditions that the infinite sum converges to a finite value.
 \end{itemize}
 Value function of the state $s$ is an expected return that the agent will get if it starts in state $s$ and acts according to the policy. Action-value function adds dependency to an action $a$:  expected return after starting in state $s$ and taking action $a$, continuing by acting forever according to the policy $\pi$: 
 \begin{equation} 
@@ -211,7 +211,7 @@ There is a connection between value and action-value functions, that is helpful 
 V^{\pi}(s) = \underset {a\sim \pi} {E} [{Q^{\pi}(s,a)}]
 \end{equation}
  - the value function of the state is an expected return of the Q-function in this state if the action a taken comes from the policy $\pi$. \\
-and
+And the optimal value function:
 \begin{equation} 
 V^*(s) =  \underset {a} \max {Q^* (s,a)}
 \end{equation}
@@ -292,9 +292,9 @@ TOTO actor-crtitic scheme from Sutton Barto find it it's good!!
 \end{comment}
 
 
-\subsection{Soft Actor-Critic}
-Soft Actor-Critic(SAC) is a off-policy state-of-the art reinforcement learning algorithm  \cite{haarnoja2018soft}. As the name suggests, it is based on the actor-critic approach. The key idea of SAC is the actor trying to maximize not only the expected return but also the entropy. The algorithm is stable and also sample-efficient, it is capable of solving high-dimensional complex tasks. \\
-Entropy is a measure of randomness in the policy. The term 'entropy' comes from the area of information theory and means the amount of information or 'surprise' of the possible outcome of the variable. When the outcome of some source of data is rather unexpected because it has less probability, it's entropy is high. \\
+\subsection{Soft-Actor-Critic Algorithm}
+Soft-Actor-Critic (SAC) is a off-policy state-of-the-art reinforcement learning algorithm  \cite{haarnoja2018soft}. As the name suggests, it is based on the actor-critic approach. The key idea of SAC is the actor trying to maximize not only the expected return but also the entropy. The algorithm is stable and also sample-efficient, it is capable of solving high-dimensional complex tasks. \\
+Entropy is a measure of randomness in the policy. The term "entropy" comes from the area of information theory and means the amount of information or "surprise" of the possible outcome of the variable. When the outcome of some source of data is rather unexpected because it has less probability, it's entropy is high. \\
 Entropy $H$ of $x$ from its distribution $P$: 
 \begin{equation} 
 H(P) = \underset {x \sim P} E [-\log P(x)]
@@ -378,7 +378,7 @@ where $\theta$ is the policy parameter,
 \begin{equation} 
 L(s, a, \theta_k, \theta) = min (\frac {\pi _\theta(a|s)} {\pi _{\theta_k}(a|s)} A^{\pi_{\theta_k}} (s,a), g(\epsilon, A^{\pi_{\theta_k}} (s,a)))
 \end{equation}
-$\frac {\pi _\theta(a|s)} {\pi _{\theta_k}(a|s)}$ is the ratio of the probability under the new and old policies, $A^\pi$ - advantage function, $\epsilon$ is a hyperparameter which sets a limit how far can an new policy be far away from the old one. The advantage function $A^\pi(s, a)$ helps to determine how much better the action $a$ in state $s$ is in comparison to the random selected action according to $\pi(\cdot|s) : A^{\pi}(s,a) = Q^{\pi}(s,a) - V^{\pi}(s)$.
+$\frac {\pi _\theta(a|s)} {\pi _{\theta_k}(a|s)}$ is the ratio of the probability under the new and old policies, $A^\pi$ - advantage function, $\epsilon$ is a hyperparameter which sets a limit how far can a new policy be far away from the old one. The advantage function $A^\pi(s, a)$ helps to determine how much better the action $a$ in state $s$ is in comparison to the random selected action according to $\pi(\cdot|s) : A^{\pi}(s,a) = Q^{\pi}(s,a) - V^{\pi}(s)$.
 \begin{equation} 
 g(\epsilon, A) = \begin{cases} 
 (1 + \epsilon)A & A \geq 0 \\
@@ -388,7 +388,7 @@ g(\epsilon, A) = \begin{cases}
 
 
 \chapter{Approach}\label{chapter:approach}
-In order to combine vision with robotic grasping, the DRL approach is introduced. As described in section \ref{section:RL}, the goal is to develop a policy $\pi$ according to which the agent will decide what action $a_t$ he will take at the current state $s_t$. The policy is trained through trial-and-error. After getting information about the current state $s_t$, the agent takes an action $a_t$. The environment yields reward $r_t$ for this action and the next state $s_{t+1}$, that the action lead to. With the help of this information the agent builds up its policy. The approach is visualized in figure \ref{fig:DRL}. At all times there is only one object on the table that is the same during the whole training. 
+In order to combine vision with robotic grasping, the DRL approach is introduced. As described in section \ref{section:RL}, the goal is to develop a policy $\pi$ according to which the agent will decide what action $a_t$ he will take at the current state $s_t$. The policy is trained through trial-and-error. After getting information about the current state $s_t$, the agent takes an action $a_t$. The environment yields reward $r_t$ for this action and the next state $s_{t+1}$, that the action led to. With the help of this information the agent builds up its policy. The approach is visualized in figure \ref{fig:DRL}. At all times there is only one object on the table that is the same during the whole training. 
 
 \begin{figure}[H]
 	\centering
@@ -409,7 +409,7 @@ In order to combine vision with robotic grasping, the DRL approach is introduced
 	 \end{cases}
 	 \end{equation} 
 	 	
-This type of reward is intuitively logical as it grants 1 only if the whole task of picking the object is completed successfully. However, it is also challenging as in cases when the agent gets 0 as reward it does not know how far he was from the correct action and how it should change its policy to achieve success. 
+This type of reward is intuitively logical as it grants 1 only if the whole task of picking the object is completed successfully. However, it is also challenging as in cases when the agent gets 0 as reward it does not know how far it was from the correct action and how it should change its policy to achieve success. 
 
 
 
@@ -417,7 +417,7 @@ This type of reward is intuitively logical as it grants 1 only if the whole task
 In order to implement the system several components were used, which are described in following sections. The approach was implemented for several action spaces in combination with different RL algorithms.
 
 
-\section{System components}
+\section{System Components}
 Mujoco \cite{todorov2012mujoco} was chosen as simulation environment as it has shown faster and more accurate performance than other simulators \cite{erez2015simulation}. As a base for the simulation the gym "FetchPickAndPlace-v0" environment \cite{pickplace2018openai} was used. Implementation of the RL algorithms SAC and PPO were taken from the stable baseline \cite{stable-baselines} library.  
 
 
@@ -436,7 +436,7 @@ and many more. Further description of Mujoco and its documentation can be found 
 Gym\cite{1606.01540} is toolkit developed by OpenAI \cite{openai} for researching in the area of reinforcement learning. Gym is an open-source library which includes collection of environments for different reinforcement learning problems. They include Atari (i.e. Breakout-v0) and Board games (Go), Robotics (HandManipulateBlock-v0) and many more \cite{1606.01540}. The user can modify the environment and construct its own agent. \\
 
 \subsection{Stable Baselines}
-Baselines \cite{baselines} is a library developed by OpenAI \cite{openai} containing implementations of different RL algorithms. Stable baselines \cite{stable-baselines} is a collection of improved RL algorithms based on OpenAI baselines. The algorithms of stable baselines have unified structure and are well documented. They have been validated through a bigger number of tests with high percentage of code coverage. Moreover, some new reinforcement learning algorithms were represented. They can be used in combination with gym environments. Stable baselines also include a set already pretrained agents \cite{rl-zoo}. \\
+Baselines \cite{baselines} is a library developed by OpenAI \cite{openai} containing implementations of different RL algorithms. Stable baselines \cite{stable-baselines} is a collection of improved RL algorithms based on OpenAI baselines. The algorithms of stable baselines have unified structure and are well documented. They have been validated through a bigger number of tests with high percentage of code coverage. Moreover, some new reinforcement learning algorithms were represented. They can be used in combination with gym environments. Stable baselines also include a set of already pretrained agents \cite{rl-zoo}. \\
 In order to train the agent using RL algorithms from stable baselines, the environment must follow the gym interface. The environment is required  to implement standard gym methods {\_\_init\_\_()}, step(), reset(), render(), close() and inherit from gym.Env.
 \begin{figure*}[h!]
 	\centering
@@ -508,7 +508,7 @@ The agent is granted with the reward 1 if he successfully grasps the object, oth
 Three possible implementations are used to represent the action space. Apart from using the straightforward continuous action space, the idea of discretizing action space as in \cite{zeng2018learning}, \cite{zeng2019tossingbot} is tested. With the help of these multiple approaches can be determined whether the representation of the action space can influence performance of some reinforcement learning algorithms. 
 
 \subsection{Continuous Action Space}\label{section:continuous_action_space}
-The action $(x, y)$ is target cartesian coordinates of the gripper: x $\in$ [1.1, 1.45] and y $\in$ [0.55, 0.95]. Continuous spaces are represented through the Box class of the gym library: 
+The action $(x, y)$ is target cartesian coordinates of the gripper: $x \in$ [1.1, 1.45] and $y \in$ [0.55, 0.95]. Continuous spaces are represented through the Box class of the gym library: 
 \begin{lstlisting}[backgroundcolor=\color{my_background_code_color}, breaklines=true] 
  self.action_space = spaces.Box(np.array([1.1, 0.55]), np.array([1.45, 0.95]), dtype='float32')
 \end{lstlisting}
@@ -516,7 +516,7 @@ Example of the action: [1.2, 0.7].
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{graphics/continuous_action_space}
-	\caption{Continuous Action Space: the action $(x, y)$ is target cartesian coordinates of the gripper.}
+	\caption{Continuous action space: the action $(x, y)$ is target cartesian coordinates of the gripper.}
 \end{figure}
 
 \subsection{Discrete Action Space without Rotation}\label{section:multidiscrete_no_rotation}
@@ -528,7 +528,7 @@ self.action_space = spaces.MultiDiscrete([49, 49])
  \begin{lstlisting}[backgroundcolor=\color{my_background_code_color}] 
 # the width of the cell 
 stepX = (1.45 - 1.1) : 50 = 0.007 
-# the length of the cell
+# the height of the cell
 stepY = (0.95 - 0.55) : 50 = 0.009 
 # (x,y) coordinates of the middle of the first cell
 first_cell_middle_X = 1.1 + 0.007:2 = 1.1035
@@ -546,10 +546,10 @@ Example of the action: $(x,y) = (2, 40)$ which corresponds to $(1.1175, 0.9145)$
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{graphics/multidiscrete_no_rotation}
-	\caption{Discrete Action Space. The workspace is represented as $50 \times 50$ grid, the action $(x, y)$ means going to the middle of the cell number $(x, y)$ and completing the planar grasp.}
+	\caption{Discrete action space. The workspace is represented as $50 \times 50$ grid, the action $(x, y)$ means going to the middle of the cell number $(x, y)$ and completing the planar grasp.}
 \end{figure}
 
-\subsection{Discrete Space with Rotation}\label{section:multidiscrete_with_rotation}
+\subsection{Discrete Action Space with Rotation}\label{section:multidiscrete_with_rotation}
 As in the previous method, described in section \ref{section:multidiscrete_no_rotation}, the workspace is  represented as $50 \times 50$ grid, action $(x, y)$ means going to the middle of the cell number $(x, y)$. In this method one more variable is added to the action space - the target yaw gripper angle $\alpha$. $\alpha$ is an integer, $\alpha$ $\in$ [0, 6]. Before completing the top-down planar grasp, $\alpha$ is translated to degrees and the gripper is rotated in a degrees value that corresponds to the $\alpha$ angle. \\
 The angle range for the gripper is limited to [0$^\circ$, 90$^\circ$] with the 15$^\circ$ step, resulting in 7 possible rotations which are expressed by the $\alpha$ value.
  \begin{lstlisting}[backgroundcolor=\color{my_background_code_color}, breaklines=true] 
@@ -565,11 +565,11 @@ Example of the action: $(x,y, \alpha)$ = (2, 40, 3) which corresponds to (1.1175
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{graphics/multidiscrete_with_rotation}
-	\caption{Discrete Action Space including rotation. The workspace is represented as $50 \times 50$ grid, the action $(x, y, \alpha$) means going to the middle of the cell number $(x, y)$, rotating the gripper value in degrees that corresponds to $\alpha$ and completing the planar grasp.}
+	\caption{Discrete action space including rotation. The workspace is represented as $50 \times 50$ grid, the action $(x, y, \alpha$) means going to the middle of the cell number $(x, y)$, rotating the gripper value in degrees that corresponds to $\alpha$ and completing the planar grasp.}
 \end{figure}
 
 \section{Learning Algorithms}
-Two algorithms are tested for solving the task: Soft-Actor Critic and Proximal Policy Optimization. Both are leading reinforcement learning algorithms. \\
+Two algorithms are tested for solving the task: Soft-Actor-Critic and Proximal Policy Optimization. Both are leading reinforcement learning algorithms. \\
 \subsection{The Soft-Actor Critic Algorithm}\label{section: SAC}
 Soft-Actor-Critic (SAC) is the state-of-the-art off-policy algorithm that can be used for environments with continuous action spaces, so it is used in combination with the action space approach described in section \ref{section:continuous_action_space}. 
 
@@ -600,7 +600,7 @@ If not explicitly stated otherwise, the hyperparameters that were applied during
 \end{table}
 
 \subsection{Proximal Policy Optimization Algorithm}
-The Proximal Policy Optimization(PPO) is the state-of-the-art off-policy algorithm that can be used for environments with continuous and discrete action spaces. It was tested in combination all three \hyperref[section:multidiscrete_no_rotation]{approaches} for representing action space. \\
+The Proximal Policy Optimization (PPO) is the state-of-the-art off-policy algorithm that can be used for environments with continuous and discrete action spaces. It was tested in combination with all three \hyperref[section:multidiscrete_no_rotation]{approaches} for representing action space. \\
 The hyperparameters that were applied during experiments are:
 \begin{table}[H]
 	\begin{center}
@@ -621,7 +621,7 @@ The hyperparameters that were applied during experiments are:
 		\end{tabular}
 	\end{center}
 	\label{exampletab}
-	\caption{Hyperparameters for for the applied PPO algorithm. These are the default parameters set for PPO in the stable baselines library.}
+	\caption{Hyperparameters for the applied PPO algorithm. These are the default parameters set for PPO in the stable baselines library.}
 \end{table}
 
 % max\textunderscore episode\textunderscore steps is a parameter that defines how many times the step() function can be called before the episode ends - how many times can robot attempt to grasp in the current episode. \\

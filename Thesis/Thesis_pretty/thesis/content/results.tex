@@ -14,9 +14,9 @@ In the fourth scenario the object's position is randomly determined for each ite
 
 
 \section{Experiments with the Soft-Actor-Critic Algorithm}
-Several experiments using the Soft-Actor-Critic(SAC) algorithm described in section \ref{section: SAC} in combination with continuous action space were conducted. The results were unstable: repeating the same experiment with same parameters delivered different results. In some cases the training was successful. However sometimes the network was showing good performance which dropped after some training steps, resulting in 0\% success rate at the end. Saving the model several times during training helped to retrieve the model that was giving a good performance. In some trainings the agent never achieved good performance. There might be several reasons for such unstable behavior, they will be discussed later on.  \\
+Several experiments using the Soft-Actor-Critic (SAC) algorithm described in section \ref{section: SAC} in combination with continuous action space were conducted. The results were unstable: repeating the same experiment with same parameters delivered different results. In some cases the training was successful. However sometimes the network was showing good performance which dropped after some training steps, resulting in 0\% success rate at the end. Saving the model several times during training helped to retrieve the model that was giving a good performance. In some trainings the agent never achieved good performance. There might be several reasons for such unstable behavior, they will be discussed later on.  \\
 
-For all four test scenarios the best agents are represented in the table below. The agents show high success rates and relatively low variance. These best agents were retrieved during successful training runs, however if the experiments will be repeated again, the results might be worse because of instability and inconsistency of the algorithm. 
+For all four test scenarios the best agents are represented in the table below. The agents show high success rates and relatively low variance. These best agents were retrieved during successful training runs, however if the experiments are repeated again, the results might be worse because of instability and inconsistency of the algorithm. 
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[h]{0.5\textwidth}
@@ -42,20 +42,20 @@ For all four test scenarios the best agents are represented in the table below. 
 	\includegraphics[width=1.0\textwidth]{graphics/results_sac}
 	% \caption{}
 	\end{subfigure}%
-	\caption{Results of the evaluation of best agents for each test scenario. These agents show high success rate and low variance. However if the trainings for each experiment will be repeated, the resulting agents might be not as successful as the ones represented in the table.}
+	\caption{Results of the evaluation of best agents for each test scenario. These agents show high success rate and low variance. However, if the trainings for each experiment are repeated, the resulting agents might be not as successful as the ones represented in the table.}
 \end{figure} 
 
 Sections \ref{evaluation:one_obj_SAC} and \ref{evaluation:20_obj_SAC} show statistics of several trainings with the SAC algorithm. Section \ref{evaluation:one_obj_SAC}  illustrates the unexpected behavior of success rate dropping during training and inconsistency of the training. Section \ref{evaluation:20_obj_SAC} disclosures more information about one of the successful runs.
 
-\subsection{One  Constant Positions Of The Object}\label{evaluation:one_obj_SAC}
-Among successful experiment runs, where the position of the object was learned even under 10k training steps, there were some that were not stable. As an example a training that lasted 30k steps. After 14k steps the agent was performing with 100\% sucessrate. However shortly after the performance dropped and never recovered. 
+\subsection{One  Constant Positions of the Object}\label{evaluation:one_obj_SAC}
+Among successful experiment runs, where the position of the object was learned even under 10k training steps, there were some that were not stable. As an example a training that lasted 30k steps is presented. After 14k steps the agent was performing with 100\% sucessrate. However, shortly after the performance dropped and never recovered. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{graphics/1_obj_pos_SAC/episode_reward}
 	\caption{An example of unstable behavior of the algorithm based on the reward value: after 14k training steps the agent learned correctly where the object is located. Then the performance dropped to 0 and did not recover after that.}
 \end{figure}
 
-\subsection{20 Constant Positions Of The Object}\label{evaluation:20_obj_SAC}
+\subsection{20 Constant Positions of the Object}\label{evaluation:20_obj_SAC}
 A list of 20 $(x,y)$ coordinates in the range of robot's action space were randomly generated. During each episode the object is located on the table with its $(x,y)$ coordinates being one random position from the list. The goal of the experiment was to determine whether the network is able to learn how to grasp the object. \\
 
 The training statistics is: \\ 
@@ -116,7 +116,7 @@ The training statistics is: \\
 \end{figure}
 
 The evaluation consisted of 300 episodes, 100\% success rate - the task was completed successfully. \\
-The 150000 steps of the training resulted in 43998 episodes. As max\_episode\_steps value was set to 50, in the beginning the majority of episodes lasted 50 steps, however at the end of the training the value shrank to 1, occasionally going up. \\
+The 150k steps of the training resulted in 43998 episodes. As $max\_episode\_steps$ value was set to 50, in the beginning the majority of episodes lasted 50 steps, however at the end of the training the value shrank to 1, occasionally going up. \\
 
 \begin{figure}[H]
 	\centering
@@ -233,7 +233,7 @@ For random object position after 300k training steps the success rate was 98\% w
 	\caption{500k step training of PPO on random position of the object. The evaluation of the model at the end showed 99.5\% success rate with 7\% variance.  }
 \end{figure}
 
-For all four test scenarios the best agents are represented in the table below. In the first three scenarios the agent coped perfectly with the task: 100\% success rate with 0 \% variance. The success rate in the forth scenario is 99.5\% with higher variance. It might be due to the fact that during evaluation some positions of the object were never seen by the robot in the training, which is why it was not able to grasp it or it took several attempts to grasp the object, as opposed to the first three scenarios, where the object was grasp from the first attempt. 
+For all four test scenarios the best agents are represented in the table below. In the first three scenarios the agent coped perfectly with the task: 100\% success rate with 0 \% variance. The success rate in the forth scenario is 99.5\% with higher variance. It might be due to the fact that during evaluation some positions of the object were never seen by the robot in the training, which is why it was not able to grasp it or it took several attempts to grasp the object, as opposed to the first three scenarios, where the object was grasped from the first attempt. 
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[h]{0.5\textwidth}
@@ -305,8 +305,8 @@ During evaluation it was noticeable that the gripper made several attempts befor
 For each experiment four different training scenarios were conducted: one, 20, 50 and random object positions. For the first three scenarios the agents were evaluated using the same list of object positions that they were trained on. This brings up the following question: how well would these agents perform on the general case with the object position being randomly assigned on the working space? \\
 The generalization test was conducted. The results showed, that the agents that were trained on specific object positions were not able to show good performance on the general case where the object position was random. \\
 The results of the generalization test together with evaluation results are shown in figure \ref{fig:gen_test}. The expected behavior is shown in figure \ref{fig:gen_test_PPO_no_rotation}: with the rising number of object positions seen in the training the success rate for the general case rises and the variance becomes lower. \\
-In figure \ref{fig:gen_test_sac} this idea is violated by the case with 50 possible positions of the object. This can be explained by the the fact that the trained agent for this case performed worse during its own evaluation: lower success rate and higher variance as in the case with 20 objects. Which suggests that the agent was not well trained overall, which is why he performed very poorly at the generalization test. \\
-In figure \ref{fig:gen_test_PPO_with_rotation} the agents trained for 20 and 50 object positions showed a high success rate for the general case - over 75\%. However the variance for both  cases is over 40\%, which means the agents were often not entirely sure which action to take and after several attempts succeeded to chose the right one. Such high variance signifies that these trained agents cannot be used for the general case as they are too uncertain in their actions. \\
+In figure \ref{fig:gen_test_sac} this idea is violated by the case with 50 possible positions of the object. This can be explained by the fact that the trained agent for this case performed worse during its own evaluation: lower success rate and higher variance as in the case with 20 objects. Which suggests that the agent was not well trained overall, which is why he performed very poorly at the generalization test. \\
+In figure \ref{fig:gen_test_PPO_with_rotation} the agents trained for 20 and 50 object positions showed a high success rate for the general case - over 75\%. However the variance for both  cases is over 40\%, which means the agents were often not entirely sure which action to take and after several attempts succeeded to choose the right one. Such high variance signifies that these trained agents cannot be used for the general case as they are too uncertain in their actions. \\
 
 \begin{figure}[H]
 	\centering
@@ -338,8 +338,8 @@ In figure \ref{fig:gen_test_PPO_with_rotation} the agents trained for 20 and 50 
 
 \section{Simulation Inaccuracies}
 During the setup of simulation some unexpected behaviors occurred that had a significant influence on the results of the experiment. Until these difficulties were eliminated, it was impossible to train a successful agent. 
-\subsection{The Angle Of The Gripper}
-The action space consists of target $(x,y)$ coordinates of the point that the gripper has to achieve before going down. The step() function computes the difference between target and current positions, the difference is then applied to the simulation using inverse kinematics. The inverse kinematics is calculated by solving the convex optimization problem. The optimization problem is defined combining description of bodies that are used in the simulation and physical constraints such as forces, friction, etc.\\
+\subsection{The Angle of the Gripper}
+The action space consists of target $(x,y)$ coordinates of the point that the gripper has to achieve before going down. The step() function computes the difference between target and current positions, the difference is then applied to the simulation using inverse kinematics. The inverse kinematics is calculated by solving the convex optimization problem. The optimization problem is defined by combining description of bodies that are used in the simulation and physical constraints such as forces, friction, etc.\\
 One of the challenges that was faced during the set-up is that there can be many solutions to the problem of gripper achieving the target $(x,y)$ position. In some cases the gripper developed an angle in different plains, successfully reaching target position but the angle made it impossible to compute a successful grasp. 
 \begin{figure*}[h!]
 	\centering
@@ -352,13 +352,13 @@ One of the challenges that was faced during the set-up is that there can be many
 	\begin{subfigure}[h]{0.3\textwidth}
 		\centering
 		\includegraphics[width=1.0\textwidth]{graphics/simulation_problems/angle_2}
-		% \caption{Model-based RL Quelle: s}\label{fig:RL}
 	\end{subfigure}%
+	\caption{The gripper developed an angle in different plains that made it impossible to successfully complete a planar grasp.}
 \end{figure*}
 
 Setting the robot to the starting position for every step helped to correct that inaccuracy for the current task. However, this approach is time-consuming and might be not applicable for similar problems in different set-ups. The possible better solution to this problem might be to set additional constraints for the position of the joints of the robot that would effect the solution of the inverse kinematics problem. \\
 
-\subsection{Slipping Of The Object}
+\subsection{Slipping of the Object}
 The first version of grasping consisted of completely closing the gripper and going up with an object. However, the object did not stay in the gripper - it slipped down. This behavior was not expected as physical forces such as friction were set to default values. The solution to the problem was to keep closing the gripper while going up - it helps to prevent the object from slipping. \\
 
 
